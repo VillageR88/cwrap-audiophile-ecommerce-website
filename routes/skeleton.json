@@ -44,14 +44,14 @@
       "style": "font-weight: 500; font-size: 15px; line-height: 25px; margin: 0; letter-spacing: 0;"
     },
     {
-      "name": "button1",
-      "type": "class",
-      "style": "color: white; font-weight: bold; font-size: 13px; letter-spacing: 1px; height: 48px; max-width: 160px; width: 100%; border: none;"
-    },
-    {
-      "name": "button",
+      "name": "a",
       "type": "element",
       "style": "font-family: Manrope; cursor: pointer;"
+    },
+    {
+      "name": "button1",
+      "type": "class",
+      "style": "color: white; font-weight: bold; font-size: 13px; letter-spacing: 1px; height: 48px; max-width: 160px; width: 100%; border: none; display:flex; align-items:center; justify-content: center;"
     }
   ],
   "element": "body",
@@ -149,11 +149,11 @@
         },
         {
           "element": "div",
-          "style": "max-width: 1110px; margin: 128px auto 0 auto;",
+          "style": "max-width: 1110px; margin: 128px auto 0 auto; display: flex; flex-direction: column;",
           "children": [
             {
               "element": "span",
-              "style": "color: rgba(255,255,255,0.4964); font-size: 14px; letter-spacing: 10px; max-width: 200px;",
+              "style": "color: rgba(255,255,255,0.4964); font-size: 14px; letter-spacing: 10px; max-width: 210px;",
               "text": "NEW PRODUCT"
             },
             {
@@ -173,7 +173,7 @@
               ]
             },
             {
-              "element": "button",
+              "element": "a",
               "attributes": {
                 "class": "button1"
               },
@@ -210,7 +210,7 @@
                 "style": "width: 50%;margin-bottom: -110px; z-index: 1; pointer-events:none;"
               },
               {
-                "element": "button",
+                "element": "a",
                 "extend": [
                   {
                     "extension": ":hover > section:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
@@ -285,17 +285,17 @@
                   ]
                 },
                 {
-                  "element": "button",
+                  "element": "a",
                   "attributes": {
                     "class": "button1"
                   },
+                  "style": "background-color: black; transition: 150ms;",
                   "extend": [
                     {
                       "extension": ":hover",
                       "style": "background-color: #4C4C4C;"
                     }
                   ],
-                  "style": "background-color: black; transition: 150ms;",
                   "text": "SEE PRODUCT"
                 }
               ]
