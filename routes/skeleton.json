@@ -255,7 +255,7 @@
         },
         {
           "element": "div",
-          "style": "min-height: 560px; background-color: #D87D4A; max-width: 1110px; margin-inline: auto; margin-block: 168px 48px; border-radius: 8px; background-image: url(\"static/images/home/desktop/pattern-circles.svg\"); background-repeat: no-repeat; background-position: -140px -36px; display: flex; overflow: hidden; justify-content: space-between;",
+          "style": "min-height: 560px; background-color: #D87D4A; max-width: 1110px; margin-inline: auto; margin-block: 168px 0; border-radius: 8px; background-image: url(\"static/images/home/desktop/pattern-circles.svg\"); background-repeat: no-repeat; background-position: -140px -36px; display: flex; overflow: hidden; justify-content: space-between;",
           "children": [
             {
               "element": "img",
@@ -301,6 +301,10 @@
               ]
             }
           ]
+        },
+        {
+          "element": "div",
+          "style": "min-height: 320px; max-width: 1110px; width: 100%; background-color: #979797; margin: 48px auto 48px auto;"
         }
       ]
     }
