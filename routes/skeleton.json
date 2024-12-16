@@ -32,21 +32,50 @@
     ]
   },
   "fonts": [],
+  "classroom": [
+    {
+      "name": "h1",
+      "type": "element",
+      "style": "color: white; font-weight: bold; font-size: 56px; line-height: 58px; letter-spacing: 2px; margin: 0;"
+    },
+    {
+      "name": "p",
+      "type": "element",
+      "style": "font-weight: 500; font-size: 15px; line-height: 25px; margin: 0; letter-spacing: 0;"
+    },
+    {
+      "name": "button1",
+      "type": "class",
+      "style": "color: white; font-weight: bold; font-size: 13px; letter-spacing: 1px;"
+    },
+    {
+      "name": "button",
+      "type": "element",
+      "style": "font-family: Manrope; cursor: pointer;"
+    }
+  ],
   "element": "body",
-  "style": "font-family: Manrope;",
+  "style": "font-family: Manrope; padding: 0; margin: 0; box-sizing: border-box; background-color: #FAFAFA;",
   "children": [
     {
       "element": "header",
-      "style": "",
+      "style": "min-height: 729px; width: 100%; background-color: #191919; position: relative; z-index: 0;",
       "children": [
         {
           "element": "nav",
-          "style": "margin-top: 32px;",
+          "style": "padding-top: 32px; width: 100%; display: flex; flex-direction: column; gap: 36px;",
           "children": [
             {
               "element": "div",
-              "style": "max-width: 1110px; width: 100%; margin-inline: auto; display: flex; align-items: center; justify-content: space-between;",
+              "style": "max-width: 1110px; width: 100%; margin-inline: auto; display: flex; align-items: center; justify-content: space-between; position: relative;",
               "children": [
+                {
+                  "element": "img",
+                  "attributes": {
+                    "src": "static/images/home/desktop/image-hero.jpg"
+                  },
+                  "style": "position: absolute; top: -32px; right: -160px; z-index: -1;"
+                },
                 {
                   "element": "img",
                   "attributes": {
@@ -56,7 +85,7 @@
                 },
                 {
                   "element": "ul",
-                  "style": "display: flex; margin: 0; padding: 0; list-style: none; gap: 34px;",
+                  "style": "display: flex; margin: 0; padding: 0; list-style: none; gap: 34px; margin-inline: 0 100px;",
                   "children": [],
                   "blueprint": {
                     "element": "li",
@@ -78,6 +107,9 @@
                 },
                 {
                   "element": "button",
+                  "attributes": {
+                    "aria-label": "shopping cart"
+                  },
                   "style": "background-color: transparent; margin: 0; padding:0; fill:white; border:none; transition: 150ms; cursor: pointer;",
                   "extend": [
                     {
@@ -93,21 +125,97 @@
                         "height": "20",
                         "xmlns": "http://www.w3.org/2000/svg"
                       },
+                      "style": "",
                       "children": [
                         {
                           "element": "path",
                           "attributes": {
                             "d": "M8.625 15.833c1.132 0 2.054.935 2.054 2.084 0 1.148-.922 2.083-2.054 2.083-1.132 0-2.054-.935-2.054-2.083 0-1.15.922-2.084 2.054-2.084zm9.857 0c1.132 0 2.054.935 2.054 2.084 0 1.148-.922 2.083-2.054 2.083-1.132 0-2.053-.935-2.053-2.083 0-1.15.92-2.084 2.053-2.084zm-9.857 1.39a.69.69 0 00-.685.694.69.69 0 00.685.694.69.69 0 00.685-.694.69.69 0 00-.685-.695zm9.857 0a.69.69 0 00-.684.694.69.69 0 00.684.694.69.69 0 00.685-.694.69.69 0 00-.685-.695zM4.717 0c.316 0 .59.215.658.517l.481 2.122h16.47a.68.68 0 01.538.262c.127.166.168.38.11.579l-2.695 9.236a.672.672 0 01-.648.478H7.41a.667.667 0 00-.673.66c0 .364.303.66.674.66h12.219c.372 0 .674.295.674.66 0 .364-.302.66-.674.66H7.412c-1.115 0-2.021-.889-2.021-1.98 0-.812.502-1.511 1.218-1.816L4.176 1.32H.674A.667.667 0 010 .66C0 .296.302 0 .674 0zm16.716 3.958H6.156l1.797 7.917h11.17l2.31-7.917z",
                             "fill-rule": "nonzero"
-                          }
+                          },
+                          "style": ""
                         }
                       ]
                     }
                   ]
                 }
               ]
+            },
+            {
+              "element": "div",
+              "style": "width: 100%; border-bottom: 1px solid rgba(255,255,255,0.25); max-width: 1110px; margin-inline: auto;"
             }
           ]
+        },
+        {
+          "element": "div",
+          "style": "max-width: 1110px; margin: 128px auto 0 auto;",
+          "children": [
+            {
+              "element": "span",
+              "style": "color: rgba(255,255,255,0.4964); font-size: 14px; letter-spacing: 10px; max-width: 200px;",
+              "text": "NEW PRODUCT"
+            },
+            {
+              "element": "section",
+              "style": "max-width: 400px; display: flex; flex-direction: column; gap: 24px; margin-top: 24px;",
+              "children": [
+                {
+                  "element": "h1",
+                  "style": "",
+                  "text": "XX99 MARK II\nHEADPHONES"
+                },
+                {
+                  "element": "p",
+                  "style": "color: rgba(255,255,255,0.75); max-width: 350px;",
+                  "text": "Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast."
+                }
+              ]
+            },
+            {
+              "element": "button",
+              "attributes": {
+                "class": "button1"
+              },
+              "style": "margin-top: 40px; height: 48px; max-width: 160px; width: 100%; background-color: #D87D4A; border: none; transition: 150ms;",
+              "extend": [
+                {
+                  "extension": ":hover",
+                  "style": "background-color: #FBAF85;"
+                }
+              ],
+              "text": "SEE PRODUCT"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "element": "main",
+      "style": "width: 100%;",
+      "children": [
+        {
+          "element": "ul",
+          "style": "max-width: 1110px; margin-inline: auto; display: flex; gap: 30px; margin-block: 0; padding: 0; list-style: none;",
+          "children": [],
+          "blueprint": {
+            "element": "li",
+            "count": "3",
+            "children": [
+              {
+                "element": "img",
+                "attributes": {
+                  "src": "static/images/shared/desktop/image-category-thumbnail-cwrapArray[headphones,speakers,earphones].png"
+                },
+                "style": "width: 50%"
+              },
+              {
+                "element": "div",
+                "style": "height: 165px;background-color: #F1F1F1;width: 100%"
+              }
+            ],
+            "style": "max-width: 350px;width: 100%;display: flex;flex-direction: column;justify-content: space-between;align-items: center"
+          }
         }
       ]
     }
