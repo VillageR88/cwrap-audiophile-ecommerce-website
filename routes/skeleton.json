@@ -196,7 +196,7 @@
       "children": [
         {
           "element": "ul",
-          "style": "max-width: 1110px; margin-inline: auto; display: flex; gap: 30px; margin-block: 0; padding: 0; list-style: none;",
+          "style": "max-width: 1110px; margin-inline: auto; display: flex; gap: 30px; margin-block: 120px 0; padding: 0; list-style: none;",
           "children": [],
           "blueprint": {
             "element": "li",
@@ -207,15 +207,64 @@
                 "attributes": {
                   "src": "static/images/shared/desktop/image-category-thumbnail-cwrapArray[headphones,speakers,earphones].png"
                 },
-                "style": "width: 50%"
+                "style": "width: 50%;margin-bottom: -110px; z-index: 1; pointer-events:none;"
               },
               {
-                "element": "div",
-                "style": "height: 165px;background-color: #F1F1F1;width: 100%"
+                "element": "button",
+                "extend": [
+                  {
+                    "extension": ":hover > section:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+                    "style": "color: #D87D4A;;"
+                  }
+                ],
+                "style": "height: 204px; background-color: #F1F1F1; width: 100%; border-radius: 8px; border: none;;display: flex;align-items: end;justify-content: center",
+                "children": [
+                  {
+                    "element": "section",
+                    "children": [
+                      {
+                        "element": "h2",
+                        "text": "HEADPHONES",
+                        "style": "font-weight: bold;font-size: 18px;letter-spacing: 1.29px"
+                      },
+                      {
+                        "element": "div",
+                        "children": [
+                          {
+                            "element": "span",
+                            "text": "SHOP",
+                            "style": "font-weight: bold;font-size: 13px;letter-spacing: 1px;color: rgba(0,0,0,0.5); transition: 150ms;"
+                          },
+                          {
+                            "element": "img",
+                            "attributes": {
+                              "src": "static/images/shared/desktop/icon-arrow-right.svg"
+                            }
+                          }
+                        ],
+                        "style": "display: flex;gap: 13px;align-items: center;justify-content: center"
+                      }
+                    ],
+                    "style": "margin-bottom: 30px"
+                  }
+                ]
               }
             ],
-            "style": "max-width: 350px;width: 100%;display: flex;flex-direction: column;justify-content: space-between;align-items: center"
+            "style": "max-width: 350px;width: 100%;display: flex;flex-direction: column;justify-content: end;align-items: center"
           }
+        },
+        {
+          "element": "div",
+          "style": "min-height: 560px; background-color: #D87D4A; max-width: 1110px; margin-inline: auto; margin-block: 168px 48px; border-radius: 8px; background-image: url(\"static/images/home/desktop/pattern-circles.svg\"); background-repeat: no-repeat; background-position: -140px -36px; display: flex; overflow: hidden;",
+          "children": [
+            {
+              "element": "img",
+              "attributes": {
+                "src": "static/images/home/desktop/image-speaker-zx9.png"
+              },
+              "style": "max-height: 460px; margin: auto 0 -12px 145px;"
+            }
+          ]
         }
       ]
     }
