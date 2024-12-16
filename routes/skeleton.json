@@ -46,7 +46,7 @@
     {
       "name": "button1",
       "type": "class",
-      "style": "color: white; font-weight: bold; font-size: 13px; letter-spacing: 1px;"
+      "style": "color: white; font-weight: bold; font-size: 13px; letter-spacing: 1px; height: 48px; max-width: 160px; width: 100%; border: none;"
     },
     {
       "name": "button",
@@ -177,7 +177,7 @@
               "attributes": {
                 "class": "button1"
               },
-              "style": "margin-top: 40px; height: 48px; max-width: 160px; width: 100%; background-color: #D87D4A; border: none; transition: 150ms;",
+              "style": "margin-top: 40px; background-color: #D87D4A; transition: 150ms;",
               "extend": [
                 {
                   "extension": ":hover",
@@ -255,7 +255,7 @@
         },
         {
           "element": "div",
-          "style": "min-height: 560px; background-color: #D87D4A; max-width: 1110px; margin-inline: auto; margin-block: 168px 48px; border-radius: 8px; background-image: url(\"static/images/home/desktop/pattern-circles.svg\"); background-repeat: no-repeat; background-position: -140px -36px; display: flex; overflow: hidden;",
+          "style": "min-height: 560px; background-color: #D87D4A; max-width: 1110px; margin-inline: auto; margin-block: 168px 48px; border-radius: 8px; background-image: url(\"static/images/home/desktop/pattern-circles.svg\"); background-repeat: no-repeat; background-position: -140px -36px; display: flex; overflow: hidden; justify-content: space-between;",
           "children": [
             {
               "element": "img",
@@ -263,6 +263,42 @@
                 "src": "static/images/home/desktop/image-speaker-zx9.png"
               },
               "style": "max-height: 460px; margin: auto 0 -12px 145px;"
+            },
+            {
+              "element": "div",
+              "style": "display: flex; flex-direction: column; gap: 40px; height: fit-content; width: fit-content; margin: auto 95px auto 0;",
+              "children": [
+                {
+                  "element": "section",
+                  "style": "gap: 24px; display: flex; flex-direction: column;",
+                  "children": [
+                    {
+                      "element": "h2",
+                      "style": "color: white; font-weight: bold; font-size: 56px; line-height: 58px; letter-spacing: 2px; max-width: 261px; margin: 0;",
+                      "text": "ZX9\nSPEAKER"
+                    },
+                    {
+                      "element": "p",
+                      "style": "max-width: 349px; color: rgba(255,255,255,0.75);",
+                      "text": "Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound."
+                    }
+                  ]
+                },
+                {
+                  "element": "button",
+                  "attributes": {
+                    "class": "button1"
+                  },
+                  "extend": [
+                    {
+                      "extension": ":hover",
+                      "style": "background-color: #4C4C4C;"
+                    }
+                  ],
+                  "style": "background-color: black; transition: 150ms;",
+                  "text": "SEE PRODUCT"
+                }
+              ]
             }
           ]
         }
