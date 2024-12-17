@@ -472,7 +472,8 @@
       {
         "element": "script",
         "attributes": {
-          "src": "static/scripts/headphones.js"
+          "src": "static/scripts/headphones.js",
+          "type": "module"
         }
       }
     ]
