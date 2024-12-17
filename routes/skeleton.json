@@ -52,6 +52,11 @@
       "name": "button1",
       "type": "class",
       "style": "color: white; font-weight: bold; font-size: 13px; letter-spacing: 1px; height: 48px; max-width: 160px; width: 100%; border: none; display:flex; align-items:center; justify-content: center;"
+    },
+    {
+      "name": "h2",
+      "type": "element",
+      "style": "margin: 0;"
     }
   ],
   "element": "body",
@@ -245,7 +250,7 @@
                         "style": "display: flex;gap: 13px;align-items: center;justify-content: center"
                       }
                     ],
-                    "style": "margin-bottom: 30px"
+                    "style": "margin-bottom: 30px;display: flex;flex-direction: column;gap: 17px"
                   }
                 ]
               }
@@ -304,7 +309,13 @@
         },
         {
           "element": "div",
-          "style": "min-height: 320px; max-width: 1110px; width: 100%; background-color: #979797; margin: 48px auto 48px auto;"
+          "style": "min-height: 320px; max-width: 1110px; width: 100%; background-color: #F1F1F1; margin: 48px auto 48px auto; background-image: url(\"static/images/home/desktop/image-speaker-zx7.jpg\"); border-radius: 8px; display: flex;",
+          "children": [
+            {
+              "element": "cwrap-template",
+              "text": "cwrapTemplate[sectionHome1(title=ZX7 SPEAKER)]"
+            }
+          ]
         }
       ]
     }

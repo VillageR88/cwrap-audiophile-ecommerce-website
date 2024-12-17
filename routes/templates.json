@@ -1,1 +1,28 @@
-[]
+[
+  {
+    "element": "section",
+    "name": "sectionHome1",
+    "style": "display: flex; flex-direction: column; gap: 32px; width: fit-content; margin: auto 62px auto 62px;",
+    "children": [
+      {
+        "element": "h2",
+        "style": "margin: 0; font-weight: bold; font-size: 28px; letter-spacing: 2px; line-height: auto;",
+        "text": "cwrapProperty[title=TITLE PLACEHOLDER]"
+      },
+      {
+        "element": "a",
+        "extend": [
+          {
+            "extension": ":hover",
+            "style": "background-color: black; color: white;"
+          }
+        ],
+        "style": "border: 1px solid black; color: black; transition: 150ms;",
+        "attributes": {
+          "class": "button1"
+        },
+        "text": "SEE PRODUCT"
+      }
+    ]
+  }
+]
