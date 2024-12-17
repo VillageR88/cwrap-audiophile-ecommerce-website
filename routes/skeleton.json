@@ -60,7 +60,7 @@
     }
   ],
   "element": "body",
-  "style": "font-family: Manrope; padding: 0; margin: 0; box-sizing: border-box; background-color: #FAFAFA;",
+  "style": "font-family: Manrope; padding: 0; margin: 0; box-sizing: border-box; background-color: #FAFAFA; min-height: 100dvh; display: flex; flex-direction: column;",
   "children": [
     {
       "element": "header",
@@ -374,6 +374,10 @@
           ]
         }
       ]
+    },
+    {
+      "element": "footer",
+      "style": "min-height: 365px; background-color: #101010; margin: auto 0 0 0;"
     }
   ]
 }
