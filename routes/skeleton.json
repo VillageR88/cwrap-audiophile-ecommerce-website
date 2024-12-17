@@ -90,26 +90,8 @@
                   "style": ""
                 },
                 {
-                  "element": "ul",
-                  "style": "display: flex; margin: 0; padding: 0; list-style: none; gap: 34px; margin-inline: 0 100px;",
-                  "children": [],
-                  "blueprint": {
-                    "element": "li",
-                    "count": "4",
-                    "children": [
-                      {
-                        "element": "a",
-                        "text": "cwrapArray[HOME,HEADPHONES,SPEAKERS,EARPHONES]",
-                        "style": "color: white;font-weight: bold;font-size: 13px;line-height: 25px;letter-spacing: 2px;cursor: pointer;transition: 150ms",
-                        "extend": [
-                          {
-                            "extension": ":hover",
-                            "style": "color: #D87D4A;"
-                          }
-                        ]
-                      }
-                    ]
-                  }
+                  "element": "cwrap-template",
+                  "text": "cwrapTemplate[ulNavigation1(rightMargin=100px)]"
                 },
                 {
                   "element": "button",
@@ -390,7 +372,7 @@
             },
             {
               "element": "div",
-              "style": "margin-top: 71px; width: 100%; min-height: 25px;",
+              "style": "margin-top: 71px; width: 100%; min-height: 25px; display: flex; align-items: center; justify-content: space-between;",
               "children": [
                 {
                   "element": "img",
@@ -399,6 +381,47 @@
                     "alt": "audiophile logo"
                   },
                   "style": ""
+                },
+                {
+                  "element": "cwrap-template",
+                  "text": "cwrapTemplate[ulNavigation1]"
+                }
+              ]
+            },
+            {
+              "element": "div",
+              "style": "margin-top: 36px; display: flex; justify-content: space-between; align-items: center;",
+              "children": [
+                {
+                  "element": "div",
+                  "style": "max-width: 540px; display: flex; flex-direction: column; justify-content: space-between; min-height: 181px;",
+                  "children": [
+                    {
+                      "element": "p",
+                      "style": "color: rgba(255,255,255,0.5);",
+                      "text": "Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week."
+                    },
+                    {
+                      "element": "p",
+                      "style": "color: rgba(255,255,255,0.5);",
+                      "text": "Copyright 2021. All Rights Reserved"
+                    }
+                  ]
+                },
+                {
+                  "element": "ul",
+                  "style": "display: flex; gap: 16px; list-style: none; margin: 0; padding: 0; align-items: center;",
+                  "children": [],
+                  "blueprint": {
+                    "element": "li",
+                    "count": 3,
+                    "children": [
+                      {
+                        "element": "cwrap-template",
+                        "text": "cwrapTemplate[cwrapArray[linkFacebook,linkTwitter,linkInstagram]];"
+                      }
+                    ]
+                  }
                 }
               ]
             }
