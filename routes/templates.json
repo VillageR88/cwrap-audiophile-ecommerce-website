@@ -468,52 +468,66 @@
             ]
           }
         ]
+      },
+      {
+        "element": "script",
+        "attributes": {
+          "src": "static/scripts/headphones.js"
+        }
       }
     ]
   },
   {
     "element": "div",
     "name": "categoryContainer",
-    "extend": [
-      {
-        "extension": " > div:nth-of-type(even)",
-        "style": "flex-direction: row-reverse;"
-      }
-    ],
-    "style": "max-width: 1110px; display: flex; margin-inline: auto; margin-block: 160px; gap: 160px; flex-direction: column;",
+    "attributes": {
+      "id": "category-container"
+    },
     "children": [
       {
         "element": "div",
-        "style": "display: flex; width: 100%; justify-content: space-between; align-items:center;",
+        "attributes": {
+          "class": "category-container-wrapper"
+        },
         "children": [
           {
             "element": "img",
             "attributes": {
+              "class": "category-container-picture",
               "src": "static/images/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg"
-            },
-            "style": "display:flex; max-width: 540px; border-radius: 8px;"
+            }
           },
           {
             "element": "div",
-            "style": "max-width: 445px; display: flex; flex-direction: column;",
+            "attributes": {
+              "class": "category-container-div"
+            },
             "children": [
               {
                 "element": "span",
-                "text": "NEW PRODUCT",
-                "style": "font-size: 14px; color: #D87D4A; letter-spacing: 14px; margin-bottom: 16px;"
+                "attributes": {
+                  "class": "category-container-div-new"
+                },
+                "text": "NEW PRODUCT"
               },
               {
                 "element": "section",
-                "style": "display: flex; flex-direction: column; gap:32px",
+                "attributes": {
+                  "class": "category-container-div-section"
+                },
                 "children": [
                   {
                     "element": "h2",
-                    "style": "font-weight: bold; font-size: 40px; line-height: 44px; letter-spacing: 1.43px;",
+                    "attributes": {
+                      "class": "category-container-div-section-title"
+                    },
                     "text": "XX99 MARK II"
                   },
                   {
                     "element": "p",
-                    "style": "color: rgba(0,0,0,0.5);",
+                    "attributes": {
+                      "class": "category-container-div-section-description"
+                    },
                     "text": "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound."
                   }
                 ]
@@ -521,64 +535,8 @@
               {
                 "element": "a",
                 "text": "SEE PRODUCT",
-                "extend": [
-                  {
-                    "extension": ":hover",
-                    "style": "background-color: #FBAF85"
-                  }
-                ],
-                "style": "background-color: #D87D4A; margin-top: 40px; transition: 150ms;",
                 "attributes": {
-                  "class": "button1"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "element": "div",
-        "style": "display: flex; width: 100%; justify-content: space-between; align-items:center;",
-        "children": [
-          {
-            "element": "img",
-            "attributes": {
-              "src": "static/images/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg"
-            },
-            "style": "display:flex; max-width: 540px; border-radius: 8px;"
-          },
-          {
-            "element": "div",
-            "style": "max-width: 445px; display: flex; flex-direction: column;",
-            "children": [
-              {
-                "element": "section",
-                "style": "display: flex; flex-direction: column; gap:32px",
-                "children": [
-                  {
-                    "element": "h2",
-                    "style": "font-weight: bold; font-size: 40px; line-height: 44px; letter-spacing: 1.43px;",
-                    "text": "XX99 MARK II"
-                  },
-                  {
-                    "element": "p",
-                    "style": "color: rgba(0,0,0,0.5);",
-                    "text": "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound."
-                  }
-                ]
-              },
-              {
-                "element": "a",
-                "text": "SEE PRODUCT",
-                "extend": [
-                  {
-                    "extension": ":hover",
-                    "style": "background-color: #FBAF85"
-                  }
-                ],
-                "style": "background-color: #D87D4A; margin-top: 40px; transition: 150ms;",
-                "attributes": {
-                  "class": "button1"
+                  "class": "button1 category-container-div-section-button"
                 }
               }
             ]
