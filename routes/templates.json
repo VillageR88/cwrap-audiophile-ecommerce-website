@@ -49,6 +49,66 @@
     }
   },
   {
+    "element": "ul",
+    "name": "ulNavigation2",
+    "style": "max-width: 1110px; margin-inline: auto; display: flex; gap: 30px; margin-block: 120px 0; padding: 0; list-style: none;",
+    "children": [],
+    "blueprint": {
+      "element": "li",
+      "count": "3",
+      "children": [
+        {
+          "element": "img",
+          "attributes": {
+            "src": "static/images/shared/desktop/image-category-thumbnail-cwrapArray[headphones,speakers,earphones].png"
+          },
+          "style": "width: 50%;margin-bottom: -110px; z-index: 1; pointer-events:none;"
+        },
+        {
+          "element": "a",
+          "extend": [
+            {
+              "extension": ":hover > section:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+              "style": "color: #D87D4A;;"
+            }
+          ],
+          "style": "height: 204px; background-color: #F1F1F1; width: 100%; border-radius: 8px; border: none;;display: flex;align-items: end;justify-content: center",
+          "children": [
+            {
+              "element": "section",
+              "children": [
+                {
+                  "element": "h2",
+                  "text": "HEADPHONES",
+                  "style": "font-weight: bold;font-size: 18px;letter-spacing: 1.29px"
+                },
+                {
+                  "element": "div",
+                  "children": [
+                    {
+                      "element": "span",
+                      "text": "SHOP",
+                      "style": "font-weight: bold;font-size: 13px;letter-spacing: 1px;color: rgba(0,0,0,0.5); transition: 150ms;"
+                    },
+                    {
+                      "element": "img",
+                      "attributes": {
+                        "src": "static/images/shared/desktop/icon-arrow-right.svg"
+                      }
+                    }
+                  ],
+                  "style": "display: flex;gap: 13px;align-items: center;justify-content: center"
+                }
+              ],
+              "style": "margin-bottom: 30px;display: flex;flex-direction: column;gap: 17px"
+            }
+          ]
+        }
+      ],
+      "style": "max-width: 350px;width: 100%;display: flex;flex-direction: column;justify-content: end;align-items: center"
+    }
+  },
+  {
     "element": "a",
     "name": "linkFacebook",
     "extend": [
@@ -135,6 +195,43 @@
             }
           }
         ]
+      }
+    ]
+  },
+  {
+    "element": "div",
+    "name": "divBottomHero",
+    "style": "max-width: 1110px; width: 100%; min-height: 588px; margin-inline: auto; margin-top: 200px; margin-bottom: 200px; display: flex; align-items: center; justify-content: space-between;",
+    "children": [
+      {
+        "element": "section",
+        "style": "width: fit-content; display: flex; flex-direction: column; gap: 32px;",
+        "children": [
+          {
+            "element": "h2",
+            "style": "max-width: 445px; color: black; font-size: 40px; font-weight: bold; line-height: 44px; letter-spacing: 1.43px;",
+            "children": [
+              {
+                "element": "span",
+                "style": "color: #D87D4A;",
+                "text": "BEST"
+              }
+            ],
+            "text": "BRINGING YOU THE cwrapSpan AUDIO GEAR"
+          },
+          {
+            "element": "p",
+            "style": "color: rgba(0,0,0,0.5); max-width: 445px;",
+            "text": "Located at the heart of New York City, Audiophile is the premier store for high end headphones, earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration rooms available for you to browse and experience a wide range of our products. Stop by our store to meet some of the fantastic people who make Audiophile the best place to buy your portable audio equipment."
+          }
+        ]
+      },
+      {
+        "element": "img",
+        "attributes": {
+          "src": "static/images/shared/desktop/image-best-gear.jpg"
+        },
+        "style": "border-radius: 8px;"
       }
     ]
   }
