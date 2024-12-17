@@ -63,8 +63,8 @@
   "text": "cwrapTemplate[bodyCategory]",
   "passover": [
     {
-      "element": "test-outer",
-      "style": "background-color:red; max-width: 1110px; min-height: 200px; display:flex; margin-inline:auto;"
+      "element": "cwrap-template",
+      "text": "cwrapTemplate[categoryContainer]"
     }
   ]
 }
