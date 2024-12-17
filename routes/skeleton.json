@@ -309,11 +309,31 @@
         },
         {
           "element": "div",
-          "style": "min-height: 320px; max-width: 1110px; width: 100%; background-color: #F1F1F1; margin: 48px auto 48px auto; background-image: url(\"static/images/home/desktop/image-speaker-zx7.jpg\"); border-radius: 8px; display: flex;",
+          "style": "min-height: 320px; max-width: 1110px; width: 100%; background-color: #F1F1F1; margin: 48px auto 0 auto; background-image: url(\"static/images/home/desktop/image-speaker-zx7.jpg\"); border-radius: 8px; display: flex;",
           "children": [
             {
               "element": "cwrap-template",
               "text": "cwrapTemplate[sectionHome1(title=ZX7 SPEAKER)]"
+            }
+          ]
+        },
+        {
+          "element": "div",
+          "style": "max-width: 1110px; min-height: 320px; margin-inline: auto; margin-top: 48px; margin-bottom: 200px; display: flex; width: 100%; gap: 30px;",
+          "children": [
+            {
+              "element": "div",
+              "style": "background-color: #F1F1F1; max-width: 540px; min-height: 320px; width: 100%; border-radius: 8px; background-image: url(\"static/images/home/desktop/image-earphones-yx1.jpg\");"
+            },
+            {
+              "element": "div",
+              "style": "background-color: #F1F1F1; width: 100%; max-width: 540px; border-radius: 8px; display: flex;",
+              "children": [
+                {
+                  "element": "cwrap-template",
+                  "text": "cwrapTemplate[sectionHome1(title=YX1 EARPHONES)]"
+                }
+              ]
             }
           ]
         }
