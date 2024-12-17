@@ -319,7 +319,7 @@
         },
         {
           "element": "div",
-          "style": "max-width: 1110px; min-height: 320px; margin-inline: auto; margin-top: 48px; margin-bottom: 200px; display: flex; width: 100%; gap: 30px;",
+          "style": "max-width: 1110px; min-height: 320px; margin-inline: auto; margin-top: 48px; display: flex; width: 100%; gap: 30px;",
           "children": [
             {
               "element": "div",
@@ -334,6 +334,42 @@
                   "text": "cwrapTemplate[sectionHome1(title=YX1 EARPHONES)]"
                 }
               ]
+            }
+          ]
+        },
+        {
+          "element": "div",
+          "style": "max-width: 1110px; width: 100%; min-height: 588px; margin-inline: auto; margin-top: 200px; margin-bottom: 200px; display: flex; align-items: center; justify-content: space-between;",
+          "children": [
+            {
+              "element": "section",
+              "style": "width: fit-content; display: flex; flex-direction: column; gap: 32px;",
+              "children": [
+                {
+                  "element": "h2",
+                  "style": "max-width: 445px; color: black; font-size: 40px; font-weight: bold; line-height: 44px; letter-spacing: 1.43px;",
+                  "children": [
+                    {
+                      "element": "span",
+                      "style": "color: #D87D4A;",
+                      "text": "BEST"
+                    }
+                  ],
+                  "text": "BRINGING YOU THE cwrapSpan AUDIO GEAR"
+                },
+                {
+                  "element": "p",
+                  "style": "color: rgba(0,0,0,0.5); max-width: 445px;",
+                  "text": "Located at the heart of New York City, Audiophile is the premier store for high end headphones, earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration rooms available for you to browse and experience a wide range of our products. Stop by our store to meet some of the fantastic people who make Audiophile the best place to buy your portable audio equipment."
+                }
+              ]
+            },
+            {
+              "element": "img",
+              "attributes": {
+                "src": "static/images/shared/desktop/image-best-gear.jpg"
+              },
+              "style": "border-radius: 8px;"
             }
           ]
         }
