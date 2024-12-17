@@ -84,7 +84,8 @@
                 {
                   "element": "img",
                   "attributes": {
-                    "src": "static/images/shared/desktop/logo.svg"
+                    "src": "static/images/shared/desktop/logo.svg",
+                    "alt": "audiophile logo"
                   },
                   "style": ""
                 },
@@ -377,7 +378,33 @@
     },
     {
       "element": "footer",
-      "style": "min-height: 365px; background-color: #101010; margin: auto 0 0 0;"
+      "style": "min-height: 365px; background-color: #101010; margin: auto 0 0 0; display: flex;",
+      "children": [
+        {
+          "element": "div",
+          "style": "max-width: 1110px; width: 100%; margin-inline: auto; display: flex; flex-direction: column;",
+          "children": [
+            {
+              "element": "div",
+              "style": "height: 4px; width: 101px; background-color: #D87D4A;"
+            },
+            {
+              "element": "div",
+              "style": "margin-top: 71px; width: 100%; min-height: 25px;",
+              "children": [
+                {
+                  "element": "img",
+                  "attributes": {
+                    "src": "static/images/shared/desktop/logo.svg",
+                    "alt": "audiophile logo"
+                  },
+                  "style": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }
