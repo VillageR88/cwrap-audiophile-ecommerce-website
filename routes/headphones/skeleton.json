@@ -115,7 +115,7 @@
     }
   ],
   "element": "cwrap-template",
-  "text": "cwrapTemplate[bodyCategory]",
+  "text": "cwrapTemplate[bodyCategory(omit=cwrapOmit)]",
   "passover": [
     {
       "element": "div",

@@ -69,13 +69,16 @@
         },
         {
           "element": "a",
+          "attributes": {
+            "href": "cwrapArray[headphones,#,#]"
+          },
           "extend": [
             {
               "extension": ":hover > section:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
-              "style": "color: #D87D4A;;"
+              "style": "color: #D87D4A;"
             }
           ],
-          "style": "height: 204px; background-color: #F1F1F1; width: 100%; border-radius: 8px; border: none;;display: flex;align-items: end;justify-content: center",
+          "style": "height: 204px; background-color: #F1F1F1; width: 100%; border-radius: 8px; border: none; display: flex; align-items: end; justify-content: center; text-decoration: none; color: black;",
           "children": [
             {
               "element": "section",
@@ -308,6 +311,7 @@
         "children": [
           {
             "element": "img",
+            "text": "cwrapProperty[omit=cwrapPlaceholder]",
             "attributes": {
               "src": "static/images/home/desktop/image-hero.jpg"
             },
@@ -360,7 +364,7 @@
       },
       {
         "element": "div",
-        "style": "width: 100%; border-bottom: 1px solid rgba(255,255,255,0.25); max-width: 1110px; margin-inline: auto;"
+        "style": "width: 100%; border-bottom: 1px solid rgba(255,255,255,0.25); margin-inline: auto;"
       }
     ]
   },
