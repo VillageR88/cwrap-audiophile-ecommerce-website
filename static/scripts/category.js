@@ -1,18 +1,19 @@
 const data = await fetchJson();
-console.log(data);
+const routeTitle = document.getElementById("route-title").textContent.toLowerCase();
+
 
 for (const item of data.reverse()) {
-  if (item.category === "headphones") {
+  if (item.category === routeTitle) {
     addCategoryProduct(
       item.categoryImage.desktop.replace("./assets", "../static/images"),
       item.new,
       item.name,
       item.description
     );
-    console.log(item.categoryImage.desktop.replace("./assets", "../static/images"));
-    console.log(item.new);
-    console.log(item.name);
-    console.log(item.description);
+    // console.log(item.categoryImage.desktop.replace("./assets", "../static/images"));
+    // console.log(item.new);
+    // console.log(item.name);
+    // console.log(item.description);
   }
 }
 

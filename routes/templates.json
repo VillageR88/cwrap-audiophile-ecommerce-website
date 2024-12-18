@@ -383,6 +383,9 @@
           },
           {
             "element": "h1",
+            "attributes": {
+              "id": "route-title"
+            },
             "style": "margin-block: auto; font-size: 40px; line-height:44px; letter-spacing: 1.43px;",
             "text": "HEADPHONES"
           }
@@ -478,7 +481,7 @@
       {
         "element": "script",
         "attributes": {
-          "src": "static/scripts/headphones.js",
+          "src": "static/scripts/category.js",
           "type": "module"
         }
       }
