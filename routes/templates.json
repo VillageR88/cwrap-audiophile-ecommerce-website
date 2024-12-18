@@ -308,6 +308,7 @@
         "children": [
           {
             "element": "img",
+            "text": "cwrapProperty[omit=cwrapPlaceholder]",
             "attributes": {
               "src": "static/images/home/desktop/image-hero.jpg"
             },
@@ -360,7 +361,7 @@
       },
       {
         "element": "div",
-        "style": "width: 100%; border-bottom: 1px solid rgba(255,255,255,0.25); max-width: 1110px; margin-inline: auto;"
+        "style": "width: 100%; border-bottom: 1px solid rgba(255,255,255,0.25); margin-inline: auto;"
       }
     ]
   },
