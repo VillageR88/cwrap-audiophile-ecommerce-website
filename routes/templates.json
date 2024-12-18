@@ -309,14 +309,20 @@
           {
             "element": "img",
             "attributes": {
+              "src": "static/images/home/desktop/image-hero.jpg"
+            },
+            "style": "position: absolute; top: -32px; right: -160px; z-index: -1;"
+          },
+          {
+            "element": "img",
+            "attributes": {
               "src": "static/images/shared/desktop/logo.svg",
               "alt": "audiophile logo"
             }
           },
           {
             "element": "cwrap-template",
-            "text": "cwrapTemplate[ulNavigation1(rightMargin=100px)]",
-            "templateName": true
+            "text": "cwrapTemplate[ulNavigation1(rightMargin=100px)]"
           },
           {
             "element": "button",
@@ -354,7 +360,7 @@
       },
       {
         "element": "div",
-        "style": "width: 100%; border-bottom: 1px solid rgba(255,255,255,0.25);  margin-inline: auto;"
+        "style": "width: 100%; border-bottom: 1px solid rgba(255,255,255,0.25); max-width: 1110px; margin-inline: auto;"
       }
     ]
   },
@@ -369,8 +375,7 @@
         "children": [
           {
             "element": "cwrap-template",
-            "text": "cwrapTemplate[sharedNavbar]",
-            "templateName": true
+            "text": "cwrapTemplate[sharedNavbar]"
           },
           {
             "element": "h1",
@@ -388,13 +393,11 @@
           },
           {
             "element": "cwrap-template",
-            "text": "cwrapTemplate[ulNavigation2]",
-            "templateName": true
+            "text": "cwrapTemplate[ulNavigation2]"
           },
           {
             "element": "cwrap-template",
-            "text": "cwrapTemplate[divBottomHero]",
-            "templateName": true
+            "text": "cwrapTemplate[divBottomHero]"
           }
         ]
       },
@@ -423,8 +426,7 @@
                   },
                   {
                     "element": "cwrap-template",
-                    "text": "cwrapTemplate[ulNavigation1]",
-                    "templateName": true
+                    "text": "cwrapTemplate[ulNavigation1]"
                   }
                 ]
               },
