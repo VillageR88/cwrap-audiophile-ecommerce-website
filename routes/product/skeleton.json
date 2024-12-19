@@ -120,7 +120,7 @@
     }
   ],
   "element": "cwrap-template",
-  "text": "cwrapTemplate[bodyCategory(omit=cwrapOmit,routeTitle=cwrapOmit)]",
+  "text": "cwrapTemplate[bodyCategory(omit=cwrapOmit,routeTitle=cwrapOmit,omitScript=cwrapOmit)]",
   "passover": [
     {
       "element": "div",
