@@ -1,0 +1,64 @@
+{
+    "global": {
+        "head": {
+            "title": "New Candy Wrapper project",
+            "link": [
+                {
+                    "rel": "shortcut icon",
+                    "href": "favicon.ico",
+                    "type": "image/x-icon"
+                },
+                {
+                    "rel": "stylesheet",
+                    "href": "https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap",
+                    "type": "text/css"
+                }
+            ],
+            "meta": [
+                {
+                    "name": "viewport",
+                    "content": "width=device-width, initial-scale=1.0"
+                },
+                {
+                    "charset": "UTF-8"
+                },
+                {
+                    "name": "description",
+                    "content": "New Candy Wrapper project."
+                },
+                {
+                    "name": "keywords",
+                    "content": ""
+                }
+            ]
+        },
+        "fonts": [],
+        "classroom": [
+            {
+                "name": "h1",
+                "type": "element",
+                "style": "color: white; font-weight: bold; font-size: 56px; line-height: 58px; letter-spacing: 2px; margin: 0;"
+            },
+            {
+                "name": "p",
+                "type": "element",
+                "style": "font-weight: 500; font-size: 15px; line-height: 25px; margin: 0; letter-spacing: 0;"
+            },
+            {
+                "name": "a",
+                "type": "element",
+                "style": "font-family: Manrope; cursor: pointer;"
+            },
+            {
+                "name": "button1",
+                "type": "class",
+                "style": "color: white; font-weight: bold; font-size: 13px; letter-spacing: 1px; height: 48px; max-width: 160px; width: 100%; border: none; display:flex; align-items:center; justify-content: center;"
+            },
+            {
+                "name": "h2",
+                "type": "element",
+                "style": "margin: 0;"
+            }
+        ]
+    }
+}

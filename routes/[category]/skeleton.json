@@ -1,4 +1,9 @@
 {
+  "routes": [
+    "headphones",
+    "speakers",
+    "earphones"
+  ],
   "head": {
     "title": "New Candy Wrapper project",
     "link": [
@@ -115,7 +120,7 @@
     }
   ],
   "element": "cwrap-template",
-  "text": "cwrapTemplate[bodyCategory(omit=cwrapOmit)]",
+  "text": "cwrapTemplate[bodyCategory(omit=cwrapOmit,routeTitle=cwrapRoutes[HEADPHONES,SPEAKERS,EARPHONES])]",
   "passover": [
     {
       "element": "div",

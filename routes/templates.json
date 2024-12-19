@@ -38,7 +38,7 @@
           "element": "a",
           "text": "cwrapArray[HOME,HEADPHONES,SPEAKERS,EARPHONES]",
           "attributes": {
-            "href": "cwrapArray[../,../headphones,#,#]"
+            "href": "cwrapArray[../,../headphones,../speakers,../earphones]"
           },
           "style": "color: white;font-weight: bold;font-size: 13px;line-height: 25px;letter-spacing: 2px;cursor: pointer; transition: 150ms; text-decoration: none;",
           "extend": [
@@ -70,7 +70,7 @@
         {
           "element": "a",
           "attributes": {
-            "href": "cwrapArray[headphones,#,#]"
+            "href": "cwrapArray[../headphones,../speakers,../earphones]"
           },
           "extend": [
             {
@@ -387,7 +387,7 @@
               "id": "route-title"
             },
             "style": "margin-block: auto; font-size: 40px; line-height:44px; letter-spacing: 1.43px;",
-            "text": "HEADPHONES"
+            "text": "cwrapProperty[routeTitle=cwrapPlaceholder]"
           }
         ]
       },
