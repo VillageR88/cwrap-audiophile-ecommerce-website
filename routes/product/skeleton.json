@@ -1,0 +1,132 @@
+{
+  "routes": [
+    "headphones",
+    "speakers",
+    "earphones"
+  ],
+  "head": {
+    "title": "New Candy Wrapper project",
+    "link": [
+      {
+        "rel": "shortcut icon",
+        "href": "favicon.ico",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap",
+        "type": "text/css"
+      }
+    ],
+    "meta": [
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1.0"
+      },
+      {
+        "charset": "UTF-8"
+      },
+      {
+        "name": "description",
+        "content": "New Candy Wrapper project."
+      },
+      {
+        "name": "keywords",
+        "content": ""
+      }
+    ]
+  },
+  "fonts": [],
+  "classroom": [
+    {
+      "name": "h1",
+      "type": "element",
+      "style": "color: white; font-weight: bold; font-size: 56px; line-height: 58px; letter-spacing: 2px; margin: 0;"
+    },
+    {
+      "name": "p",
+      "type": "element",
+      "style": "font-weight: 500; font-size: 15px; line-height: 25px; margin: 0; letter-spacing: 0;"
+    },
+    {
+      "name": "a",
+      "type": "element",
+      "style": "font-family: Manrope; cursor: pointer;"
+    },
+    {
+      "name": "button1",
+      "type": "class",
+      "style": "color: white; font-weight: bold; font-size: 13px; letter-spacing: 1px; height: 48px; max-width: 160px; width: 100%; border: none; display:flex; align-items:center; justify-content: center;"
+    },
+    {
+      "name": "h2",
+      "type": "element",
+      "style": "margin: 0;"
+    },
+    {
+      "name": "category-container",
+      "type": "id",
+      "style": "max-width: 1110px; display: flex; margin-inline: auto; margin-block: 160px; gap: 160px; flex-direction: column;"
+    },
+    {
+      "name": "category-container-wrapper",
+      "type": "class",
+      "style": "display: flex; width: 100%; justify-content: space-between; align-items:center;"
+    },
+    {
+      "name": "category-container > div:nth-of-type(even)",
+      "type": "id",
+      "style": "flex-direction: row-reverse;"
+    },
+    {
+      "name": "category-container-picture",
+      "type": "class",
+      "style": "display:flex; max-width: 540px; border-radius: 8px;"
+    },
+    {
+      "name": "category-container-div",
+      "type": "class",
+      "style": "max-width: 445px; display: flex; flex-direction: column;"
+    },
+    {
+      "name": "category-container-div-new",
+      "type": "class",
+      "style": "font-size: 14px; color: #D87D4A; letter-spacing: 14px; margin-bottom: 16px;"
+    },
+    {
+      "name": "category-container-div-section",
+      "type": "class",
+      "style": "display: flex; flex-direction: column; gap:32px;"
+    },
+    {
+      "name": "category-container-div-section-title",
+      "type": "class",
+      "style": "font-weight: bold; font-size: 40px; line-height: 44px; letter-spacing: 1.43px;"
+    },
+    {
+      "name": "category-container-div-section-description",
+      "type": "class",
+      "style": "color: rgba(0,0,0,0.5);"
+    },
+    {
+      "name": "category-container-div-section-button",
+      "type": "class",
+      "style": "background-color: #D87D4A; margin-top: 40px; transition: 150ms;"
+    },
+    {
+      "name": "category-container-div-section-button:hover",
+      "type": "class",
+      "style": "background-color: #FBAF85;"
+    }
+  ],
+  "element": "cwrap-template",
+  "text": "cwrapTemplate[bodyCategory(omit=cwrapOmit,routeTitle=cwrapOmit)]",
+  "passover": [
+    {
+      "element": "div",
+      "attributes": {
+        "id": "category-container"
+      }
+    }
+  ]
+}

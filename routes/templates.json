@@ -375,7 +375,7 @@
     "children": [
       {
         "element": "header",
-        "style": "min-height: 336px; width: 100%; background-color: #191919; position: relative; z-index: 0; display:flex; flex-direction: column; align-items: center;",
+        "style": "min-height: fit-content; width: 100%; background-color: #191919; position: relative; z-index: 0; display:flex; flex-direction: column; align-items: center;",
         "children": [
           {
             "element": "cwrap-template",
@@ -386,7 +386,7 @@
             "attributes": {
               "id": "route-title"
             },
-            "style": "margin-block: auto; font-size: 40px; line-height:44px; letter-spacing: 1.43px;",
+            "style": "margin-block: 98px; font-size: 40px; line-height:44px; letter-spacing: 1.43px;",
             "text": "cwrapProperty[routeTitle=cwrapPlaceholder]"
           }
         ]
