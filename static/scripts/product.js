@@ -27,6 +27,10 @@ const additionalFeaturesTitle = document.createElement("h2");
 const additionalFeaturesDescription = document.createElement("p");
 const additionalBox = document.createElement("section");
 const additionalBoxTitle = document.createElement("h2");
+const gallery = document.createElement("div");
+const like = document.createElement("div");
+const likeTitle = document.createElement("h2");
+const likeContentWrapper = document.createElement("div");
 
 hero.classList.add("hero-container");
 heroImage.classList.add("hero-image");
@@ -64,7 +68,10 @@ additionalFeaturesDescription.textContent = data[3].features;
 additionalBox.classList.add("additional-box");
 additionalBoxTitle.classList.add("h2-title");
 additionalBoxTitle.textContent = "IN THE BOX";
-
+gallery.classList.add("gallery-container");
+like.classList.add("like-container");
+likeTitle.classList.add("h2-title");
+likeTitle.textContent = "YOU MAY ALSO LIKE";
 hero.appendChild(heroImage);
 heroDiv.appendChild(heroNew);
 heroSection.appendChild(heroTitle);
@@ -98,6 +105,36 @@ for (const item of data[3].includes) {
 }
 additional.appendChild(additionalBox);
 productContainer.appendChild(additional);
+for (const item in data[3].gallery) {
+  const galleryImage = document.createElement("img");
+  galleryImage.src = data[3].gallery[item].desktop.replace(
+    "./assets",
+    "../static/images"
+  );
+  gallery.appendChild(galleryImage);
+}
+productContainer.appendChild(gallery);
+like.appendChild(likeTitle);
+for (const item of data[3].others) {
+  const itemWrapper = document.createElement("div");
+  const itemImage = document.createElement("img");
+  const itemSection = document.createElement("section");
+  const itemSectionDescription = document.createElement("h3");
+  const itemSectionButton = document.createElement("a");
+
+  itemImage.src = item.image.desktop.replace("./assets", "../static/images");
+  itemSectionDescription.textContent = item.name.toUpperCase();
+  itemSectionButton.classList.add("hero-cart-div-cart-button");
+  itemSectionButton.textContent = "SEE PRODUCT"
+
+  itemWrapper.appendChild(itemImage);
+  itemSection.appendChild(itemSectionDescription);
+  itemSection.appendChild(itemSectionButton);
+  itemWrapper.appendChild(itemSection);
+  likeContentWrapper.appendChild(itemWrapper);
+}
+like.appendChild(likeContentWrapper);
+productContainer.appendChild(like);
 
 heroCartDivCountMinus.addEventListener("click", () => {
   if (heroCartDivCountInput.value > 1) {

@@ -146,7 +146,7 @@
     {
       "name": "hero-cart-div-cart-button",
       "type": "class",
-      "style": "background-color: #D87D4A; width: 160px; min-height: 48px; color: white; border: none; font-size: 13px; font-weight: bold; letter-spacing: 1px; cursor: pointer; transition: 150ms;"
+      "style": "background-color: #D87D4A; width: 160px; min-height: 48px; color: white; border: none; font-size: 13px; font-weight: bold; letter-spacing: 1px; cursor: pointer; transition: 150ms; display: flex; align-items:center; justify-content: center;"
     },
     {
       "name": "hero-cart-div-cart-button:hover",
@@ -166,7 +166,7 @@
     {
       "name": "h2-title",
       "type": "class",
-      "style": ""
+      "style": "font-weight: bold; font-size: 32px; line-height: 32px; letter-spacing: 1.14px;"
     },
     {
       "name": "p-description",
@@ -197,6 +197,61 @@
       "name": "additional-box-span-item",
       "type": "class",
       "style": "font-weight: 500; color: rgba(0,0,0,0.5); line-height: 25px;"
+    },
+    {
+      "name": "gallery-container",
+      "type": "class",
+      "style": "max-width: 1110px; width: 100%; margin-top: 160px; display: grid; grid-template: 'i1 i3' 'i2 i3'; gap: 32px 30px;"
+    },
+    {
+      "name": "gallery-container > img",
+      "type": "class",
+      "style": "border-radius: 8px;"
+    },
+    {
+      "name": "gallery-container > img:nth-of-type(1)",
+      "type": "class",
+      "style": "grid-area: i1"
+    },
+    {
+      "name": "gallery-container > img:nth-of-type(2)",
+      "type": "class",
+      "style": "grid-area: i2"
+    },
+    {
+      "name": "gallery-container > img:nth-of-type(3)",
+      "type": "class",
+      "style": "grid-area: i3"
+    },
+    {
+      "name": "like-container",
+      "type": "class",
+      "style": "max-width: 1110px; width: 100%; margin-top: 160px; display: flex; flex-direction: column; align-items: center; gap: 64px;"
+    },
+    {
+      "name": "like-container > div:nth-of-type(1)",
+      "type": "class",
+      "style": "max-width: 1110px; width: 100%; display: flex; align-items: center; justify-content: space-between;"
+    },
+    {
+      "name": "like-container > div:nth-of-type(1) > div",
+      "type": "class",
+      "style": "max-width: 350px; width: 100%; min-height: 471px; gap: 40px; display: flex; flex-direction: column;"
+    },
+    {
+      "name": "like-container > div:nth-of-type(1) > div > img:nth-of-type(1)",
+      "type": "class",
+      "style": "max-width: 350px;"
+    },
+    {
+      "name": "like-container > div:nth-of-type(1) > div > section",
+      "type": "class",
+      "style": "display: flex; flex-direction: column; align-items: center;"
+    },
+    {
+      "name": "like-container > div:nth-of-type(1) > div > section > h3",
+      "type": "class",
+      "style": "font-weight: bold; font-size: 24px; letter-spacing: 1.71px; margin: 0;"
     }
   ],
   "element": "cwrap-template",
