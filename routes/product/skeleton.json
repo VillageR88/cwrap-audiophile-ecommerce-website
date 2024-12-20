@@ -152,6 +152,51 @@
       "name": "hero-cart-div-cart-button:hover",
       "type": "class",
       "style": "background-color: #FBAF85;"
+    },
+    {
+      "name": "additional-container",
+      "type": "class",
+      "style": "margin-top: 160px; display: flex; justify-content: space-between;"
+    },
+    {
+      "name": "additional-features",
+      "type": "class",
+      "style": "max-width: 635px; width: 100%; display: flex; flex-direction: column;"
+    },
+    {
+      "name": "h2-title",
+      "type": "class",
+      "style": ""
+    },
+    {
+      "name": "p-description",
+      "type": "class",
+      "style": "color: rgba(0,0,0,0.5); margin-top: 32px; font-weight: 500; font-size: 15px; line-height: 25px; white-space: pre-line;"
+    },
+    {
+      "name": "additional-box",
+      "type": "class",
+      "style": "max-width: 350px; width: 100%; display: flex; flex-direction: column;"
+    },
+    {
+      "name": "additional-box-p",
+      "type": "class",
+      "style": "display: flex; gap: 24px; align-items: center; margin-top: 8px;"
+    },
+    {
+      "name": "additional-box-p:nth-of-type(1)",
+      "type": "class",
+      "style": "margin-top: 32px;"
+    },
+    {
+      "name": "additional-box-span-quantity",
+      "type": "class",
+      "style": "color: #D87D4A; font-weight: bold; font-size: 15px; line-height: 25px;"
+    },
+    {
+      "name": "additional-box-span-item",
+      "type": "class",
+      "style": "font-weight: 500; color: rgba(0,0,0,0.5); line-height: 25px;"
     }
   ],
   "element": "cwrap-template",

@@ -7,7 +7,6 @@ async function fetchJson() {
 }
 
 const productContainer = document.getElementById("product-container");
-
 const hero = document.createElement("div");
 const heroImage = document.createElement("img");
 const heroDiv = document.createElement("div");
@@ -22,6 +21,12 @@ const heroCartDivCountMinus = document.createElement("button");
 const heroCartDivCountPlus = document.createElement("button");
 const heroCartDivCartButton = document.createElement("button");
 const heroCartDivCountInput = document.createElement("input");
+const additional = document.createElement("div");
+const additionalFeatures = document.createElement("section");
+const additionalFeaturesTitle = document.createElement("h2");
+const additionalFeaturesDescription = document.createElement("p");
+const additionalBox = document.createElement("section");
+const additionalBoxTitle = document.createElement("h2");
 
 hero.classList.add("hero-container");
 heroImage.classList.add("hero-image");
@@ -39,6 +44,7 @@ heroPrice.textContent = `$ ${data[3].price.toLocaleString()}`;
 heroCartDiv.classList.add("hero-cart-div");
 heroCartDivCountMinus.classList.add("hero-cart-div-count-buttons");
 heroCartDivCountMinus.textContent = "-";
+heroCartDivCountInput.id = "countInput";
 heroCartDivCountInput.classList.add("hero-cart-div-count-input");
 heroCartDivCountInput.type = "number";
 heroCartDivCountInput.value = 1;
@@ -49,6 +55,15 @@ heroCartDivCountPlus.textContent = "+";
 heroCartDivCountDiv.classList.add("hero-cart-div-count-div");
 heroCartDivCartButton.classList.add("hero-cart-div-cart-button");
 heroCartDivCartButton.textContent = "ADD TO CART";
+additional.classList.add("additional-container");
+additionalFeatures.classList.add("additional-features");
+additionalFeaturesTitle.classList.add("h2-title");
+additionalFeaturesTitle.textContent = "FEATURES";
+additionalFeaturesDescription.classList.add("p-description");
+additionalFeaturesDescription.textContent = data[3].features;
+additionalBox.classList.add("additional-box");
+additionalBoxTitle.classList.add("h2-title");
+additionalBoxTitle.textContent = "IN THE BOX";
 
 hero.appendChild(heroImage);
 heroDiv.appendChild(heroNew);
@@ -64,6 +79,25 @@ heroCartDiv.appendChild(heroCartDivCartButton);
 heroDiv.appendChild(heroCartDiv);
 hero.appendChild(heroDiv);
 productContainer.appendChild(hero);
+additionalFeatures.appendChild(additionalFeaturesTitle);
+additionalFeatures.appendChild(additionalFeaturesDescription);
+additional.appendChild(additionalFeatures);
+additionalBox.appendChild(additionalBoxTitle);
+for (const item of data[3].includes) {
+  const additionalBoxDescription = document.createElement("p");
+  const spanQuantity = document.createElement("span");
+  const spanItem = document.createElement("span");
+  additionalBoxDescription.classList.add("additional-box-p");
+  spanQuantity.classList.add("additional-box-span-quantity");
+  spanQuantity.textContent = `${item.quantity}x`;
+  spanItem.classList.add("additional-box-span-item");
+  spanItem.textContent = item.item;
+  additionalBoxDescription.appendChild(spanQuantity);
+  additionalBoxDescription.appendChild(spanItem);
+  additionalBox.appendChild(additionalBoxDescription);
+}
+additional.appendChild(additionalBox);
+productContainer.appendChild(additional);
 
 heroCartDivCountMinus.addEventListener("click", () => {
   if (heroCartDivCountInput.value > 1) {
