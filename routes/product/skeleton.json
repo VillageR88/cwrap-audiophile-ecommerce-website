@@ -64,18 +64,103 @@
       "style": "margin: 0;"
     },
     {
-      "name": "category-container",
+      "name": "product-container",
       "type": "id",
       "style": "max-width: 1110px; display: flex; flex-direction: column; margin-inline: auto;"
+    },
+    {
+      "name": "hero-container",
+      "type": "class",
+      "style": "display:flex; justify-content: space-between;"
+    },
+    {
+      "name": "hero-image",
+      "type": "class",
+      "style": "max-width: 540px; "
+    },
+    {
+      "name": "hero-div",
+      "type": "class",
+      "style": "display:flex; flex-direction:column; max-width:445px; width:100%; margin-block: 77px;"
+    },
+    {
+      "name": "hero-new",
+      "type": "class",
+      "style": "color: #D87D4A; font-size: 14px; letter-spacing: 10px;"
+    },
+    {
+      "name": "hero-section",
+      "type": "class",
+      "style": "display: flex; flex-direction: column; margin-top:16px; gap:32px;"
+    },
+    {
+      "name": "hero-title",
+      "type": "class",
+      "style": "color: black; font-weight: bold; font-size:40px; line-height:44px; letter-spacing: 1.43px;"
+    },
+    {
+      "name": "hero-description",
+      "type": "class",
+      "style": "color: rgba(0,0,0,0.5);"
+    },
+    {
+      "name": "hero-price",
+      "type": "class",
+      "style": "margin-top: 32px; font-weight: bold; font-size: 18px; letter-spacing: 1.29px;"
+    },
+    {
+      "name": "hero-cart-div",
+      "type": "class",
+      "style": "display: flex; align-items: center: justify-content: space-between; margin-top: 47px; gap: 16px;"
+    },
+    {
+      "name": "hero-cart-div-count-div",
+      "type": "class",
+      "style": "min-height: 48px; max-width: 120px; background-color: #F1F1F1; display: flex; align-items: center; justify-content: space-between; width:100%;"
+    },
+    {
+      "name": "hero-cart-div-count-buttons",
+      "type": "class",
+      "style": "border: none; font-size: 13px; font-weight: bold; letter-spacing: 1px; color: rgba(0,0,0,0.25); cursor: pointer; transition: 150ms; margin-inline: 12.5px;"
+    },
+    {
+      "name": "hero-cart-div-count-input",
+      "type": "class",
+      "style": "border: none; text-align: center; outline:none; width: 40px; padding:0; margin:0; font-family: Manrope; font-size: 13px; font-weight:bold; letter-spacing: 1px; background-color: transparent;"
+    },
+    {
+      "name": "input::-webkit-outer-spin-button, input::-webkit-inner-spin-button",
+      "type": "element",
+      "style": "-webkit-appearance: none; margin: 0;"
+    },
+    {
+      "name": "input[type=number]",
+      "type": "element",
+      "style": "-moz-appearance: textfield;"
+    },
+    {
+      "name": "hero-cart-div-count-buttons:hover",
+      "type": "class",
+      "style": "color: #D87D4A;"
+    },
+    {
+      "name": "hero-cart-div-cart-button",
+      "type": "class",
+      "style": "background-color: #D87D4A; width: 160px; min-height: 48px; color: white; border: none; font-size: 13px; font-weight: bold; letter-spacing: 1px; cursor: pointer; transition: 150ms;"
+    },
+    {
+      "name": "hero-cart-div-cart-button:hover",
+      "type": "class",
+      "style": "background-color: #FBAF85;"
     }
   ],
   "element": "cwrap-template",
-  "text": "cwrapTemplate[bodyCategory(omit=cwrapOmit,routeTitle=cwrapOmit,omitScript=cwrapOmit)]",
+  "text": "cwrapTemplate[bodyCategory(omit=cwrapOmit,routeTitle=cwrapOmit,scriptName=product.js)]",
   "passover": [
     {
       "element": "div",
       "attributes": {
-        "id": "category-container"
+        "id": "product-container"
       },
       "children": [
         {

@@ -480,9 +480,8 @@
       },
       {
         "element": "script",
-        "text": "cwrapProperty[omitScript=cwrapPlaceholder]",
         "attributes": {
-          "src": "static/scripts/category.js",
+          "src": "static/scripts/cwrapProperty[scriptName=category.js]",
           "type": "module"
         }
       }
