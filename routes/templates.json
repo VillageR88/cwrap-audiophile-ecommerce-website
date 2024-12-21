@@ -19,7 +19,8 @@
         ],
         "style": "border: 1px solid black; color: black; transition: 150ms;",
         "attributes": {
-          "class": "button1"
+          "class": "button1",
+          "href": "cwrapProperty[link=#]"
         },
         "text": "SEE PRODUCT"
       }

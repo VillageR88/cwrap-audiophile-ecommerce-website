@@ -1,11 +1,29 @@
 {
   "routes": [
-    "yx1-earphones",
-    "xx59-headphones",
-    "xx99-mark-one-headphones",
-    "xx99-mark-two-headphones",
-    "zx7-speaker",
-    "zx9-speaker"
+    {
+      "route": "yx1-earphones",
+      "parent": "earphones"
+    },
+    {
+      "route": "xx59-headphones",
+      "parent": "headphones"
+    },
+    {
+      "route": "xx99-mark-one-headphones",
+      "parent": "headphones"
+    },
+    {
+      "route": "xx99-mark-two-headphones",
+      "parent": "headphones"
+    },
+    {
+      "route": "zx7-speaker",
+      "parent": "speakers"
+    },
+    {
+      "route": "zx9-speaker",
+      "parent": "speakers"
+    }
   ],
   "head": {
     "title": "New Candy Wrapper project",
@@ -54,7 +72,7 @@
     {
       "name": "a",
       "type": "element",
-      "style": "font-family: Manrope; cursor: pointer;"
+      "style": "font-family: Manrope; cursor: pointer; text-decoration: none;"
     },
     {
       "name": "button1",
@@ -269,8 +287,17 @@
       "children": [
         {
           "element": "a",
+          "attributes": {
+            "href": "/cwrapRoutes[earphones,headphones,headphones,headphones,speakers,speakers]"
+          },
           "text": "Go Back",
-          "style": "margin-block: 79px 56px; font-weight: 500; font-size: 15px; color: rgba(0,0,0,0.5); line-height: 25px;"
+          "extend": [
+            {
+              "extension": ":hover",
+              "style": "color: #D87D4A;"
+            }
+          ],
+          "style": "margin-block: 79px 56px; font-weight: 500; font-size: 15px; color: rgba(0,0,0,0.5); line-height: 25px; transition: 150ms;"
         }
       ]
     }

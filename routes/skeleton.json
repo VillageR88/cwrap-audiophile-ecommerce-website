@@ -51,7 +51,7 @@
     {
       "name": "button1",
       "type": "class",
-      "style": "color: white; font-weight: bold; font-size: 13px; letter-spacing: 1px; height: 48px; max-width: 160px; width: 100%; border: none; display:flex; align-items:center; justify-content: center;"
+      "style": "color: white; font-weight: bold; font-size: 13px; letter-spacing: 1px; height: 48px; max-width: 160px; width: 100%; border: none; display:flex; align-items:center; justify-content: center; text-decoration: none;"
     },
     {
       "name": "h2",
@@ -98,7 +98,8 @@
             {
               "element": "a",
               "attributes": {
-                "class": "button1"
+                "class": "button1",
+                "href": "../headphones/xx99-mark-two-headphones"
               },
               "style": "margin-top: 40px; background-color: #D87D4A; transition: 150ms;",
               "extend": [
@@ -155,7 +156,8 @@
                 {
                   "element": "a",
                   "attributes": {
-                    "class": "button1"
+                    "class": "button1",
+                    "href": "../speakers/zx9-speaker"
                   },
                   "style": "background-color: black; transition: 150ms;",
                   "extend": [
@@ -176,7 +178,7 @@
           "children": [
             {
               "element": "cwrap-template",
-              "text": "cwrapTemplate[sectionHome1(title=ZX7 SPEAKER)]"
+              "text": "cwrapTemplate[sectionHome1(title=ZX7 SPEAKER,link=speakers/zx7-speaker)]"
             }
           ]
         },
@@ -194,7 +196,7 @@
               "children": [
                 {
                   "element": "cwrap-template",
-                  "text": "cwrapTemplate[sectionHome1(title=YX1 EARPHONES)]"
+                  "text": "cwrapTemplate[sectionHome1(title=YX1 EARPHONES,link=earphones/yx1-earphones)]"
                 }
               ]
             }

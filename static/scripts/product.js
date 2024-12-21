@@ -6,8 +6,6 @@ async function fetchJson() {
 
 const data = await fetchJson();
 
-
-
 const productContainer = document.getElementById("product-container");
 const productSlug = productContainer.getAttribute("data-product-slug");
 const hero = document.createElement("div");
@@ -128,6 +126,7 @@ for (const item in productData.gallery) {
 productContainer.appendChild(gallery);
 like.appendChild(likeTitle);
 for (const item of productData.others) {
+  console.log(item);
   const itemWrapper = document.createElement("div");
   const itemImage = document.createElement("img");
   const itemSection = document.createElement("section");
@@ -138,6 +137,7 @@ for (const item of productData.others) {
   itemSectionDescription.textContent = item.name.toUpperCase();
   itemSectionButton.classList.add("hero-cart-div-cart-button");
   itemSectionButton.textContent = "SEE PRODUCT";
+  itemSectionButton.href = `/${item.category}/${item.slug}`;
 
   itemWrapper.appendChild(itemImage);
   itemSection.appendChild(itemSectionDescription);

@@ -1,14 +1,18 @@
 const data = await fetchJson();
-const routeTitle = document.getElementById("route-title").textContent.toLowerCase();
-
+const routeTitle = document
+  .getElementById("route-title")
+  .textContent.toLowerCase();
 
 for (const item of data.reverse()) {
   if (item.category === routeTitle) {
+    console.log(item);
+
     addCategoryProduct(
       item.categoryImage.desktop.replace("./assets", "../static/images"),
       item.new,
       item.name,
-      item.description
+      item.description,
+      item.slug
     );
     // console.log(item.categoryImage.desktop.replace("./assets", "../static/images"));
     // console.log(item.new);
@@ -23,7 +27,7 @@ async function fetchJson() {
   return data;
 }
 
-function addCategoryProduct(imageSrc, newProduct, title, description) {
+function addCategoryProduct(imageSrc, newProduct, title, description, slug) {
   const categoryContainer = document.getElementById("category-container");
   const categoryContainerWrapper = document.createElement("div");
   const categoryContainerPicture = document.createElement("img");
@@ -55,6 +59,7 @@ function addCategoryProduct(imageSrc, newProduct, title, description) {
   categoryContainerDivSectionTitle.textContent = title?.toUpperCase();
   categoryContainerDivSectionDescription.textContent = description;
   categoryContainerDivSectionButton.textContent = "SEE PRODUCT";
+  categoryContainerDivSectionButton.href = `../${routeTitle}/${slug}`;
 
   categoryContainerWrapper.appendChild(categoryContainerPicture);
   if (newProduct) categoryContainerDiv.appendChild(categoryContainerDivNew);
