@@ -1,12 +1,15 @@
-const data = await fetchJson();
-
 async function fetchJson() {
   const response = await fetch("../static/scripts/data.json");
   const data = await response.json();
   return data;
 }
 
+const data = await fetchJson();
+
+
+
 const productContainer = document.getElementById("product-container");
+const productSlug = productContainer.getAttribute("data-product-slug");
 const hero = document.createElement("div");
 const heroImage = document.createElement("img");
 const heroDiv = document.createElement("div");
@@ -31,20 +34,29 @@ const gallery = document.createElement("div");
 const like = document.createElement("div");
 const likeTitle = document.createElement("h2");
 const likeContentWrapper = document.createElement("div");
+let productData;
+for (const product of data) {
+  if (product.slug === productSlug) {
+    productData = product;
+  }
+}
 
 hero.classList.add("hero-container");
 heroImage.classList.add("hero-image");
-heroImage.src = data[3].image.desktop.replace("./assets", "../static/images");
+heroImage.src = productData.image.desktop.replace(
+  "./assets",
+  "../static/images"
+);
 heroDiv.classList.add("hero-div");
 heroNew.classList.add("hero-new");
 heroNew.textContent = "NEW PRODUCT";
 heroSection.classList.add("hero-section");
 heroTitle.classList.add("hero-title");
-heroTitle.textContent = data[3].name.toUpperCase();
+heroTitle.textContent = productData.name.toUpperCase();
 heroDescription.classList.add("hero-description");
-heroDescription.textContent = data[3].description;
+heroDescription.textContent = productData.description;
 heroPrice.classList.add("hero-price");
-heroPrice.textContent = `$ ${data[3].price.toLocaleString()}`;
+heroPrice.textContent = `$ ${productData.price.toLocaleString()}`;
 heroCartDiv.classList.add("hero-cart-div");
 heroCartDivCountMinus.classList.add("hero-cart-div-count-buttons");
 heroCartDivCountMinus.textContent = "-";
@@ -64,7 +76,7 @@ additionalFeatures.classList.add("additional-features");
 additionalFeaturesTitle.classList.add("h2-title");
 additionalFeaturesTitle.textContent = "FEATURES";
 additionalFeaturesDescription.classList.add("p-description");
-additionalFeaturesDescription.textContent = data[3].features;
+additionalFeaturesDescription.textContent = productData.features;
 additionalBox.classList.add("additional-box");
 additionalBoxTitle.classList.add("h2-title");
 additionalBoxTitle.textContent = "IN THE BOX";
@@ -90,7 +102,7 @@ additionalFeatures.appendChild(additionalFeaturesTitle);
 additionalFeatures.appendChild(additionalFeaturesDescription);
 additional.appendChild(additionalFeatures);
 additionalBox.appendChild(additionalBoxTitle);
-for (const item of data[3].includes) {
+for (const item of productData.includes) {
   const additionalBoxDescription = document.createElement("p");
   const spanQuantity = document.createElement("span");
   const spanItem = document.createElement("span");
@@ -105,9 +117,9 @@ for (const item of data[3].includes) {
 }
 additional.appendChild(additionalBox);
 productContainer.appendChild(additional);
-for (const item in data[3].gallery) {
+for (const item in productData.gallery) {
   const galleryImage = document.createElement("img");
-  galleryImage.src = data[3].gallery[item].desktop.replace(
+  galleryImage.src = productData.gallery[item].desktop.replace(
     "./assets",
     "../static/images"
   );
@@ -115,7 +127,7 @@ for (const item in data[3].gallery) {
 }
 productContainer.appendChild(gallery);
 like.appendChild(likeTitle);
-for (const item of data[3].others) {
+for (const item of productData.others) {
   const itemWrapper = document.createElement("div");
   const itemImage = document.createElement("img");
   const itemSection = document.createElement("section");
@@ -125,7 +137,7 @@ for (const item of data[3].others) {
   itemImage.src = item.image.desktop.replace("./assets", "../static/images");
   itemSectionDescription.textContent = item.name.toUpperCase();
   itemSectionButton.classList.add("hero-cart-div-cart-button");
-  itemSectionButton.textContent = "SEE PRODUCT"
+  itemSectionButton.textContent = "SEE PRODUCT";
 
   itemWrapper.appendChild(itemImage);
   itemSection.appendChild(itemSectionDescription);
