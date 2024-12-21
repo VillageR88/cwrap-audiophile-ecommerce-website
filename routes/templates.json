@@ -63,7 +63,7 @@
         {
           "element": "img",
           "attributes": {
-            "src": "static/images/shared/desktop/image-category-thumbnail-cwrapArray[headphones,speakers,earphones].png"
+            "src": "../static/images/shared/desktop/image-category-thumbnail-cwrapArray[headphones,speakers,earphones].png"
           },
           "style": "width: 50%;margin-bottom: -110px; z-index: 1; pointer-events:none;"
         },
@@ -99,7 +99,7 @@
                     {
                       "element": "img",
                       "attributes": {
-                        "src": "static/images/shared/desktop/icon-arrow-right.svg"
+                        "src": "../static/images/shared/desktop/icon-arrow-right.svg"
                       }
                     }
                   ],
@@ -235,7 +235,7 @@
       {
         "element": "img",
         "attributes": {
-          "src": "static/images/shared/desktop/image-best-gear.jpg"
+          "src": "../static/images/shared/desktop/image-best-gear.jpg"
         },
         "style": "border-radius: 8px;"
       }
@@ -248,14 +248,14 @@
       {
         "element": "img",
         "attributes": {
-          "src": "static/images/home/desktop/image-hero.jpg"
+          "src": "../static/images/home/desktop/image-hero.jpg"
         },
         "style": "position: absolute; top: -32px; right: -160px; z-index: -1;"
       },
       {
         "element": "img",
         "attributes": {
-          "src": "static/images/shared/desktop/logo.svg",
+          "src": "../static/images/shared/desktop/logo.svg",
           "alt": "audiophile logo"
         },
         "style": ""
@@ -313,14 +313,14 @@
             "element": "img",
             "text": "cwrapProperty[omit=cwrapPlaceholder]",
             "attributes": {
-              "src": "static/images/home/desktop/image-hero.jpg"
+              "src": "../static/images/home/desktop/image-hero.jpg"
             },
             "style": "position: absolute; top: -32px; right: -160px; z-index: -1;"
           },
           {
             "element": "img",
             "attributes": {
-              "src": "static/images/shared/desktop/logo.svg",
+              "src": "../static/images/shared/desktop/logo.svg",
               "alt": "audiophile logo"
             }
           },
@@ -427,7 +427,7 @@
                   {
                     "element": "img",
                     "attributes": {
-                      "src": "static/images/shared/desktop/logo.svg",
+                      "src": "../static/images/shared/desktop/logo.svg",
                       "alt": "audiophile logo"
                     }
                   },
@@ -481,7 +481,7 @@
       {
         "element": "script",
         "attributes": {
-          "src": "static/scripts/cwrapProperty[scriptName=category.js]",
+          "src": "../static/scripts/cwrapProperty[scriptName=category.js]",
           "type": "module"
         }
       }
@@ -504,7 +504,7 @@
             "element": "img",
             "attributes": {
               "class": "category-container-picture",
-              "src": "static/images/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg"
+              "src": "../static/images/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg"
             }
           },
           {
