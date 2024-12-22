@@ -169,3 +169,7 @@ heroCartDivCountInput.addEventListener("input", () => {
     heroCartDivCountInput.value = value;
   }
 });
+
+heroCartDivCartButton.addEventListener("click", () => {
+  heroCartDivCountInput.value = 1;
+});
