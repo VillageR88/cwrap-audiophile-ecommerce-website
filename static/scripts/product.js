@@ -83,7 +83,7 @@ like.classList.add("like-container");
 likeTitle.classList.add("h2-title");
 likeTitle.textContent = "YOU MAY ALSO LIKE";
 hero.appendChild(heroImage);
-heroDiv.appendChild(heroNew);
+if (productData.new) heroDiv.appendChild(heroNew);
 heroSection.appendChild(heroTitle);
 heroSection.appendChild(heroDescription);
 heroDiv.appendChild(heroSection);
@@ -126,7 +126,6 @@ for (const item in productData.gallery) {
 productContainer.appendChild(gallery);
 like.appendChild(likeTitle);
 for (const item of productData.others) {
-  console.log(item);
   const itemWrapper = document.createElement("div");
   const itemImage = document.createElement("img");
   const itemSection = document.createElement("section");

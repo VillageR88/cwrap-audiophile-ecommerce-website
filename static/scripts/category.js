@@ -5,8 +5,6 @@ const routeTitle = document
 
 for (const item of data.reverse()) {
   if (item.category === routeTitle) {
-    console.log(item);
-
     addCategoryProduct(
       item.categoryImage.desktop.replace("./assets", "../static/images"),
       item.new,
@@ -14,10 +12,6 @@ for (const item of data.reverse()) {
       item.description,
       item.slug
     );
-    // console.log(item.categoryImage.desktop.replace("./assets", "../static/images"));
-    // console.log(item.new);
-    // console.log(item.name);
-    // console.log(item.description);
   }
 }
 
