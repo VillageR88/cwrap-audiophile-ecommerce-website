@@ -179,6 +179,21 @@ heroCartDivCountInput.addEventListener("input", () => {
   }
 });
 
+function updateLocalStorage(product, quantity) {
+  const cart = JSON.parse(localStorage.getItem("cart")) || {};
+  if (cart[product]) {
+    cart[product] += quantity;
+  } else {
+    cart[product] = quantity;
+  }
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
 heroCartDivCartButton.addEventListener("click", () => {
+  const productShortName = ProductShortNames[productData.name];
+  const quantity = Number.parseInt(heroCartDivCountInput.value, 10);
+  updateLocalStorage(productShortName, quantity);
   heroCartDivCountInput.value = 1;
 });
+
+console.log(localStorage.getItem("cart"));
