@@ -68,7 +68,7 @@
       "children": [
         {
           "element": "cwrap-template",
-          "text": "cwrapTemplate[sharedNavbar]"
+          "text": "cwrapTemplate[sharedNavbar(rightMargin=100px)]"
         },
         {
           "element": "div",
@@ -234,7 +234,7 @@
                 },
                 {
                   "element": "cwrap-template",
-                  "text": "cwrapTemplate[ulNavigation1]"
+                  "text": "cwrapTemplate[ulNavigation1(rightMargin=0)]"
                 }
               ]
             },
