@@ -123,6 +123,16 @@
       "name": "category-container-div-section-button:hover",
       "type": "class",
       "style": "background-color: #FBAF85;"
+    },
+    {
+      "name": "h2",
+      "type": "element",
+      "style": "margin: 0;"
+    },
+    {
+      "name": "h2-cart",
+      "type": "class",
+      "style": "font-weight: bold; font-size: 18px; letter-spacing: 1.29px;"
     }
   ],
   "element": "cwrap-template",
