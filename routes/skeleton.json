@@ -57,11 +57,107 @@
       "name": "h2",
       "type": "element",
       "style": "margin: 0;"
+    },
+    {
+      "name": "h2-cart",
+      "type": "class",
+      "style": "font-weight: bold; font-size: 18px; letter-spacing: 1.29px;"
     }
   ],
   "element": "body",
   "style": "font-family: Manrope; padding: 0; margin: 0; box-sizing: border-box; background-color: #FAFAFA; min-height: 100dvh; display: flex; flex-direction: column;",
   "children": [
+    {
+      "element": "div",
+      "attributes": {
+        "id": "mask"
+      },
+      "style": "position: absolute; width:100%; height: 100%; background-color: rgba(0,0,0,0.4); z-index: 2; margin-top: 95px; padding: 0; display: none;",
+      "children": [
+        {
+          "element": "div",
+          "style": "max-width: 1110px; margin-inline: auto; display:flex; justify-content: end; padding-top: 32px; box-sizing: border-box;",
+          "children": [
+            {
+              "element": "div",
+              "style": "max-width: 377px; width: 100%; background-color: white; padding: 31px; box-sizing: border-box; border-radius: 8px; display: flex; flex-direction: column; gap: 32px;",
+              "children": [
+                {
+                  "element": "div",
+                  "style": "display: flex; justify-content: space-between;",
+                  "children": [
+                    {
+                      "element": "h2",
+                      "attributes": {
+                        "class": "h2-cart"
+                      },
+                      "text": "CART(cwrapSpan)",
+                      "children": [
+                        {
+                          "element": "span",
+                          "attributes": {
+                            "id": "cart-amount"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "element": "button",
+                      "style": "font-weight: 500; font-size: 15px; line-height: 25px; font-family: Manrope; background-color: transparent; border: none; cursor: pointer; text-decoration: underline; color: rgba(0,0,0,0.5);",
+                      "text": "Remove all"
+                    }
+                  ]
+                },
+                {
+                  "element": "div",
+                  "attributes": {
+                    "id": "cart-product-container"
+                  }
+                },
+                {
+                  "element": "div",
+                  "style": "display: flex; flex-direction: column; gap: 24px;",
+                  "children": [
+                    {
+                      "element": "section",
+                      "style": "display: flex; justify-content: space-between;",
+                      "children": [
+                        {
+                          "element": "h2",
+                          "style": "font-size: 15px; font-weight: 500; color: rgba(0,0,0,0.5); line-height: 25px;",
+                          "text": "TOTAL"
+                        },
+                        {
+                          "element": "p",
+                          "style": "font-size: 18px; font-weight: bold;",
+                          "attributes": {
+                            "id": "cart-total-cost"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "element": "button",
+                      "style": "max-width: 100%; background-color: #D87D4A; cursor: pointer; transition: 150ms;",
+                      "extend": [
+                        {
+                          "extension": ":hover",
+                          "style": "background-color: #FBAF85;"
+                        }
+                      ],
+                      "text": "CHECKOUT",
+                      "attributes": {
+                        "class": "button1"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
     {
       "element": "header",
       "style": "min-height: 729px; width: 100%; background-color: #191919; position: relative; z-index: 0;",
@@ -278,6 +374,13 @@
           ]
         }
       ]
+    },
+    {
+      "element": "script",
+      "attributes": {
+        "src": "../static/scripts/cart.js",
+        "type": "module"
+      }
     }
   ]
 }

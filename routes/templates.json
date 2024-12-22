@@ -273,6 +273,7 @@
           {
             "element": "button",
             "attributes": {
+              "id": "cart",
               "aria-label": "shopping cart"
             },
             "style": "background-color: transparent; margin: 0; padding:0; fill:white; border:none; transition: 150ms; cursor: pointer;",
