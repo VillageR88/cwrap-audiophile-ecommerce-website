@@ -62,6 +62,22 @@
       "name": "h2-cart",
       "type": "class",
       "style": "font-weight: bold; font-size: 18px; letter-spacing: 1.29px;"
+    },
+    {
+      "name": "cart-product-container-item",
+      "type": "class"
+    },
+    {
+      "name": "cart-product-container-item-product-div",
+      "type": "class"
+    },
+    {
+      "name": "cart-product-container-item-product-div-picture",
+      "type": "class"
+    },
+    {
+      "name": "cart-product-container-item-amount-div",
+      "type": "class"
     }
   ],
   "element": "body",

@@ -428,6 +428,13 @@
       {
         "element": "script",
         "attributes": {
+          "src": "../static/scripts/fetchedData.js",
+          "type": "module"
+        }
+      },
+      {
+        "element": "script",
+        "attributes": {
           "src": "../static/scripts/cwrapProperty[scriptName=category.js]",
           "type": "module"
         }
@@ -546,6 +553,9 @@
                   },
                   {
                     "element": "button",
+                    "attributes": {
+                      "id": "cart-product-clear"
+                    },
                     "style": "font-weight: 500; font-size: 15px; line-height: 25px; font-family: Manrope; background-color: transparent; border: none; cursor: pointer; text-decoration: underline; color: rgba(0,0,0,0.5);",
                     "text": "Remove all"
                   }
@@ -555,7 +565,8 @@
                 "element": "div",
                 "attributes": {
                   "id": "cart-product-container"
-                }
+                },
+                "style": "display: flex; flex-directions: column; gap: 24px;"
               },
               {
                 "element": "div",

@@ -1,4 +1,5 @@
-const data = await fetchJson();
+import data from "./fetchedData.js";
+
 const routeTitle = document
   .getElementById("route-title")
   .textContent.toLowerCase();
@@ -13,12 +14,6 @@ for (const item of data.reverse()) {
       item.slug
     );
   }
-}
-
-async function fetchJson() {
-  const response = await fetch("static/scripts/data.json");
-  const data = await response.json();
-  return data;
 }
 
 function addCategoryProduct(imageSrc, newProduct, title, description, slug) {

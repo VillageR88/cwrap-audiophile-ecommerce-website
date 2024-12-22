@@ -1,21 +1,11 @@
-async function fetchJson() {
-  const response = await fetch("../static/scripts/data.json");
-  const data = await response.json();
-  return data;
-}
+import data from "./fetchedData.js";
+import { productShortNames } from "./const.js";
 
-const data = await fetchJson();
-
-const ProductShortNames = {
-  "YX1 Wireless Earphones": "YX1",
-  "XX59 Headphones": "XX59",
-  "XX99 Mark I Headphones": "XX99 MK I",
-  "XX99 Mark II Headphones": "XX99 MK II",
-  "ZX7 Speaker": "ZX7",
-  "ZX9 Speaker": "ZX9",
-};
+const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+const cartAmount = document.getElementById("cart-amount");
 
 const productContainer = document.getElementById("product-container");
+const cartProductContainer = document.getElementById("cart-product-container");
 const productSlug = productContainer.getAttribute("data-product-slug");
 const hero = document.createElement("div");
 const heroImage = document.createElement("img");
@@ -186,14 +176,16 @@ function updateLocalStorage(product, quantity) {
   } else {
     cart[product] = quantity;
   }
+
   localStorage.setItem("cart", JSON.stringify(cart));
+  cartAmount.textContent = Object.keys(cart).length.toString();
+  cartItems.length = 0;
+  Object.assign(cartItems, cart);
 }
 
 heroCartDivCartButton.addEventListener("click", () => {
-  const productShortName = ProductShortNames[productData.name];
+  const productShortName = productShortNames[productData.name];
   const quantity = Number.parseInt(heroCartDivCountInput.value, 10);
   updateLocalStorage(productShortName, quantity);
   heroCartDivCountInput.value = 1;
 });
-
-console.log(localStorage.getItem("cart"));
