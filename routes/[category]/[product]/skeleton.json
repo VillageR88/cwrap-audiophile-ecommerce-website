@@ -96,36 +96,7 @@
       "type": "class",
       "style": "display: flex; align-items: center: justify-content: space-between; margin-top: 47px; gap: 16px;"
     },
-    {
-      "name": "hero-cart-div-count-div",
-      "type": "class",
-      "style": "min-height: 48px; max-width: 120px; background-color: #F1F1F1; display: flex; align-items: center; justify-content: space-between; width:100%;"
-    },
-    {
-      "name": "hero-cart-div-count-buttons",
-      "type": "class",
-      "style": "border: none; font-size: 13px; font-weight: bold; letter-spacing: 1px; color: rgba(0,0,0,0.25); cursor: pointer; transition: 150ms; margin-inline: 12.5px;"
-    },
-    {
-      "name": "hero-cart-div-count-input",
-      "type": "class",
-      "style": "border: none; text-align: center; outline:none; width: 40px; padding:0; margin:0; font-family: Manrope; font-size: 13px; font-weight:bold; letter-spacing: 1px; background-color: transparent;"
-    },
-    {
-      "name": "input::-webkit-outer-spin-button, input::-webkit-inner-spin-button",
-      "type": "element",
-      "style": "-webkit-appearance: none; margin: 0;"
-    },
-    {
-      "name": "input[type=number]",
-      "type": "element",
-      "style": "-moz-appearance: textfield;"
-    },
-    {
-      "name": "hero-cart-div-count-buttons:hover",
-      "type": "class",
-      "style": "color: #D87D4A;"
-    },
+   
     {
       "name": "hero-cart-div-cart-button",
       "type": "class",
