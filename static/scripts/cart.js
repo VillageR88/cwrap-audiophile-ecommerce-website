@@ -24,6 +24,9 @@ for (const item in cartItems) {
             document.createElement("div");
           const cartProductContainerItemProductDivPicture =
             document.createElement("img");
+          cartProductContainerItemProductDivPicture.classList.add(
+            "cart-product-container-item-product-div-picture"
+          );
           cartProductContainerItemProductDivPicture.src = `../static/images/cart/image-${dataItem.slug}.jpg`;
           cartProductContainerItemProductDiv.appendChild(
             cartProductContainerItemProductDivPicture
