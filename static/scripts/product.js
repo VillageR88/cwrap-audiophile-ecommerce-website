@@ -141,6 +141,10 @@ function updateLocalStorage(product, quantity) {
     cart[product] = quantity;
   }
 
+  if (cart[product] > 300) {
+    cart[product] = 300;
+  }
+
   localStorage.setItem("cart", JSON.stringify(cart));
   cartAmount.textContent = Object.keys(cart).length.toString();
   cartItems.length = 0;

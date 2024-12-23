@@ -32,7 +32,7 @@ function updateCartDisplay() {
               document.createElement("h3");
             const cartProductContainerItemProductDivSectionDescription =
               document.createElement("p");
-            const cartProductContainerItemInputButton = inputButton("type2");
+            const cartProductContainerItemInputButton = inputButton("type2", 0);
             cartProductContainerItemInputButton.input.value =
               getCartItems()[item];
 
@@ -82,15 +82,29 @@ function updateCartDisplay() {
 
             totalCost += dataItem.price * getCartItems()[item];
 
-            cartProductContainerItemInputButton.input.addEventListener("input", (event) => {
-              console.log(`Input changed: ${event.target.value}`);
-            });
+            cartProductContainerItemInputButton.input.addEventListener(
+              "input",
+              (event) => {
+                const newQuantity = Number.parseInt(event.target.value, 10);
+                if (Number.isNaN(newQuantity) || newQuantity < 0) {
+                  event.target.value = getCartItems()[item];
+                  return;
+                }
+                const cartItems = getCartItems();
+                cartItems[item] = newQuantity;
+                if (cartItems[item] === 0) {
+                  delete cartItems[item];
+                }
+                localStorage.setItem("cart", JSON.stringify(cartItems));
+                updateCartDisplay();
+              }
+            );
           }
         }
       }
     }
   }
-
+  cartAmount.textContent = Object.keys(getCartItems()).length.toString();
   cartTotalCost.textContent = `$ ${totalCost.toLocaleString()}`;
 }
 
@@ -114,12 +128,10 @@ function manageCartPresence() {
 }
 
 cartProductClear.addEventListener("click", () => {
-  console.log(getCartItems());
   localStorage.removeItem("cart");
   cartAmount.textContent = "0";
   cartTotalCost.textContent = `$ ${"0".toLocaleString()}`;
   updateCartDisplay();
-  console.log(getCartItems());
 });
 
 export { updateCartDisplay };
