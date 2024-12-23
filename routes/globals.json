@@ -56,6 +56,45 @@
             "name": "h2",
             "type": "element",
             "style": "margin: 0;"
+        },
+        {
+            "name": "h2-cart",
+            "type": "class",
+            "style": "font-weight: bold; font-size: 18px; letter-spacing: 1.29px;"
+        },
+        {
+            "name": "cart-product-container-item",
+            "type": "class",
+            "style": "display: flex; width: 100%;"
+        },
+        {
+            "name": "cart-product-container-item-product-div",
+            "type": "class",
+            "style": "display: flex; gap: 16px;"
+        },
+        {
+            "name": "cart-product-container-item-product-div-picture",
+            "type": "class",
+            "style": "max-width: 64px;"
+        },
+        {
+            "name": "cart-product-container-item-product-div-section",
+            "type": "class",
+            "style": "display: flex; flex-direction: column; justify-content: center;"
+        },
+        {
+            "name": "cart-product-container-item-product-div-section-title",
+            "type": "class",
+            "style": "font-weight: bold; margin: 0; font-size: 15px; line-height: 25px;"
+        },
+        {
+            "name": "cart-product-container-item-product-div-section-description",
+            "type": "class",
+            "style": "font-weight: bold; font-size: 14px; color: rgba(0,0,0,0.5);"
+        },
+        {
+            "name": "cart-product-container-item-amount-div",
+            "type": "class"
         }
     ]
 }

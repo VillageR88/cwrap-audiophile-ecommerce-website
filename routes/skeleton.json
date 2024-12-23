@@ -19,28 +19,7 @@
     ]
   },
   "classroom": [
-    {
-      "name": "h2-cart",
-      "type": "class",
-      "style": "font-weight: bold; font-size: 18px; letter-spacing: 1.29px;"
-    },
-    {
-      "name": "cart-product-container-item",
-      "type": "class"
-    },
-    {
-      "name": "cart-product-container-item-product-div",
-      "type": "class"
-    },
-    {
-      "name": "cart-product-container-item-product-div-picture",
-      "type": "class",
-      "style": "max-width: 64px;"
-    },
-    {
-      "name": "cart-product-container-item-amount-div",
-      "type": "class"
-    }
+
   ],
   "element": "body",
   "style": "font-family: Manrope; padding: 0; margin: 0; box-sizing: border-box; background-color: #FAFAFA; min-height: 100dvh; display: flex; flex-direction: column;",

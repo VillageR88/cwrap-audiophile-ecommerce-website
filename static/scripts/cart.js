@@ -17,19 +17,52 @@ for (const item in cartItems) {
     if (productShortNames[objItem] === item) {
       for (const dataItem of data) {
         if (dataItem.name === objItem) {
-          console.log(dataItem.slug);
-          console.log(dataItem);
           const cartProductContainerItem = document.createElement("div");
           const cartProductContainerItemProductDiv =
             document.createElement("div");
           const cartProductContainerItemProductDivPicture =
             document.createElement("img");
+          const cartProductContainerItemProductDivSection =
+            document.createElement("section");
+          const cartProductContainerItemProductDivSectionTitle =
+            document.createElement("h3");
+          const cartProductContainerItemProductDivSectionDescription =
+            document.createElement("p");
+
+          cartProductContainerItem.classList.add("cart-product-container-item");
+          cartProductContainerItemProductDiv.classList.add(
+            "cart-product-container-item-product-div"
+          );
           cartProductContainerItemProductDivPicture.classList.add(
             "cart-product-container-item-product-div-picture"
           );
+          cartProductContainerItemProductDivSection.classList.add(
+            "cart-product-container-item-product-div-section"
+          );
+          cartProductContainerItemProductDivSectionTitle.classList.add(
+            "cart-product-container-item-product-div-section-title"
+          );
+          cartProductContainerItemProductDivSectionDescription.classList.add(
+            "cart-product-container-item-product-div-section-description"
+          );
+
           cartProductContainerItemProductDivPicture.src = `../static/images/cart/image-${dataItem.slug}.jpg`;
+          cartProductContainerItemProductDivSectionTitle.textContent =
+            productShortNames[objItem];
+          console.log(dataItem);
+          cartProductContainerItemProductDivSectionDescription.textContent = `$ ${dataItem.price.toLocaleString()}`; 
+
           cartProductContainerItemProductDiv.appendChild(
             cartProductContainerItemProductDivPicture
+          );
+          cartProductContainerItemProductDivSection.appendChild(
+            cartProductContainerItemProductDivSectionTitle
+          );
+          cartProductContainerItemProductDivSection.appendChild(
+            cartProductContainerItemProductDivSectionDescription
+          );
+          cartProductContainerItemProductDiv.appendChild(
+            cartProductContainerItemProductDivSection
           );
           cartProductContainerItem.appendChild(
             cartProductContainerItemProductDiv

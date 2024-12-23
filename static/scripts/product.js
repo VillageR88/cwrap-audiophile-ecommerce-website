@@ -133,7 +133,7 @@ for (const item of productData.others) {
 
   itemImage.src = item.image.desktop.replace("./assets", "../static/images");
   itemSectionDescription.textContent = item.name.toUpperCase();
-  itemSectionButton.classList.add("hero-cart-div-cart-button");
+  itemSectionButton.classList.add("button1", "hero-cart-div-cart-button");
   itemSectionButton.textContent = "SEE PRODUCT";
   itemSectionButton.href = `/${item.category}/${item.slug}`;
 

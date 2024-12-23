@@ -235,16 +235,6 @@
       "name": "like-container > div:nth-of-type(1) > div > section > h3",
       "type": "class",
       "style": "font-weight: bold; font-size: 24px; letter-spacing: 1.71px; margin: 0;"
-    },
-    {
-      "name": "h2",
-      "type": "element",
-      "style": "margin: 0;"
-    },
-    {
-      "name": "h2-cart",
-      "type": "class",
-      "style": "font-weight: bold; font-size: 18px; letter-spacing: 1.29px;"
     }
   ],
   "element": "cwrap-template",
