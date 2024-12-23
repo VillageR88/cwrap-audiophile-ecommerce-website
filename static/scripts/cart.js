@@ -1,4 +1,5 @@
 import data from "./fetchedData.js";
+import { productShortNames } from "./const.js";
 
 const mask = document.getElementById("mask");
 const cart = document.getElementById("cart");
@@ -6,24 +7,35 @@ const cartAmount = document.getElementById("cart-amount");
 const cartTotalCost = document.getElementById("cart-total-cost");
 const cartProductClear = document.getElementById("cart-product-clear");
 const cartProductContainer = document.getElementById("cart-product-container");
-const cartProductContainerItem = document.getElementById(
-  "cart-product-container-item"
-);
-const cartProductContainerItemProductDiv = document.getElementById(
-  "cart-product-container-item-product-div"
-);
-const cartProductContainerItemProductDivPicture = document.getElementById(
-  "cart-product-container-item-product-div-picture"
-);
 
 const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
 cartAmount.textContent = Object.keys(cartItems).length.toString();
 cartTotalCost.textContent = `$ ${"0".toLocaleString()}`;
 
 for (const item in cartItems) {
-  const key = item;
-  const value = cartItems[item];
-  console.log(data);
+  for (const objItem in productShortNames) {
+    if (productShortNames[objItem] === item) {
+      for (const dataItem of data) {
+        if (dataItem.name === objItem) {
+          console.log(dataItem.slug);
+          console.log(dataItem);
+          const cartProductContainerItem = document.createElement("div");
+          const cartProductContainerItemProductDiv =
+            document.createElement("div");
+          const cartProductContainerItemProductDivPicture =
+            document.createElement("img");
+          cartProductContainerItemProductDivPicture.src = `../static/images/cart/image-${dataItem.slug}.jpg`;
+          cartProductContainerItemProductDiv.appendChild(
+            cartProductContainerItemProductDivPicture
+          );
+          cartProductContainerItem.appendChild(
+            cartProductContainerItemProductDiv
+          );
+          cartProductContainer.appendChild(cartProductContainerItem);
+        }
+      }
+    }
+  }
 }
 
 let cartIsOpen = false;
