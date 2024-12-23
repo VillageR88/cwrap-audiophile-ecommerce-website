@@ -8,81 +8,97 @@ const cartAmount = document.getElementById("cart-amount");
 const cartTotalCost = document.getElementById("cart-total-cost");
 const cartProductClear = document.getElementById("cart-product-clear");
 const cartProductContainer = document.getElementById("cart-product-container");
-
-const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-cartAmount.textContent = Object.keys(cartItems).length.toString();
+const getCartItems = () => JSON.parse(localStorage.getItem("cart")) || [];
+cartAmount.textContent = Object.keys(getCartItems()).length.toString();
 cartTotalCost.textContent = `$ ${"0".toLocaleString()}`;
 
-for (const item in cartItems) {
-  for (const objItem in productShortNames) {
-    if (productShortNames[objItem] === item) {
-      for (const dataItem of data) {
-        if (dataItem.name === objItem) {
-          const cartProductContainerItem = document.createElement("div");
-          const cartProductContainerItemProductDiv =
-            document.createElement("div");
-          const cartProductContainerItemProductDivPicture =
-            document.createElement("img");
-          const cartProductContainerItemProductDivSection =
-            document.createElement("section");
-          const cartProductContainerItemProductDivSectionTitle =
-            document.createElement("h3");
-          const cartProductContainerItemProductDivSectionDescription =
-            document.createElement("p");
-          const cartProductContainerItemInputButton = inputButton("type2");
+function updateCartDisplay() {
+  cartProductContainer.innerHTML = ""; // Clear existing items
+  let totalCost = 0;
 
-          cartProductContainerItem.classList.add("cart-product-container-item");
-          cartProductContainerItemProductDiv.classList.add(
-            "cart-product-container-item-product-div"
-          );
-          cartProductContainerItemProductDivPicture.classList.add(
-            "cart-product-container-item-product-div-picture"
-          );
-          cartProductContainerItemProductDivSection.classList.add(
-            "cart-product-container-item-product-div-section"
-          );
-          cartProductContainerItemProductDivSectionTitle.classList.add(
-            "cart-product-container-item-product-div-section-title"
-          );
-          cartProductContainerItemProductDivSectionDescription.classList.add(
-            "cart-product-container-item-product-div-section-description"
-          );
+  for (const item in getCartItems()) {
+    for (const objItem in productShortNames) {
+      if (productShortNames[objItem] === item) {
+        for (const dataItem of data) {
+          if (dataItem.name === objItem) {
+            const cartProductContainerItem = document.createElement("div");
+            const cartProductContainerItemProductDiv =
+              document.createElement("div");
+            const cartProductContainerItemProductDivPicture =
+              document.createElement("img");
+            const cartProductContainerItemProductDivSection =
+              document.createElement("section");
+            const cartProductContainerItemProductDivSectionTitle =
+              document.createElement("h3");
+            const cartProductContainerItemProductDivSectionDescription =
+              document.createElement("p");
+            const cartProductContainerItemInputButton = inputButton("type2");
+            cartProductContainerItemInputButton.input.value =
+              getCartItems()[item];
 
-          cartProductContainerItemProductDivPicture.src = `../static/images/cart/image-${dataItem.slug}.jpg`;
-          cartProductContainerItemProductDivSectionTitle.textContent =
-            productShortNames[objItem];
-          console.log(dataItem);
-          cartProductContainerItemProductDivSectionDescription.textContent = `$ ${dataItem.price.toLocaleString()}`;
+            cartProductContainerItem.classList.add(
+              "cart-product-container-item"
+            );
+            cartProductContainerItemProductDiv.classList.add(
+              "cart-product-container-item-product-div"
+            );
+            cartProductContainerItemProductDivPicture.classList.add(
+              "cart-product-container-item-product-div-picture"
+            );
+            cartProductContainerItemProductDivSection.classList.add(
+              "cart-product-container-item-product-div-section"
+            );
+            cartProductContainerItemProductDivSectionTitle.classList.add(
+              "cart-product-container-item-product-div-section-title"
+            );
+            cartProductContainerItemProductDivSectionDescription.classList.add(
+              "cart-product-container-item-product-div-section-description"
+            );
 
-          cartProductContainerItemProductDiv.appendChild(
-            cartProductContainerItemProductDivPicture
-          );
-          cartProductContainerItemProductDivSection.appendChild(
-            cartProductContainerItemProductDivSectionTitle
-          );
-          cartProductContainerItemProductDivSection.appendChild(
-            cartProductContainerItemProductDivSectionDescription
-          );
-          cartProductContainerItemProductDiv.appendChild(
-            cartProductContainerItemProductDivSection
-          );
-          cartProductContainerItem.appendChild(
-            cartProductContainerItemProductDiv
-          );
-          cartProductContainerItem.appendChild(
-            cartProductContainerItemInputButton.container
-          );
-          cartProductContainer.appendChild(cartProductContainerItem);
+            cartProductContainerItemProductDivPicture.src = `../static/images/cart/image-${dataItem.slug}.jpg`;
+            cartProductContainerItemProductDivSectionTitle.textContent =
+              productShortNames[objItem];
+            cartProductContainerItemProductDivSectionDescription.textContent = `$ ${dataItem.price.toLocaleString()}`;
+
+            cartProductContainerItemProductDiv.appendChild(
+              cartProductContainerItemProductDivPicture
+            );
+            cartProductContainerItemProductDivSection.appendChild(
+              cartProductContainerItemProductDivSectionTitle
+            );
+            cartProductContainerItemProductDivSection.appendChild(
+              cartProductContainerItemProductDivSectionDescription
+            );
+            cartProductContainerItemProductDiv.appendChild(
+              cartProductContainerItemProductDivSection
+            );
+            cartProductContainerItem.appendChild(
+              cartProductContainerItemProductDiv
+            );
+            cartProductContainerItem.appendChild(
+              cartProductContainerItemInputButton.container
+            );
+            cartProductContainer.appendChild(cartProductContainerItem);
+
+            totalCost += dataItem.price * getCartItems()[item];
+
+            cartProductContainerItemInputButton.input.addEventListener("input", (event) => {
+              console.log(`Input changed: ${event.target.value}`);
+            });
+          }
         }
       }
     }
   }
+
+  cartTotalCost.textContent = `$ ${totalCost.toLocaleString()}`;
 }
+
+updateCartDisplay();
 
 let cartIsOpen = false;
 cart.addEventListener("click", () => {
-  if (cartIsOpen === false) cartIsOpen = true;
-  else cartIsOpen = false;
+  cartIsOpen = !cartIsOpen;
   manageCartPresence();
 });
 
@@ -98,7 +114,12 @@ function manageCartPresence() {
 }
 
 cartProductClear.addEventListener("click", () => {
+  console.log(getCartItems());
   localStorage.removeItem("cart");
   cartAmount.textContent = "0";
   cartTotalCost.textContent = `$ ${"0".toLocaleString()}`;
+  updateCartDisplay();
+  console.log(getCartItems());
 });
+
+export { updateCartDisplay };

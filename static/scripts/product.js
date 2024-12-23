@@ -1,6 +1,7 @@
 import data from "./fetchedData.js";
 import { productShortNames } from "./const.js";
 import { inputButton } from "./elements.js";
+import { updateCartDisplay } from "./cart.js";
 
 const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
 const cartAmount = document.getElementById("cart-amount");
@@ -150,5 +151,6 @@ heroCartDivCartButton.addEventListener("click", () => {
   const productShortName = productShortNames[productData.name];
   const quantity = Number.parseInt(singleInputButton.input.value, 10);
   updateLocalStorage(productShortName, quantity);
+  updateCartDisplay(); // Update the cart display
   singleInputButton.input.value = 1;
 });
