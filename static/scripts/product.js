@@ -1,5 +1,6 @@
 import data from "./fetchedData.js";
 import { productShortNames } from "./const.js";
+import { inputButton } from "./elements.js";
 
 const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
 const cartAmount = document.getElementById("cart-amount");
@@ -16,11 +17,8 @@ const heroTitle = document.createElement("h1");
 const heroDescription = document.createElement("p");
 const heroPrice = document.createElement("span");
 const heroCartDiv = document.createElement("div");
-const heroCartDivCountDiv = document.createElement("div");
-const heroCartDivCountMinus = document.createElement("button");
-const heroCartDivCountPlus = document.createElement("button");
+const singleInputButton = inputButton();
 const heroCartDivCartButton = document.createElement("button");
-const heroCartDivCountInput = document.createElement("input");
 const additional = document.createElement("div");
 const additionalFeatures = document.createElement("section");
 const additionalFeaturesTitle = document.createElement("h2");
@@ -31,6 +29,7 @@ const gallery = document.createElement("div");
 const like = document.createElement("div");
 const likeTitle = document.createElement("h2");
 const likeContentWrapper = document.createElement("div");
+
 let productData;
 for (const product of data) {
   if (product.slug === productSlug) {
@@ -55,17 +54,7 @@ heroDescription.textContent = productData.description;
 heroPrice.classList.add("hero-price");
 heroPrice.textContent = `$ ${productData.price.toLocaleString()}`;
 heroCartDiv.classList.add("hero-cart-div");
-heroCartDivCountMinus.classList.add("hero-cart-div-count-buttons");
-heroCartDivCountMinus.textContent = "-";
-heroCartDivCountInput.id = "countInput";
-heroCartDivCountInput.classList.add("hero-cart-div-count-input");
-heroCartDivCountInput.type = "number";
-heroCartDivCountInput.value = 1;
-heroCartDivCountInput.min = 1;
-heroCartDivCountInput.max = 300;
-heroCartDivCountPlus.classList.add("hero-cart-div-count-buttons");
-heroCartDivCountPlus.textContent = "+";
-heroCartDivCountDiv.classList.add("hero-cart-div-count-div");
+
 heroCartDivCartButton.classList.add("hero-cart-div-cart-button");
 heroCartDivCartButton.textContent = "ADD TO CART";
 additional.classList.add("additional-container");
@@ -87,10 +76,7 @@ heroSection.appendChild(heroTitle);
 heroSection.appendChild(heroDescription);
 heroDiv.appendChild(heroSection);
 heroDiv.appendChild(heroPrice);
-heroCartDivCountDiv.appendChild(heroCartDivCountMinus);
-heroCartDivCountDiv.appendChild(heroCartDivCountInput);
-heroCartDivCountDiv.appendChild(heroCartDivCountPlus);
-heroCartDiv.appendChild(heroCartDivCountDiv);
+heroCartDiv.appendChild(singleInputButton.container);
 heroCartDiv.appendChild(heroCartDivCartButton);
 heroDiv.appendChild(heroCartDiv);
 hero.appendChild(heroDiv);
@@ -146,29 +132,6 @@ for (const item of productData.others) {
 like.appendChild(likeContentWrapper);
 productContainer.appendChild(like);
 
-heroCartDivCountMinus.addEventListener("click", () => {
-  if (heroCartDivCountInput.value > 1) {
-    heroCartDivCountInput.value--;
-  }
-});
-
-heroCartDivCountPlus.addEventListener("click", () => {
-  if (heroCartDivCountInput.value < 300) {
-    heroCartDivCountInput.value++;
-  }
-});
-
-heroCartDivCountInput.addEventListener("input", () => {
-  const value = Number.parseInt(heroCartDivCountInput.value, 10);
-  if (Number.isNaN(value) || value < 1) {
-    heroCartDivCountInput.value = 1;
-  } else if (value > 300) {
-    heroCartDivCountInput.value = 300;
-  } else {
-    heroCartDivCountInput.value = value;
-  }
-});
-
 function updateLocalStorage(product, quantity) {
   const cart = JSON.parse(localStorage.getItem("cart")) || {};
   if (cart[product]) {
@@ -185,7 +148,7 @@ function updateLocalStorage(product, quantity) {
 
 heroCartDivCartButton.addEventListener("click", () => {
   const productShortName = productShortNames[productData.name];
-  const quantity = Number.parseInt(heroCartDivCountInput.value, 10);
+  const quantity = Number.parseInt(singleInputButton.input.value, 10);
   updateLocalStorage(productShortName, quantity);
-  heroCartDivCountInput.value = 1;
+  singleInputButton.input.value = 1;
 });

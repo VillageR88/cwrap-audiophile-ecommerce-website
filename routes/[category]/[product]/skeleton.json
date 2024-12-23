@@ -94,9 +94,8 @@
     {
       "name": "hero-cart-div",
       "type": "class",
-      "style": "display: flex; align-items: center: justify-content: space-between; margin-top: 47px; gap: 16px;"
+      "style": "display: flex; align-items: center; margin-top: 47px; gap: 16px;"
     },
-   
     {
       "name": "hero-cart-div-cart-button",
       "type": "class",

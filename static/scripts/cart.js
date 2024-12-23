@@ -1,5 +1,6 @@
 import data from "./fetchedData.js";
 import { productShortNames } from "./const.js";
+import { inputButton } from "./elements.js";
 
 const mask = document.getElementById("mask");
 const cart = document.getElementById("cart");
@@ -28,6 +29,7 @@ for (const item in cartItems) {
             document.createElement("h3");
           const cartProductContainerItemProductDivSectionDescription =
             document.createElement("p");
+          const cartProductContainerItemInputButton = inputButton("type2");
 
           cartProductContainerItem.classList.add("cart-product-container-item");
           cartProductContainerItemProductDiv.classList.add(
@@ -50,7 +52,7 @@ for (const item in cartItems) {
           cartProductContainerItemProductDivSectionTitle.textContent =
             productShortNames[objItem];
           console.log(dataItem);
-          cartProductContainerItemProductDivSectionDescription.textContent = `$ ${dataItem.price.toLocaleString()}`; 
+          cartProductContainerItemProductDivSectionDescription.textContent = `$ ${dataItem.price.toLocaleString()}`;
 
           cartProductContainerItemProductDiv.appendChild(
             cartProductContainerItemProductDivPicture
@@ -66,6 +68,9 @@ for (const item in cartItems) {
           );
           cartProductContainerItem.appendChild(
             cartProductContainerItemProductDiv
+          );
+          cartProductContainerItem.appendChild(
+            cartProductContainerItemInputButton.container
           );
           cartProductContainer.appendChild(cartProductContainerItem);
         }
@@ -83,6 +88,7 @@ cart.addEventListener("click", () => {
 
 function manageCartPresence() {
   if (cartIsOpen) {
+    window.scrollTo({ top: 0, behavior: "instant" });
     document.body.style.overflowY = "clip";
     mask.style.display = "block";
   } else {

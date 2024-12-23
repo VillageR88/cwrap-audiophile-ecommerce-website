@@ -572,7 +572,7 @@
                 "attributes": {
                   "id": "cart-product-container"
                 },
-                "style": "display: flex; flex-directions: column; gap: 24px;"
+                "style": "display: flex; flex-direction: column; gap: 24px;"
               },
               {
                 "element": "div",
