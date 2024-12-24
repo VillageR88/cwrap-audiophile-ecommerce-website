@@ -18,7 +18,28 @@
       }
     ]
   },
-  "classroom": [],
+  "classroom": [
+    {
+      "name": "h2-checkout",
+      "type": "class",
+      "style": "color: #D87D4A; font-size: 13px; line-height: 25px; letter-spacing: 0.93px;"
+    },
+    {
+      "name": "input-checkout",
+      "type": "class",
+      "style": "font-family: Manrope; min-height: 56px; border-radius: 8px; border: 1px solid #CFCFCF; outline: none; padding-inline: 24px; font-weight: bold; font-size: 14px; letter-spacing: -0.25px;"
+    },
+    {
+      "name": "input-checkout::placeholder",
+      "type": "class",
+      "style": "color: rgba(0,0,0,0.4);"
+    },
+    {
+      "name": "label",
+      "type": "element",
+      "style": "font-weight: bold; font-size: 12px; letter-spacing: -0.21px;"
+    }
+  ],
   "element": "cwrap-template",
   "omit": [
     "ulNavigation2",
@@ -28,14 +49,13 @@
   "passover": [
     {
       "element": "div",
-      "attributes": {
-        "id": "product-container"
-      },
+      "style": "max-width: 1110px; margin-inline: auto; margin-top: 79px; margin-bottom: 38px; box-sizing: border-box;",
       "children": [
         {
           "element": "a",
+          "style": "margin-top: 79px; font-weight: 500; font-size: 15px; color: rgba(0,0,0,0.5); line-height: 25px; transition: 150ms; text-decoration: none;",
           "attributes": {
-            "href": "/cwrapRoutes[earphones,headphones,headphones,headphones,speakers,speakers]"
+            "href": "../"
           },
           "text": "Go Back",
           "extend": [
@@ -43,8 +63,104 @@
               "extension": ":hover",
               "style": "color: #D87D4A;"
             }
-          ],
-          "style": "margin-block: 79px 56px; font-weight: 500; font-size: 15px; color: rgba(0,0,0,0.5); line-height: 25px; transition: 150ms;"
+          ]
+        },
+        {
+          "element": "form",
+          "style": "display: flex; justify-content: space-between; margin-top: 38px;",
+          "children": [
+            {
+              "element": "div",
+              "style": "max-width: 730px; width: 100%; padding: 54px 48px 48px 48px; box-sizing: border-box; background-color: white; border-radius: 8px;",
+              "children": [
+                {
+                  "element": "h1",
+                  "style": "color: black; font-size: 32px; font-weight: bold; line-height: 36px; letter-spacing: 1.14px;",
+                  "text": "CHECKOUT"
+                },
+                {
+                  "element": "div",
+                  "style": "display: flex; flex-direction: column; margin-top: 41px;",
+                  "children": [
+                    {
+                      "element": "h2",
+                      "attributes": {
+                        "class": "h2-checkout"
+                      },
+                      "text": "BILLING DETAILS"
+                    },
+                    {
+                      "element": "ul",
+                      "style": "margin: 16px 0 0 0; padding: 0; display: grid; grid-template-areas: 'li1 li2' 'li3 _'; gap: 24px 16px;",
+                      "blueprint": {
+                        "element": "li",
+                        "style": "display: flex; flex-direction: column; gap: 9px; grid-area: cwrapArray[li1,li2,li3]",
+                        "count": 3,
+                        "children": [
+                          {
+                            "element": "label",
+                            "text": "cwrapArray[Name,Email Address,Phone Number]",
+                            "attributes": {
+                              "for": "cwrapArray[name,email,phone]"
+                            }
+                          },
+                          {
+                            "element": "input",
+                            "attributes": {
+                              "class": "input-checkout",
+                              "id": "cwrapArray[name,email,phone]",
+                              "autocomplete": "cwrapArray[name,email,phone]",
+                              "placeholder": "cwrapArray[Alexei Ward,alexei@mail.com,+1 202-555-0136]"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "element": "div",
+                  "style": "display: flex; flex-direction: column; margin-top: 53px;",
+                  "children": [
+                    {
+                      "element": "h2",
+                      "attributes": {
+                        "class": "h2-checkout"
+                      },
+                      "text": "SHIPPING INFO"
+                    },
+                    {
+                      "element": "ul",
+                      "style": "margin: 16px 0 0 0; padding: 0; display: grid; grid-template-areas: 'li1 li1' 'li2 li3' 'li4 _'; gap: 24px 16px;",
+                      "blueprint": {
+                        "element": "li",
+                        "style": "display: flex; flex-direction: column; gap: 9px; grid-area: cwrapArray[li1,li2,li3,li4,li5]",
+                        "count": 4,
+                        "children": [
+                          {
+                            "element": "label",
+                            "text": "cwrapArray[Address,ZIP Code,City, Country]",
+                            "attributes": {
+                              "for": "cwrapArray[street-address,postal-code,address-level2,address-level1]"
+                            }
+                          },
+                          {
+                            "element": "input",
+                            "attributes": {
+                              "class": "input-checkout",
+                              "id": "cwrapArray[street-address,postal-code,address-level2,address-level1]",
+                              "autocomplete": "cwrapArray[street-address,postal-code,address-level2,address-level1]",
+                              "placeholder": "cwrapArray[1137 Williams Avenue,10001,New York,United States]"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
     }
