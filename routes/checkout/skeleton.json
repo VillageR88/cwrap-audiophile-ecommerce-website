@@ -1,0 +1,52 @@
+{
+  "head": {
+    "meta": [
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1.0"
+      },
+      {
+        "charset": "UTF-8"
+      },
+      {
+        "name": "description",
+        "content": "New Candy Wrapper project."
+      },
+      {
+        "name": "keywords",
+        "content": ""
+      }
+    ]
+  },
+  "classroom": [],
+  "element": "cwrap-template",
+  "omit": [
+    "ulNavigation2",
+    "divBottomHero"
+  ],
+  "text": "cwrapTemplate[bodyCategory(omit=cwrapOmit,routeTitle=cwrapOmit,scriptName=checkout.js)]",
+  "passover": [
+    {
+      "element": "div",
+      "attributes": {
+        "id": "product-container"
+      },
+      "children": [
+        {
+          "element": "a",
+          "attributes": {
+            "href": "/cwrapRoutes[earphones,headphones,headphones,headphones,speakers,speakers]"
+          },
+          "text": "Go Back",
+          "extend": [
+            {
+              "extension": ":hover",
+              "style": "color: #D87D4A;"
+            }
+          ],
+          "style": "margin-block: 79px 56px; font-weight: 500; font-size: 15px; color: rgba(0,0,0,0.5); line-height: 25px; transition: 150ms;"
+        }
+      ]
+    }
+  ]
+}

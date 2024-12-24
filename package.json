@@ -7,11 +7,11 @@
     "build": "node build.js"
   },
   "devDependencies": {
-    "cwrap-framework": "0.1.0-beta.202412182141",
     "body-parser": "^1.20.2",
-    "express": "^4.17.1",
     "connect-livereload": "^0.6.1",
     "cross-env": "^7.0.3",
+    "cwrap-framework": "^0.1.0-beta.202412240059",
+    "express": "^4.17.1",
     "livereload": "^0.9.3",
     "mkdirp": "^3.0.1",
     "serve-static": "^1.14.1"

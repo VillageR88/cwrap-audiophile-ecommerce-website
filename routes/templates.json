@@ -347,10 +347,12 @@
           },
           {
             "element": "cwrap-template",
+            "omit-id": "ulNavigation2",
             "text": "cwrapTemplate[ulNavigation2]"
           },
           {
             "element": "cwrap-template",
+            "omit-id": "divBottomHero",
             "text": "cwrapTemplate[divBottomHero]"
           }
         ]
@@ -597,7 +599,7 @@
                     ]
                   },
                   {
-                    "element": "button",
+                    "element": "a",
                     "style": "max-width: 100%; background-color: #D87D4A; cursor: pointer; transition: 150ms;",
                     "extend": [
                       {
@@ -607,7 +609,8 @@
                     ],
                     "text": "CHECKOUT",
                     "attributes": {
-                      "class": "button1"
+                      "class": "button1",
+                      "href": "../checkout"
                     }
                   }
                 ]
