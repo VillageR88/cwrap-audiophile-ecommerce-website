@@ -27,7 +27,7 @@
     {
       "name": "input-checkout",
       "type": "class",
-      "style": "font-family: Manrope; min-height: 56px; border-radius: 8px; border: 1px solid #CFCFCF; outline: none; padding-inline: 24px; font-weight: bold; font-size: 14px; letter-spacing: -0.25px;"
+      "style": "font-family: Manrope; min-height: 56px; border-radius: 8px; border: 1px solid #CFCFCF; outline: none; padding-inline: 24px; font-weight: bold; font-size: 14px; letter-spacing: -0.25px; box-sizing: border-box; transition: 150ms;"
     },
     {
       "name": "input-checkout::placeholder",
@@ -35,21 +35,28 @@
       "style": "color: rgba(0,0,0,0.4);"
     },
     {
-      "name": "label",
-      "type": "element",
+      "name": "input-checkout:focus",
+      "type": "class",
+      "style": "border-color: #D87D4A"
+    },
+    {
+      "name": "input-checkout:hover",
+      "type": "class",
+      "style": "border-color: #D87D4A"
+    },
+    {
+      "name": "label1",
+      "type": "class",
       "style": "font-weight: bold; font-size: 12px; letter-spacing: -0.21px;"
     }
   ],
   "element": "cwrap-template",
-  "omit": [
-    "ulNavigation2",
-    "divBottomHero"
-  ],
+  "omit": ["ulNavigation2", "divBottomHero"],
   "text": "cwrapTemplate[bodyCategory(omit=cwrapOmit,routeTitle=cwrapOmit,scriptName=checkout.js)]",
   "passover": [
     {
       "element": "div",
-      "style": "max-width: 1110px; margin-inline: auto; margin-top: 79px; margin-bottom: 38px; box-sizing: border-box;",
+      "style": "max-width: 1110px; margin-inline: auto; margin-top: 79px; margin-bottom: 141px; box-sizing: border-box;",
       "children": [
         {
           "element": "a",
@@ -67,7 +74,7 @@
         },
         {
           "element": "form",
-          "style": "display: flex; justify-content: space-between; margin-top: 38px;",
+          "style": "display: flex; justify-content: space-between; margin-top: 38px; gap: 30px;",
           "children": [
             {
               "element": "div",
@@ -101,7 +108,8 @@
                             "element": "label",
                             "text": "cwrapArray[Name,Email Address,Phone Number]",
                             "attributes": {
-                              "for": "cwrapArray[name,email,phone]"
+                              "for": "cwrapArray[name,email,phone]",
+                              "class": "label1"
                             }
                           },
                           {
@@ -141,7 +149,8 @@
                             "element": "label",
                             "text": "cwrapArray[Address,ZIP Code,City, Country]",
                             "attributes": {
-                              "for": "cwrapArray[street-address,postal-code,address-level2,address-level1]"
+                              "for": "cwrapArray[street-address,postal-code,address-level2,address-level1]",
+                              "class": "label1"
                             }
                           },
                           {
@@ -157,8 +166,119 @@
                       }
                     }
                   ]
+                },
+                {
+                  "element": "div",
+                  "style": "display: flex; flex-direction: column; margin-top: 53px;",
+                  "children": [
+                    {
+                      "element": "h2",
+                      "attributes": {
+                        "class": "h2-checkout"
+                      },
+                      "text": "PAYMENT DETAILS"
+                    },
+                    {
+                      "element": "ul",
+                      "style": "margin: 16px 0 0 0; padding: 0; display: grid; gap: 16px;",
+                      "blueprint": {
+                        "element": "li",
+                        "style": "display: flex; flex-direction: row; gap: 9px; justify-content: space-between;",
+                        "count": 2,
+                        "children": [
+                          {
+                            "element": "h3",
+                            "text": "cwrapArray[Payment Method,]",
+                            "attributes": {
+                              "for": "cwrapArray[Payment Method,]",
+                              "class": "label1"
+                            }
+                          },
+                          {
+                            "element": "label",
+                            "style": "max-width: 276px; width: 100%; position: relative; align-items: center; display: flex; transition: 150ms;",
+                            "extend": [
+                              {
+                                "extension": ":has(input:nth-of-type(1):checked) > div:nth-of-type(1) > div:nth-of-type(1)",
+                                "style": "display: block;"
+                              },
+                              {
+                                "extension": ":has(input:nth-of-type(1):checked)",
+                                "style": "border-color: D87D4A; opacity: 100;"
+                              }
+                            ],
+                            "attributes": {
+                              "class": "input-checkout"
+                            },
+                            "children": [
+                              {
+                                "element": "div",
+                                "style": "position: absolute; width: 20px; height: 20px; border: 1px solid #CFCFCF; box-sizing: border-box; border-radius: 50%; left: 16px; display: flex; align-items: center; justify-content: center;",
+                                "children": [
+                                  {
+                                    "element": "div",
+                                    "style": "width: 10px; height: 10px; background-color: #D87D4A; border-radius: 50%; display: none; transition: 150ms;"
+                                  }
+                                ]
+                              },
+                              {
+                                "element": "span",
+                                "style": "position: absolute; left: 52px;",
+                                "text": "cwrapArray[e-Money,Cash on Delivery]"
+                              },
+                              {
+                                "element": "input",
+                                "style": "position: absolute; right: 0; opacity: 0;",
+                                "attributes": {
+                                  "type": "radio",
+                                  "tabindex": "0",
+                                  "checked": "cwrapArray[,cwrapOmit]",
+                                  "name": "payment",
+                                  "id": "cwrapArray[e-money,cash-on-delivery]",
+                                  "placeholder": "cwrapArray[Alexei Ward,alexei@mail.com]"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "element": "ul",
+                      "style": "margin: 24px 0 0 0; padding: 0; display: flex; gap: 24px 16px;",
+                      "blueprint": {
+                        "element": "li",
+                        "style": "display: flex; flex-direction: column; gap: 9px; width: 100%;",
+                        "count": 2,
+                        "children": [
+                          {
+                            "element": "label",
+                            "style": "box-sizing: border-box;",
+                            "text": "cwrapArray[e-Money Number,e-Money PIN]",
+                            "attributes": {
+                              "for": "cwrapArray[e-money-number,e-money-pin]",
+                              "class": "label1"
+                            }
+                          },
+                          {
+                            "element": "input",
+                            "attributes": {
+                              "class": "input-checkout",
+                              "id": "cwrapArray[e-money-number,e-money-pin]",
+                              "autocomplete": "off",
+                              "placeholder": "cwrapArray[238521993,6891]"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
                 }
               ]
+            },
+            {
+              "element": "div",
+              "style": "display: flex; flex-direction: column; max-width: 350px; width: 100%; padding: 32px 33px; background-color: white; height: fit-content; border-radius: 8px;"
             }
           ]
         }

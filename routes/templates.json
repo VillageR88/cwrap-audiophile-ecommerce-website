@@ -314,7 +314,7 @@
   {
     "element": "body",
     "name": "bodyCategory",
-    "style": "font-family: Manrope; padding: 0; margin: 0; box-sizing: border-box; background-color: #FAFAFA; min-height: 100dvh; display: flex; flex-direction: column;",
+    "style": "font-family: Manrope; padding: 0; margin: 0; box-sizing: border-box; background-color: #FAFAFA; min-height: 100dvh; display: flex; flex-direction: column; overflow-x: clip;",
     "children": [
       {
         "element": "cwrap-template",
@@ -524,7 +524,7 @@
     "attributes": {
       "id": "mask"
     },
-    "style": "position: absolute; width:100%; height: 100%; background-color: rgba(0,0,0,0.4); z-index: 2; margin-top: 93px; padding: 0; display: none;",
+    "style": "position: absolute; width:100%; height: 100%; background-color: rgba(0,0,0,0.4); z-index: 2; padding: 0; display: none; overflow-y: auto;",
     "children": [
       {
         "element": "div",
