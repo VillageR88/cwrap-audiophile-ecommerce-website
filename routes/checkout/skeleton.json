@@ -48,11 +48,31 @@
       "name": "label1",
       "type": "class",
       "style": "font-weight: bold; font-size: 12px; letter-spacing: -0.21px;"
+    },
+    {
+      "name": "checkout-summary-container-list-item-count",
+      "type": "class",
+      "style": "font-weight: bold; font-size: 15px; line-height: 25px; color: rgba(0,0,0,0.5); align-self: start; margin-top: 7px;"
+    },
+    {
+      "name": "checkout-summary-container-div",
+      "type": "class",
+      "style": "display: flex; align-items: center; justify-content: space-between;"
+    },
+    {
+      "name": "checkout-summary-container-h3",
+      "type": "class",
+      "style": "font-size: 15px; font-weight: 500; color: rgba(0,0,0,0.5); line-height: 25px; margin: 0;"
+    },
+    {
+      "name": "checkout-summary-container-h3-p",
+      "type": "class",
+      "style": "font-size: 18px; font-weight: bold;"
     }
   ],
   "element": "cwrap-template",
   "omit": ["ulNavigation2", "divBottomHero"],
-  "text": "cwrapTemplate[bodyCategory(omit=cwrapOmit,routeTitle=cwrapOmit,scriptName=checkout.js)]",
+  "text": "cwrapTemplate[bodyCategory(omit=cwrapOmit,routeTitle=cwrapOmit,backgroundColor=#F1F1F1,scriptName=checkout.js)]",
   "passover": [
     {
       "element": "div",
@@ -278,7 +298,51 @@
             },
             {
               "element": "div",
-              "style": "display: flex; flex-direction: column; max-width: 350px; width: 100%; padding: 32px 33px; background-color: white; height: fit-content; border-radius: 8px;"
+              "style": "display: flex; flex-direction: column; max-width: 350px; width: 100%; padding: 32px 33px; background-color: white; height: fit-content; border-radius: 8px; box-sizing: border-box;",
+              "children": [
+                {
+                  "element": "h2",
+                  "attributes": {
+                    "class": "h2-cart"
+                  },
+                  "text": "SUMMARY"
+                },
+                {
+                  "element": "ul",
+                  "attributes": {
+                    "id": "checkout-summary-container"
+                  },
+                  "style": "width: 100%; margin: 31px 0 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 24px;"
+                },
+                {
+                  "element": "section",
+                  "style": "margin-top: 32px; display: flex; flex-direction: column; gap: 8px;",
+                  "children": [
+                    {
+                      "element": "div",
+                      "attributes": {
+                        "class": "checkout-summary-container-div"
+                      },
+                      "children": [
+                        {
+                          "element": "h3",
+                          "attributes": {
+                            "class": "checkout-summary-container-h3"
+                          },
+                          "text": "TOTAL"
+                        },
+                        {
+                          "element": "p",
+                          "attributes": {
+                            "id": "checkout-summary-total",
+                            "class": "checkout-summary-container-h3-p"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }

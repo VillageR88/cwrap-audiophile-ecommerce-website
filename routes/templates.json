@@ -340,7 +340,7 @@
       },
       {
         "element": "main",
-        "style": "width: 100%;",
+        "style": "width: 100%; background-color: cwrapProperty[backgroundColor=inherit];",
         "children": [
           {
             "element": "cwrap-passover"
@@ -570,11 +570,11 @@
                 ]
               },
               {
-                "element": "div",
+                "element": "ul",
                 "attributes": {
                   "id": "cart-product-container"
                 },
-                "style": "display: flex; flex-direction: column; gap: 24px;"
+                "style": "display: flex; flex-direction: column; gap: 24px; width: 100%; margin: 0; list-style: none; padding: 0;"
               },
               {
                 "element": "div",
@@ -585,8 +585,8 @@
                     "style": "display: flex; justify-content: space-between;",
                     "children": [
                       {
-                        "element": "h2",
-                        "style": "font-size: 15px; font-weight: 500; color: rgba(0,0,0,0.5); line-height: 25px;",
+                        "element": "h3",
+                        "style": "font-size: 15px; font-weight: 500; color: rgba(0,0,0,0.5); line-height: 25px; margin: 0;",
                         "text": "TOTAL"
                       },
                       {

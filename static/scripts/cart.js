@@ -21,7 +21,7 @@ function updateCartDisplay() {
       if (productShortNames[objItem] === item) {
         for (const dataItem of data) {
           if (dataItem.name === objItem) {
-            const cartProductContainerItem = document.createElement("div");
+            const cartProductContainerItem = document.createElement("li");
             const cartProductContainerItemProductDiv =
               document.createElement("div");
             const cartProductContainerItemProductDivPicture =
@@ -105,7 +105,7 @@ function updateCartDisplay() {
     }
   }
   cartAmount.textContent = Object.keys(getCartItems()).length.toString();
-  cartTotalCost.textContent = `$ ${totalCost.toLocaleString()}`;
+  cartTotalCost.textContent = totalCost.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0, maximumFractionDigits: 0 }).replace('$', '$ ');
 }
 
 updateCartDisplay();
