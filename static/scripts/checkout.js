@@ -7,6 +7,18 @@ const checkoutSummaryContainer = document.getElementById(
 );
 const cartItems = getCartItems();
 const checkoutSummaryTotal = document.getElementById("checkout-summary-total");
+const checkoutSummaryShipping = document.getElementById(
+  "checkout-summary-shipping"
+);
+const checkoutSummaryVat = document.getElementById("checkout-summary-vat");
+const checkoutSummaryGrand = document.getElementById("checkout-summary-grand");
+const checkoutForm = document.getElementById("checkout-form");
+const inputEMoney = document.getElementById("e-money");
+const cashOnDelivery = document.getElementById("cash-on-delivery");
+const eMoneyPaymentType = document.getElementById("e-money-payment-type");
+const cashOnDeliveryInformation = document.getElementById(
+  "cash-on-delivery-information"
+);
 
 function longNameFromShort(shortName) {
   for (const longName in productShortNames) {
@@ -17,7 +29,6 @@ let totalCost = 0;
 for (const itemName in cartItems) {
   const longName = longNameFromShort(itemName);
   const productData = data.find((product) => product.name === longName);
-  console.log(productData);
   const checkoutSummaryContainerListItem = document.createElement("li");
   const checkoutSummaryContainerListItemDiv = document.createElement("div");
   const checkoutSummaryContainerListItemDivPicture =
@@ -76,6 +87,32 @@ for (const itemName in cartItems) {
   checkoutSummaryContainer.appendChild(checkoutSummaryContainerListItem);
   totalCost += productData.price * cartItems[itemName];
 }
-console.log(totalCost);
 
 checkoutSummaryTotal.textContent = formattedCost(totalCost);
+checkoutSummaryShipping.textContent = formattedCost(totalCost > 0 ? 50 : 0);
+checkoutSummaryVat.textContent = formattedCost(totalCost * 0.2);
+checkoutSummaryGrand.textContent = formattedCost(
+  totalCost + (totalCost > 0 ? 50 : 0) + totalCost * 0.2
+);
+
+function resolvePaymentMethodSubOptions() {
+  if (inputEMoney.checked) {
+    eMoneyPaymentType.style.display = "flex";
+    cashOnDeliveryInformation.style.display = "none";
+  } else {
+    eMoneyPaymentType.style.display = "none";
+    cashOnDeliveryInformation.style.display = "flex";
+  }
+}
+
+inputEMoney.addEventListener("change", () => {
+  resolvePaymentMethodSubOptions();
+});
+
+cashOnDelivery.addEventListener("change", () => {
+  resolvePaymentMethodSubOptions();
+});
+
+checkoutForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+});

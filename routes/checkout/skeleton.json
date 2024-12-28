@@ -94,6 +94,9 @@
         },
         {
           "element": "form",
+          "attributes": {
+            "id": "checkout-form"
+          },
           "style": "display: flex; justify-content: space-between; margin-top: 38px; gap: 30px;",
           "children": [
             {
@@ -178,7 +181,7 @@
                             "attributes": {
                               "class": "input-checkout",
                               "id": "cwrapArray[street-address,postal-code,address-level2,address-level1]",
-                              "autocomplete": "cwrapArray[street-address,postal-code,address-level2,address-level1]",
+                              "autocomplete": "cwrapArray[street-address,postal-code,address-level2,country-name]",
                               "placeholder": "cwrapArray[1137 Williams Avenue,10001,New York,United States]"
                             }
                           }
@@ -265,6 +268,9 @@
                     },
                     {
                       "element": "ul",
+                      "attributes": {
+                        "id": "e-money-payment-type"
+                      },
                       "style": "margin: 24px 0 0 0; padding: 0; display: flex; gap: 24px 16px;",
                       "blueprint": {
                         "element": "li",
@@ -291,6 +297,26 @@
                           }
                         ]
                       }
+                    },
+                    {
+                      "element": "div",
+                      "attributes": {
+                        "id": "cash-on-delivery-information"
+                      },
+                      "style": "display: flex; align-items: center; gap: 32px; display: none; margin-top: 31px;",
+                      "children": [
+                        {
+                          "element": "img",
+                          "attributes": {
+                            "src": "../static/images/checkout/icon-cash-on-delivery.svg"
+                          }
+                        },
+                        {
+                          "element": "span",
+                          "style": "color: rgba(0,0,0,0.5); font-weight: 500; font-size: 15px; line-height: 25px;",
+                          "text": "The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives at your residence. Just make sure your address is correct so that your order will not be cancelled."
+                        }
+                      ]
                     }
                   ]
                 }
@@ -339,8 +365,90 @@
                           }
                         }
                       ]
+                    },
+                    {
+                      "element": "div",
+                      "attributes": {
+                        "class": "checkout-summary-container-div"
+                      },
+                      "children": [
+                        {
+                          "element": "h3",
+                          "attributes": {
+                            "class": "checkout-summary-container-h3"
+                          },
+                          "text": "SHIPPING"
+                        },
+                        {
+                          "element": "p",
+                          "attributes": {
+                            "id": "checkout-summary-shipping",
+                            "class": "checkout-summary-container-h3-p"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "element": "div",
+                      "attributes": {
+                        "class": "checkout-summary-container-div"
+                      },
+                      "children": [
+                        {
+                          "element": "h3",
+                          "attributes": {
+                            "class": "checkout-summary-container-h3"
+                          },
+                          "text": "VAT (INCLUDED)"
+                        },
+                        {
+                          "element": "p",
+                          "attributes": {
+                            "id": "checkout-summary-vat",
+                            "class": "checkout-summary-container-h3-p"
+                          }
+                        }
+                      ]
                     }
                   ]
+                },
+                {
+                  "element": "div",
+                  "attributes": {
+                    "class": "checkout-summary-container-div",
+                    "style": "margin-top: 24px;"
+                  },
+                  "children": [
+                    {
+                      "element": "h3",
+                      "attributes": {
+                        "class": "checkout-summary-container-h3"
+                      },
+                      "text": "GRAND TOTAL"
+                    },
+                    {
+                      "element": "p",
+                      "style": "color: #D87D4A;",
+                      "attributes": {
+                        "id": "checkout-summary-grand",
+                        "class": "checkout-summary-container-h3-p"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "element": "button",
+                  "attributes": {
+                    "class": "button1"
+                  },
+                  "extend": [
+                    {
+                      "extension": ":hover",
+                      "style": "background-color: #FBAF85;"
+                    }
+                  ],
+                  "style": "margin-top: 32px; max-width: 100%; background-color: #D87D4A; font-family: Manrope; transition: 150ms; cursor: pointer;",
+                  "text": "CONTINUE & PAY"
                 }
               ]
             }
