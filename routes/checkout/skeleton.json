@@ -141,7 +141,8 @@
                               "class": "input-checkout",
                               "id": "cwrapArray[name,email,phone]",
                               "autocomplete": "cwrapArray[name,email,phone]",
-                              "placeholder": "cwrapArray[Alexei Ward,alexei@mail.com,+1 202-555-0136]"
+                              "placeholder": "cwrapArray[Alexei Ward,alexei@mail.com,+1 202-555-0136]",
+                              "required": ""
                             }
                           }
                         ]
@@ -182,7 +183,8 @@
                               "class": "input-checkout",
                               "id": "cwrapArray[street-address,postal-code,address-level2,address-level1]",
                               "autocomplete": "cwrapArray[street-address,postal-code,address-level2,country-name]",
-                              "placeholder": "cwrapArray[1137 Williams Avenue,10001,New York,United States]"
+                              "placeholder": "cwrapArray[1137 Williams Avenue,10001,New York,United States]",
+                              "required": ""
                             }
                           }
                         ]
@@ -292,7 +294,8 @@
                               "class": "input-checkout",
                               "id": "cwrapArray[e-money-number,e-money-pin]",
                               "autocomplete": "off",
-                              "placeholder": "cwrapArray[238521993,6891]"
+                              "placeholder": "cwrapArray[238521993,6891]",
+                              "required": ""
                             }
                           }
                         ]

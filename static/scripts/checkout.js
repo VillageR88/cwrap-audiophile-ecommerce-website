@@ -19,6 +19,8 @@ const eMoneyPaymentType = document.getElementById("e-money-payment-type");
 const cashOnDeliveryInformation = document.getElementById(
   "cash-on-delivery-information"
 );
+const eMoneyNumber = document.getElementById("e-money-number");
+const eMoneyPin = document.getElementById("e-money-pin");
 
 function longNameFromShort(shortName) {
   for (const longName in productShortNames) {
@@ -99,9 +101,13 @@ function resolvePaymentMethodSubOptions() {
   if (inputEMoney.checked) {
     eMoneyPaymentType.style.display = "flex";
     cashOnDeliveryInformation.style.display = "none";
+    eMoneyNumber.setAttribute("required", "");
+    eMoneyPin.setAttribute("required", "");
   } else {
     eMoneyPaymentType.style.display = "none";
     cashOnDeliveryInformation.style.display = "flex";
+    eMoneyNumber.removeAttribute("required");
+    eMoneyPin.removeAttribute("required");
   }
 }
 
