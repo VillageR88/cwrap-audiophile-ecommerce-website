@@ -1,5 +1,5 @@
 import data from "./fetchedData.js";
-import { productShortNames } from "./const.js";
+import { productShortNames, formattedCost } from "./const.js";
 
 const getCartItems = () => JSON.parse(localStorage.getItem("cart")) || [];
 const checkoutSummaryContainer = document.getElementById(
@@ -78,4 +78,4 @@ for (const itemName in cartItems) {
 }
 console.log(totalCost);
 
-checkoutSummaryTotal.textContent = totalCost.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0, maximumFractionDigits: 0 }).replace('$', '$ ');
+checkoutSummaryTotal.textContent = formattedCost(totalCost);

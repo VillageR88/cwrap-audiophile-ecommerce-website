@@ -1,5 +1,5 @@
 import data from "./fetchedData.js";
-import { productShortNames } from "./const.js";
+import { productShortNames, formattedCost } from "./const.js";
 import { inputButton } from "./elements.js";
 
 const mask = document.getElementById("mask");
@@ -105,7 +105,7 @@ function updateCartDisplay() {
     }
   }
   cartAmount.textContent = Object.keys(getCartItems()).length.toString();
-  cartTotalCost.textContent = totalCost.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0, maximumFractionDigits: 0 }).replace('$', '$ ');
+  cartTotalCost.textContent = formattedCost(totalCost);
 }
 
 updateCartDisplay();
