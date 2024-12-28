@@ -524,7 +524,7 @@
     "attributes": {
       "id": "mask"
     },
-    "style": "position: absolute; width:100%; height: 100%; background-color: rgba(0,0,0,0.4); z-index: 2; padding: 0; display: none; overflow-y: auto;",
+    "style": "position: absolute; top: 93px; width: 100%; height: calc(100% - 93px); background-color: rgba(0,0,0,0.4); z-index: 2; padding: 0; display: none; overflow-y: auto;",
     "children": [
       {
         "element": "div",
@@ -532,7 +532,7 @@
         "children": [
           {
             "element": "div",
-            "style": "max-width: 377px; width: 100%; background-color: white; padding: 31px; box-sizing: border-box; border-radius: 8px; display: flex; flex-direction: column; gap: 32px;",
+            "style": "max-width: 377px; position: absolute; width: 100%; background-color: white; padding: 31px; box-sizing: border-box; border-radius: 8px; display: flex; flex-direction: column; gap: 32px;",
             "children": [
               {
                 "element": "div",
