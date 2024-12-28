@@ -92,7 +92,7 @@ checkoutSummaryTotal.textContent = formattedCost(totalCost);
 checkoutSummaryShipping.textContent = formattedCost(totalCost > 0 ? 50 : 0);
 checkoutSummaryVat.textContent = formattedCost(totalCost * 0.2);
 checkoutSummaryGrand.textContent = formattedCost(
-  totalCost + (totalCost > 0 ? 50 : 0) + totalCost * 0.2
+  totalCost + (totalCost > 0 ? 50 : 0)
 );
 
 function resolvePaymentMethodSubOptions() {
