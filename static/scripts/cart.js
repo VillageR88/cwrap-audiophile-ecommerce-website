@@ -14,7 +14,7 @@ cartAmount.textContent = Object.keys(getCartItems()).length.toString();
 cartTotalCost.textContent = `$ ${"0".toLocaleString()}`;
 
 function updateCartDisplay() {
-  cartProductContainer.innerHTML = ""; // Clear existing items
+  cartProductContainer.innerHTML = "";
   let totalCost = 0;
 
   for (const item in getCartItems()) {
