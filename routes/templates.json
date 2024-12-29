@@ -317,12 +317,42 @@
     "style": "font-family: Manrope; padding: 0; margin: 0; box-sizing: border-box; background-color: #FAFAFA; min-height: 100dvh; display: flex; flex-direction: column; overflow-x: clip;",
     "children": [
       {
-        "element":"div",
+        "element": "div",
         "omit-id": "fullMask",
-
-        "attributes":{
-          "class":"full-mask"
-        }
+        "style": "display: flex; overflow-y: auto; align-items: center; justify-content: center; background-color: rgba(0,0,0,0.4); position: fixed; width: 100%; min-height: 100%; z-index: 1;",
+        "attributes": {
+          "class": "full-mask"
+        },
+        "children": [
+          {
+            "element": "div",
+            "style": "display: flex; align-items: start; flex-direction: column; max-width: 540px; width: 100%; padding: 48px; box-sizing: border-box; background-color: white; border-radius: 8px;",
+            "children": [
+              {
+                "element": "img",
+                "attributes": {
+                  "src": "../static/images/checkout/icon-order-confirmation.svg"
+                }
+              },
+              {
+                "element": "section",
+                "style": "margin-top: 33px; display: flex; flex-direction: column; gap:24px;",
+                "children": [
+                  {
+                    "element": "h2",
+                    "style": "white-space: pre-wrap;  font-weight: bold; font-size: 32px; line-height: 36px; letter-spacing: 1.14px;",
+                    "text": "THANK YOU\nFOR YOUR ORDER"
+                  },
+                  {
+                    "element": "p",
+                    "style": "color: rgba(0,0,0,0.5);",
+                    "text": "You will receive an email confirmation shortly."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       },
       {
         "element": "cwrap-template",
@@ -532,7 +562,7 @@
     "attributes": {
       "id": "mask"
     },
-    "style": "position: absolute; top: 93px; width: 100%; height: calc(100% - 93px); background-color: rgba(0,0,0,0.4); z-index: 2; padding: 0; display: none; overflow-y: auto;",
+    "style": "position: absolute; top: 93px; width: 100%; min-height: calc(100% - 93px); background-color: rgba(0,0,0,0.4); z-index: 2; padding: 0; display: none; overflow-y: auto;",
     "children": [
       {
         "element": "div",
