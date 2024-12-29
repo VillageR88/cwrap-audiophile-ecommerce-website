@@ -1,7 +1,7 @@
 import data from "./fetchedData.js";
 import { productShortNames, formattedCost } from "./const.js";
 import { inputButton } from "./elements.js";
-import { fillSummary} from "./checkout.js";
+import { fillSummary } from "./checkout.js";
 
 const mask = document.getElementById("mask");
 const cart = document.getElementById("cart");
@@ -119,9 +119,11 @@ cart.addEventListener("click", () => {
 });
 
 function manageCartPresence() {
-  const mask = document.getElementById('mask');
-  const bodyElements = document.querySelectorAll('body *:not(#mask):not(#mask *)'); // Select all body elements, excluding #mask and its children
-  console.log(bodyElements)
+  const mask = document.getElementById("mask");
+  const bodyElements = document.querySelectorAll(
+    "body *:not(#mask):not(#mask *)"
+  ); // Select all body elements, excluding #mask and its children
+  console.log(bodyElements);
 
   if (cartIsOpen) {
     window.scrollTo({ top: 0, behavior: "instant" });
@@ -130,8 +132,7 @@ function manageCartPresence() {
 
     for (const element of bodyElements) {
       if (element !== mask) {
-
-        element.setAttribute('tabindex', '-1');
+        element.setAttribute("tabindex", "-1");
       }
     }
   } else {
@@ -139,11 +140,10 @@ function manageCartPresence() {
     mask.style.display = "none";
 
     for (const element of bodyElements) {
-      element.removeAttribute('tabindex');
+      element.removeAttribute("tabindex");
     }
   }
 }
-
 
 cartProductClear.addEventListener("click", () => {
   localStorage.removeItem("cart");

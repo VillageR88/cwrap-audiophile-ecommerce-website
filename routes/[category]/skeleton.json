@@ -88,6 +88,7 @@
     }
   ],
   "element": "cwrap-template",
+  "omit": "fullMask",
   "text": "cwrapTemplate[bodyCategory(omit=cwrapOmit,routeTitle=cwrapRoutes[HEADPHONES,SPEAKERS,EARPHONES])]",
   "passover": [
     {

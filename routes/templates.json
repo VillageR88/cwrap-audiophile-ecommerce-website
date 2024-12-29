@@ -317,6 +317,14 @@
     "style": "font-family: Manrope; padding: 0; margin: 0; box-sizing: border-box; background-color: #FAFAFA; min-height: 100dvh; display: flex; flex-direction: column; overflow-x: clip;",
     "children": [
       {
+        "element":"div",
+        "omit-id": "fullMask",
+
+        "attributes":{
+          "class":"full-mask"
+        }
+      },
+      {
         "element": "cwrap-template",
         "text": "cwrapTemplate[cartContainer]"
       },
