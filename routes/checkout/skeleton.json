@@ -139,7 +139,7 @@
                             "element": "input",
                             "attributes": {
                               "class": "input-checkout",
-                              "pattern": "cwrapArray[patternName,patternEmail,patternPhone]",
+                              "pattern": "cwrapArray[cwrapGlobal[patternName]cwrapBreakcwrapGlobal[patternEmail]cwrapBreakcwrapGlobal[patternPhone]]",
                               "id": "cwrapArray[name,email,phone]",
                               "autocomplete": "cwrapArray[name,email,phone]",
                               "placeholder": "cwrapArray[Alexei Ward,alexei@mail.com,+1 202-555-0136]",

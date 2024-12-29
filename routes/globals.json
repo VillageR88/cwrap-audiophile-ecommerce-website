@@ -137,9 +137,10 @@
       "style": "color: #D87D4A;"
     }
   ],
-  "const": {
-    "patternName": "^[a-zA-Z\\s]+$",
-    "patternEmail": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]$",
-    "patternPhone": "^[+]?[(]?[0-9][)]?[-\\s./0-9]*$"
-  }
+"const": {
+  "patternEmail": "^[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,}$",
+  "patternName": "^[a-zA-Z\\s]+$",
+  "patternPhone": "^\\+?[0-9]{7,}$"
+}
+
 }
