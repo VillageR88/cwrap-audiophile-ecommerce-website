@@ -319,7 +319,7 @@
       {
         "element": "div",
         "omit-id": "fullMask",
-        "style": "display: flex; overflow-y: auto; align-items: center; justify-content: center; background-color: rgba(0,0,0,0.4); position: fixed; width: 100%; min-height: 100%; z-index: 1;",
+        "style": "display: flex; overflow-y: auto; align-items: center; justify-content: center; background-color: rgba(0,0,0,0.4); position: fixed; width: 100%; height: 100%; z-index: 1;",
         "attributes": {
           "class": "full-mask"
         },
@@ -347,6 +347,43 @@
                     "element": "p",
                     "style": "color: rgba(0,0,0,0.5);",
                     "text": "You will receive an email confirmation shortly."
+                  }
+                ]
+              },
+              {
+                "element": "div",
+                "style": "display: flex; width: 100%; margin-top: 33px;",
+                "children": [
+                  {
+                    "element": "div",
+                    "attributes": {
+                      "id": "confirmation-products-container"
+                    },
+                    "style": "display: flex; flex-direction: column; max-width: 246px; width: 100%; background-color: #F1F1F1; padding: 24px; box-sizing: border-box; border-radius: 8px 0 0 8px;"
+                  },
+                  {
+                    "element": "div",
+                    "style": "display: flex; box-sizing: border-box; align-items: end; max-width: 198px; width: 100%; background-color: black; border-radius: 0 8px 8px 0;",
+                    "children": [
+                      {
+                        "element": "section",
+                        "style": "padding: 41px 24px; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px;",
+                        "children": [
+                          {
+                            "element": "h3",
+                            "style": "color: rgba(255,255,255,0.5); font-size: 15px; font-weight: 500; line-height: 25px; margin: 0;",
+                            "text": "GRAND TOTAL"
+                          },
+                          {
+                            "element": "p",
+                            "style": "color: white; font-weight: bold; font-size: 18px;",
+                            "attributes": {
+                              "id": "confirmation-total"
+                            }
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ]
               }
@@ -562,7 +599,7 @@
     "attributes": {
       "id": "mask"
     },
-    "style": "position: absolute; top: 93px; width: 100%; min-height: calc(100% - 93px); background-color: rgba(0,0,0,0.4); z-index: 2; padding: 0; display: none; overflow-y: auto;",
+    "style": "position: absolute; top: 93px; width: 100%; height: calc(100% - 93px); background-color: rgba(0,0,0,0.4); z-index: 2; padding: 0; display: none; overflow-y: auto;",
     "children": [
       {
         "element": "div",

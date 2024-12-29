@@ -123,7 +123,6 @@ function manageCartPresence() {
   const bodyElements = document.querySelectorAll(
     "body *:not(#mask):not(#mask *)"
   ); // Select all body elements, excluding #mask and its children
-  console.log(bodyElements);
 
   if (cartIsOpen) {
     window.scrollTo({ top: 0, behavior: "instant" });

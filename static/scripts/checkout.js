@@ -6,6 +6,7 @@ export function fillSummary() {
     "checkout-summary-container"
   );
   if (!checkoutSummaryContainer) return;
+  checkoutSummaryContainer.innerHTML = "";
 
   const getCartItems = () => JSON.parse(localStorage.getItem("cart")) || [];
   const cartItems = getCartItems();
@@ -28,6 +29,10 @@ export function fillSummary() {
   );
   const eMoneyNumber = document.getElementById("e-money-number");
   const eMoneyPin = document.getElementById("e-money-pin");
+  const confirmationProductsContainer = document.getElementById(
+    "confirmation-products-container"
+  );
+  const confirmationTotal = document.getElementById("confirmation-total");
 
   function longNameFromShort(shortName) {
     for (const longName in productShortNames) {
@@ -73,8 +78,6 @@ export function fillSummary() {
       "checkout-summary-container-list-item-count"
     );
 
-
-    checkoutSummaryContainer.innerHTML = "";
     checkoutSummaryContainerListItemDivPicture.src = `../static/images/cart/image-${productData.slug}.jpg`;
     checkoutSummaryContainerListItemDivSectionTitle.textContent = itemName;
     checkoutSummaryContainerListItemDivSectionDescription.textContent = `$ ${productData.price.toLocaleString()}`;
@@ -108,6 +111,28 @@ export function fillSummary() {
   checkoutSummaryGrand.textContent = formattedCost(
     totalCost + (totalCost > 0 ? 50 : 0)
   );
+  confirmationTotal.textContent = formattedCost(
+    totalCost + (totalCost > 0 ? 50 : 0)
+  );
+  const itemsInCart = Object.keys(cartItems).length - 1;
+  const clonedSummaryContainer = checkoutSummaryContainer.cloneNode(true);
+  const summaryButton = document.createElement("button");
+  summaryButton.addEventListener("click", () => {
+    if (clonedSummaryContainer.classList.contains("open")) {
+      clonedSummaryContainer.classList.remove("open");
+      summaryButton.textContent = `and ${itemsInCart} other item(s)`;
+    } else {
+      clonedSummaryContainer.classList.add("open");
+      summaryButton.textContent = "View less";
+    }
+  });
+  clonedSummaryContainer.id = "confirmation-summary-container";
+  summaryButton.textContent = `and ${itemsInCart} other item(s)`;
+
+  confirmationProductsContainer.innerHTML = "";
+  confirmationProductsContainer.appendChild(clonedSummaryContainer);
+  confirmationProductsContainer.appendChild(document.createElement("div"));
+  confirmationProductsContainer.appendChild(summaryButton);
 
   function resolvePaymentMethodSubOptions() {
     if (inputEMoney.checked) {
