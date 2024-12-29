@@ -137,10 +137,9 @@
       "style": "color: #D87D4A;"
     }
   ],
-"const": {
-  "patternEmail": "^[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,}$",
-  "patternName": "^[a-zA-Z\\s]+$",
-  "patternPhone": "^\\+?[0-9]{7,}$"
-}
-
+  "const": {
+    "patternEmail": "^[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,}$",
+    "patternName": "^[a-zA-Z\\s]+$",
+    "patternPhone": "^\\+?[0-9]{7,}$"
+  }
 }
