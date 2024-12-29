@@ -106,8 +106,6 @@ function resolvePaymentMethodSubOptions() {
   } else {
     eMoneyPaymentType.style.display = "none";
     cashOnDeliveryInformation.style.display = "flex";
-    eMoneyNumber.removeAttribute("required");
-    eMoneyPin.removeAttribute("required");
   }
 }
 
