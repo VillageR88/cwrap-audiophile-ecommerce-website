@@ -117,9 +117,9 @@
       "style": "font-family: Manrope; border: none; font-size: 13px; font-weight: bold; letter-spacing: 1px; color: rgba(0,0,0,0.25); cursor: pointer; transition: 150ms; margin-inline: 6px;"
     },
     {
-      "name":"hero-cart-div-count-buttons2:hover",
-      "type":"class",
-      "style":"color: #D87D4A;"
+      "name": "hero-cart-div-count-buttons2:hover",
+      "type": "class",
+      "style": "color: #D87D4A;"
     },
     {
       "name": "hero-cart-div-count-input",
@@ -145,6 +145,8 @@
   "const": {
     "patternEmail": "^[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,}$",
     "patternName": "^[a-zA-Z\\s]+$",
-    "patternPhone": "^\\+?[0-9]{7,}$"
+    "patternPhone": "^\\+?[0-9]{7,}$",
+    "patternEMoney": "^[a-zA-Z0-9]{6,20}$",
+    "patternEMoneyPin": "^[0-9]{4}$"
   }
 }

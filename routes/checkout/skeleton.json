@@ -295,6 +295,7 @@
                               "class": "input-checkout",
                               "id": "cwrapArray[e-money-number,e-money-pin]",
                               "autocomplete": "off",
+                              "pattern": "cwrapArray[cwrapGlobal[patternEMoney]cwrapBreakcwrapGlobal[patternEMoneyPin]]",
                               "placeholder": "cwrapArray[238521993,6891]",
                               "required": ""
                             }
