@@ -82,7 +82,7 @@
     },
     {
       "element": "main",
-      "style": "width: 100%;",
+      "style": "width: 100%; padding-inline: 24px; box-sizing: border-box;",
       "children": [
         {
           "element": "cwrap-template",
@@ -175,75 +175,8 @@
       ]
     },
     {
-      "element": "footer",
-      "style": "min-height: 365px; background-color: #101010; margin: auto 0 0 0; display: flex;",
-      "children": [
-        {
-          "element": "div",
-          "style": "max-width: 1110px; width: 100%; margin-inline: auto; display: flex; flex-direction: column;",
-          "children": [
-            {
-              "element": "div",
-              "style": "height: 4px; width: 101px; background-color: #D87D4A;"
-            },
-            {
-              "element": "div",
-              "style": "margin-top: 71px; width: 100%; min-height: 25px; display: flex; align-items: center; justify-content: space-between;",
-              "children": [
-                {
-                  "element": "img",
-                  "attributes": {
-                    "src": "static/images/shared/desktop/logo.svg",
-                    "alt": "audiophile logo"
-                  },
-                  "style": ""
-                },
-                {
-                  "element": "cwrap-template",
-                  "text": "cwrapTemplate[ulNavigation1(rightMargin=0)]"
-                }
-              ]
-            },
-            {
-              "element": "div",
-              "style": "margin-top: 36px; display: flex; justify-content: space-between; align-items: center;",
-              "children": [
-                {
-                  "element": "div",
-                  "style": "max-width: 540px; display: flex; flex-direction: column; justify-content: space-between; min-height: 181px;",
-                  "children": [
-                    {
-                      "element": "p",
-                      "style": "color: rgba(255,255,255,0.5);",
-                      "text": "Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week."
-                    },
-                    {
-                      "element": "p",
-                      "style": "color: rgba(255,255,255,0.5); font-weight: bold;",
-                      "text": "Copyright 2021. All Rights Reserved"
-                    }
-                  ]
-                },
-                {
-                  "element": "ul",
-                  "style": "display: flex; gap: 16px; list-style: none; margin: 0; padding: 0; align-items: center;",
-                  "children": [],
-                  "blueprint": {
-                    "element": "li",
-                    "count": 3,
-                    "children": [
-                      {
-                        "element": "cwrap-template",
-                        "text": "cwrapTemplate[cwrapArray[linkFacebook,linkTwitter,linkInstagram]];"
-                      }
-                    ]
-                  }
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      "element": "cwrap-template",
+      "text": "cwrapTemplate[footerUniversal]"
     },
     {
       "element": "script",
