@@ -249,7 +249,7 @@
     "children": [
       {
         "element": "div",
-        "style": "max-width: 1110px; width: 100%; margin-inline: auto; display: flex; align-items: center; justify-content: space-between; position: relative;",
+        "style": "max-width: 1110px; width: 100%; margin-inline: auto; display: flex; align-items: center; justify-content: space-between; gap:24px; position: relative;",
         "children": [
           {
             "element": "img",
@@ -307,7 +307,7 @@
       },
       {
         "element": "div",
-        "style": "width: 100%; border-bottom: 1px solid rgba(255,255,255,0.25); margin-inline: auto;"
+        "style": "width: calc(100% + 48px); border-bottom: 1px solid rgba(255,255,255,0.25); margin-left: -24px;"
       }
     ]
   },
@@ -412,7 +412,7 @@
       },
       {
         "element": "header",
-        "style": "min-height: fit-content; width: 100%; background-color: #191919; position: relative; z-index: 0; display:flex; flex-direction: column; align-items: center;",
+        "style": "min-height: fit-content; width: 100%; background-color: #191919; position: relative; z-index: 0; display:flex; flex-direction: column; align-items: center; padding-inline: 24px; box-sizing: border-box;",
         "children": [
           {
             "element": "cwrap-template",
