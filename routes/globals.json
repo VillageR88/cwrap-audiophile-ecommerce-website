@@ -48,8 +48,19 @@
       ]
     },
     {
+      "name": "nav1Footer",
+      "type": "class",
+      "mediaQueries": [
+        {
+          "query": "max-width: 640px",
+          "style": "flex-direction: column; align-items: center;"
+        }
+      ]
+    },
+    {
       "name": "h1",
-      "type": "element", "mediaQueries": [
+      "type": "element",
+      "mediaQueries": [
         {
           "query": "max-width: 768px",
           "style": "font-size: 36px; line-height: 40px; letter-spacing: 1.29px;"
