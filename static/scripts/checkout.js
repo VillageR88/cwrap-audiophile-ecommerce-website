@@ -143,6 +143,8 @@ export function fillSummary() {
     } else {
       eMoneyPaymentType.style.display = "none";
       cashOnDeliveryInformation.style.display = "flex";
+      eMoneyNumber.removeAttribute("required");
+      eMoneyPin.removeAttribute("required");
     }
   }
 
@@ -156,6 +158,15 @@ export function fillSummary() {
 
   checkoutForm.addEventListener("submit", (event) => {
     event.preventDefault();
+    const fullMask = document.getElementById("full-mask");
+    const bodyElements = document.querySelectorAll(
+      "body *:not(#full-mask):not(#full-mask *)"
+    );
+    fullMask.style.display = "flex";
+
+    for (const element of bodyElements) {
+      element.setAttribute("tabindex", "-1");
+    }
   });
 }
 

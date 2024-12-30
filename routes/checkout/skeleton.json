@@ -257,7 +257,7 @@
                           },
                           {
                             "element": "label",
-                            "style": "max-width: 276px; width: 100%; position: relative; align-items: center; display: flex; transition: 150ms;",
+                            "style": "max-width: 276px; width: 100%; position: relative; align-items: center; display: flex; transition: 150ms; cursor: pointer;",
                             "extend": [
                               {
                                 "extension": ":has(input:nth-of-type(1):checked) > div:nth-of-type(1) > div:nth-of-type(1)",
