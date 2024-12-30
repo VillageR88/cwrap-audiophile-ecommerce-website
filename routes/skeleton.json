@@ -100,25 +100,55 @@
         },
         {
           "element": "div",
+          "mediaQueries": [
+            {
+              "query": "max-width: 1024px",
+              "style": "gap: 64px; padding-block: 52px 64px; background-position: center 130%; flex-direction: column; align-items: center;"
+            }
+          ],
           "style": "gap:48px; min-height: 560px; background-color: #D87D4A; max-width: 1110px; margin-inline: auto; margin-block: 168px 0; border-radius: 8px; background-image: url(\"static/images/home/desktop/pattern-circles.svg\"); background-repeat: no-repeat; background-position: -140px -36px; display: flex; overflow: hidden; justify-content: space-between;",
           "children": [
             {
               "element": "img",
+              "mediaQueries": [
+                {
+                  "query": "max-width: 1024px",
+                  "style": "margin: 0; max-width: 200px;"
+                }
+              ],
+              "style": "max-height: 460px; margin: auto 0 -12px 145px;",
               "attributes": {
                 "src": "static/images/home/desktop/image-speaker-zx9.png"
-              },
-              "style": "max-height: 460px; margin: auto 0 -12px 145px;"
+              }
             },
             {
               "element": "div",
+              "mediaQueries": [
+                {
+                  "query": "max-width: 1024px",
+                  "style": "align-items: center; text-align: center; margin: 0;"
+                }
+              ],
               "style": "display: flex; flex-direction: column; gap: 40px; height: fit-content; width: fit-content; margin: auto 95px auto 0;",
               "children": [
                 {
                   "element": "section",
+                  "mediaQueries": [
+                    {
+                      "query": "max-width: 1024px",
+                      "style": "align-items: center;"
+                    }
+                  ],
                   "style": "gap: 24px; display: flex; flex-direction: column;",
                   "children": [
                     {
                       "element": "h2",
+                      "mediaQueries": [
+                        {
+                          "query": "max-width: 768px",
+                          "style": "font-size: 36px; line-height: 40px; letter-spacing: 1.29px;"
+                        }
+                      ],
                       "style": "color: white; font-weight: bold; font-size: 56px; line-height: 58px; letter-spacing: 2px; max-width: 261px; margin: 0;",
                       "text": "ZX9\nSPEAKER"
                     },
@@ -150,7 +180,7 @@
         },
         {
           "element": "div",
-          "style": "min-height: 320px; max-width: 1110px; width: 100%; background-color: #F1F1F1; margin: 48px auto 0 auto; background-image: url(\"static/images/home/desktop/image-speaker-zx7.jpg\"); border-radius: 8px; display: flex;",
+          "style": "min-height: 320px; max-width: 1110px; width: 100%; background-color: #F1F1F1; margin: 48px auto 0 auto; background-image: url(\"static/images/home/desktop/image-speaker-zx7.jpg\"); background-position: center; border-radius: 8px; display: flex;",
           "children": [
             {
               "element": "cwrap-template",
@@ -164,7 +194,7 @@
           "children": [
             {
               "element": "div",
-              "style": "background-color: #F1F1F1; max-width: 540px; min-height: 320px; width: 100%; border-radius: 8px; background-image: url(\"static/images/home/desktop/image-earphones-yx1.jpg\");"
+              "style": "background-color: #F1F1F1; max-width: 540px; min-height: 320px; width: 100%; border-radius: 8px; background-image: url(\"static/images/home/desktop/image-earphones-yx1.jpg\"); background-position: center;"
             },
             {
               "element": "div",
