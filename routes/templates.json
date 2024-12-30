@@ -386,6 +386,21 @@
                     ]
                   }
                 ]
+              },
+              {
+                "element": "a",
+                "style": "max-width: 100%; margin-top: 46px; background-color: #D87D4A; transition: 150ms;",
+                "extend": [
+                  {
+                    "extension": ":hover",
+                    "style": "background-color: #FBAF85;"
+                  }
+                ],
+                "text": "BACK TO HOME",
+                "attributes": {
+                  "class": "button1",
+                  "href": "../"
+                }
               }
             ]
           }
