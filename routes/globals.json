@@ -33,6 +33,21 @@
   },
   "classroom": [
     {
+      "name": "nav1All",
+      "type": "class",
+      "style": "display: flex;"
+    },
+    {
+      "name": "nav1Head",
+      "type": "class",
+      "mediaQueries": [
+        {
+          "query": "max-width: 840px",
+          "style": "display: none;"
+        }
+      ]
+    },
+    {
       "name": "h1",
       "type": "element",
       "style": "color: white; font-weight: bold; font-size: 56px; line-height: 58px; letter-spacing: 2px; margin: 0;"

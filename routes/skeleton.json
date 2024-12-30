@@ -18,9 +18,7 @@
       }
     ]
   },
-  "classroom": [
-
-  ],
+  "classroom": [],
   "element": "body",
   "style": "font-family: Manrope; padding: 0; margin: 0; box-sizing: border-box; background-color: #FAFAFA; min-height: 100dvh; display: flex; flex-direction: column; overflow-x: clip;",
   "children": [
@@ -38,6 +36,12 @@
         },
         {
           "element": "div",
+          "mediaQueries": [
+            {
+              "query": "max-width: 1024px",
+              "style": "align-items: center; text-align: center;"
+            }
+          ],
           "style": "max-width: 1110px; margin: 128px auto 0 auto; display: flex; flex-direction: column;",
           "children": [
             {
@@ -47,6 +51,12 @@
             },
             {
               "element": "section",
+              "mediaQueries": [
+                {
+                  "query": "max-width: 1024px",
+                  "style": "align-items: center;"
+                }
+              ],
               "style": "max-width: 400px; display: flex; flex-direction: column; gap: 24px; margin-top: 24px;",
               "children": [
                 {
@@ -90,7 +100,7 @@
         },
         {
           "element": "div",
-          "style": "min-height: 560px; background-color: #D87D4A; max-width: 1110px; margin-inline: auto; margin-block: 168px 0; border-radius: 8px; background-image: url(\"static/images/home/desktop/pattern-circles.svg\"); background-repeat: no-repeat; background-position: -140px -36px; display: flex; overflow: hidden; justify-content: space-between;",
+          "style": "gap:48px; min-height: 560px; background-color: #D87D4A; max-width: 1110px; margin-inline: auto; margin-block: 168px 0; border-radius: 8px; background-image: url(\"static/images/home/desktop/pattern-circles.svg\"); background-repeat: no-repeat; background-position: -140px -36px; display: flex; overflow: hidden; justify-content: space-between;",
           "children": [
             {
               "element": "img",
@@ -144,7 +154,7 @@
           "children": [
             {
               "element": "cwrap-template",
-              "text": "cwrapTemplate[sectionHome1(title=ZX7 SPEAKER,link=speakers/zx7-speaker)]"
+              "text": "cwrapTemplate[sectionHome1(title=ZX7 SPEAKER,link=speakers/zx7-speaker,sMarginLeft=95px)]"
             }
           ]
         },
@@ -162,7 +172,7 @@
               "children": [
                 {
                   "element": "cwrap-template",
-                  "text": "cwrapTemplate[sectionHome1(title=YX1 EARPHONES,link=earphones/yx1-earphones)]"
+                  "text": "cwrapTemplate[sectionHome1(title=YX1 EARPHONES,link=earphones/yx1-earphones,sMarginLeft=62px)]"
                 }
               ]
             }

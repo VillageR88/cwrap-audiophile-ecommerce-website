@@ -2,7 +2,7 @@
   {
     "element": "section",
     "name": "sectionHome1",
-    "style": "display: flex; flex-direction: column; gap: 32px; width: fit-content; margin: auto 62px auto 62px;",
+    "style": "display: flex; flex-direction: column; gap: 32px; width: fit-content; margin: auto 62px auto cwrapProperty[sMarginLeft=cwrapPlaceholder] ;",
     "children": [
       {
         "element": "h2",
@@ -28,8 +28,11 @@
   },
   {
     "element": "ul",
+    "attributes": {
+      "class": "nav1All cwrapProperty[nav1Class=nav1Head]"
+    },
     "name": "ulNavigation1",
-    "style": "display: flex; margin: 0; padding: 0; list-style: none; gap: 34px; margin-right: cwrapProperty[rightMargin=0];",
+    "style": "margin: 0; padding: 0; list-style: none; gap: 34px; margin-right: cwrapProperty[rightMargin=0];",
     "children": [],
     "blueprint": {
       "element": "li",
@@ -208,7 +211,7 @@
   {
     "element": "div",
     "name": "divBottomHero",
-    "style": "max-width: 1110px; width: 100%; min-height: 588px; margin-inline: auto; margin-top: 200px; margin-bottom: 200px; display: flex; align-items: center; justify-content: space-between;",
+    "style": "gap: 48px; max-width: 1110px; width: 100%; min-height: 588px; margin-inline: auto; margin-top: 200px; margin-bottom: 200px; display: flex; align-items: center; justify-content: space-between;",
     "children": [
       {
         "element": "section",
@@ -238,7 +241,7 @@
         "attributes": {
           "src": "../static/images/shared/desktop/image-best-gear.jpg"
         },
-        "style": "border-radius: 8px;"
+        "style": "border-radius: 8px; width: 50%;"
       }
     ]
   },
@@ -252,15 +255,60 @@
         "style": "max-width: 1110px; width: 100%; margin-inline: auto; display: flex; align-items: center; justify-content: space-between; gap:24px; position: relative;",
         "children": [
           {
-            "element": "img",
-            "text": "cwrapProperty[omit=cwrapPlaceholder]",
+            "element": "button",
             "attributes": {
-              "src": "../static/images/home/desktop/image-hero.jpg"
+              "aria-label": "navbar"
             },
-            "style": "position: absolute; top: -32px; right: -160px; z-index: -1;"
+            "mediaQueries": [
+              {
+                "query": "max-width: 840px",
+                "style": "display: flex;"
+              }
+            ],
+            "style": "display: none; cursor: pointer; border: none; box-sizing: border-box; padding: 0; margin: 0; background-color: transparent; background-image: url('../static/images/shared/tablet/icon-hamburger.svg'); width: 16px; height: 15px;"
+          },
+          {
+            "element": "picture",
+            "style": "position: absolute; top: -32px; right: -160px; z-index: -1;",
+            "mediaQueries": [
+              {
+                "query": "max-width: 1024px",
+                "style": "top: -20px; left: -920px; transform: translateX(50%);"
+              }
+            ],
+            "children": [
+              {
+                "element": "source",
+                "attributes": {
+                  "srcset": "../static/images/home/tablet/image-header.jpg",
+                  "media": "(max-width: 1024px)"
+                }
+              },
+              {
+                "element": "img",
+                "text": "cwrapProperty[omit=cwrapPlaceholder]",
+
+                "mediaQueries": [
+                  {
+                    "query": "max-width: 1024px",
+                    "style": "width: 750px;"
+                  }
+                ],
+                "attributes": {
+                  "src": "../static/images/home/desktop/image-hero.jpg",
+                  "alt": "Hero Image"
+                }
+              }
+            ]
           },
           {
             "element": "img",
+            "mediaQueries": [
+              {
+                "query": "max-width: 840px",
+                "style": "margin-right: auto;"
+              }
+            ],
             "attributes": {
               "src": "../static/images/shared/desktop/logo.svg",
               "alt": "audiophile logo"
@@ -648,7 +696,7 @@
   {
     "element": "footer",
     "name": "footerUniversal",
-    "style": "min-height: 365px; background-color: #101010; margin: auto 0 0 0; display: flex;",
+    "style": "padding-bottom: 46px ;background-color: #101010; margin: auto 0 0 0; display: flex;",
     "children": [
       {
         "element": "div",
@@ -660,7 +708,13 @@
           },
           {
             "element": "div",
-            "style": "margin-top: 71px; width: 100%; min-height: 25px; display: flex; align-items: center; justify-content: space-between;",
+            "mediaQueries": [
+              {
+                "query": "max-width: 1024px",
+                "style": "flex-direction: column; align-items: start;"
+              }
+            ],
+            "style": "gap:32px; margin-top: 71px; width: 100%; min-height: 25px; display: flex; align-items: center; justify-content: space-between;",
             "children": [
               {
                 "element": "img",
@@ -671,16 +725,22 @@
               },
               {
                 "element": "cwrap-template",
-                "text": "cwrapTemplate[ulNavigation1(rightMargin=0)]"
+                "text": "cwrapTemplate[ulNavigation1(rightMargin=0,nav1Class=nav1Footer)]"
               }
             ]
           },
           {
             "element": "div",
-            "style": "margin-top: 36px; display: flex; justify-content: space-between; align-items: center;",
+            "style": "position: relative; margin-top: 36px; display: flex; justify-content: space-between; align-items: center;",
             "children": [
               {
                 "element": "div",
+                "mediaQueries": [
+                  {
+                    "query": "max-width: 1024px",
+                    "style": "max-width: 100%;"
+                  }
+                ],
                 "style": "max-width: 540px; display: flex; flex-direction: column; justify-content: space-between; min-height: 181px;",
                 "children": [
                   {
@@ -697,6 +757,12 @@
               },
               {
                 "element": "ul",
+                "mediaQueries": [
+                  {
+                    "query": "max-width: 1024px",
+                    "style": "position: absolute; bottom: 0; right: 0;"
+                  }
+                ],
                 "style": "display: flex; gap: 16px; list-style: none; margin: 0; padding: 0; align-items: center;",
                 "children": [],
                 "blueprint": {
