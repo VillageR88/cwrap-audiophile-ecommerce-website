@@ -159,7 +159,7 @@
     {
       "name": "gallery-container > img",
       "type": "class",
-      "style": "border-radius: 8px; width: 100%;"
+      "style": "border-radius: 8px;"
     },
     {
       "name": "gallery-container > img:nth-of-type(1)",
