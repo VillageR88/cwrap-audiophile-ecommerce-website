@@ -77,7 +77,7 @@
     {
       "name": "confirmation-summary-container.open",
       "type": "id",
-      "style":"max-height: 100%;"
+      "style": "max-height: 100%;"
     },
     {
       "name": "confirmation-summary-container > li > div > img",
@@ -103,6 +103,11 @@
       "name": "confirmation-products-container > button:hover",
       "type": "id",
       "style": "color: #D87D4A;"
+    },
+    {
+      "name": "input",
+      "type": "element",
+      "style": "width: 100%;"
     }
   ],
   "element": "cwrap-template",
@@ -132,10 +137,22 @@
           "attributes": {
             "id": "checkout-form"
           },
+          "mediaQueries": [
+            {
+              "query": "max-width: 1024px",
+              "style": "flex-direction: column;"
+            }
+          ],
           "style": "display: flex; justify-content: space-between; margin-top: 38px; gap: 30px;",
           "children": [
             {
               "element": "div",
+              "mediaQueries": [
+                {
+                  "query": "max-width: 1024px",
+                  "style": "max-width: 100%;"
+                }
+              ],
               "style": "max-width: 730px; width: 100%; padding: 54px 48px 48px 48px; box-sizing: border-box; background-color: white; border-radius: 8px;",
               "children": [
                 {
@@ -156,6 +173,12 @@
                     },
                     {
                       "element": "ul",
+                      "mediaQueries": [
+                        {
+                          "query": "max-width: 768px",
+                          "style": "display: flex; flex-direction: column;"
+                        }
+                      ],
                       "style": "margin: 16px 0 0 0; padding: 0; display: grid; grid-template-areas: 'li1 li2' 'li3 _'; gap: 24px 16px;",
                       "blueprint": {
                         "element": "li",
@@ -199,6 +222,12 @@
                     },
                     {
                       "element": "ul",
+                      "mediaQueries": [
+                        {
+                          "query": "max-width: 768px",
+                          "style": "display: flex; flex-direction: column;"
+                        }
+                      ],
                       "style": "margin: 16px 0 0 0; padding: 0; display: grid; grid-template-areas: 'li1 li1' 'li2 li3' 'li4 _'; gap: 24px 16px;",
                       "blueprint": {
                         "element": "li",
@@ -241,23 +270,41 @@
                     },
                     {
                       "element": "ul",
+                      "mediaQueries": [
+                        {
+                          "query": "max-width: 768px",
+                          "style": "display: flex; flex-direction: column;"
+                        }
+                      ],
                       "style": "margin: 16px 0 0 0; padding: 0; display: grid; gap: 16px;",
                       "blueprint": {
                         "element": "li",
+                        "mediaQueries": [
+                          {
+                            "query": "max-width: 768px",
+                            "style": "display: flex; flex-direction: column;"
+                          }
+                        ],
                         "style": "display: flex; flex-direction: row; gap: 9px; justify-content: space-between;",
                         "count": 2,
                         "children": [
                           {
                             "element": "h3",
-                            "text": "cwrapArray[Payment Method,]",
+                            "text": "cwrapArray[Payment Method, cwrapOmit]",
                             "attributes": {
-                              "for": "cwrapArray[Payment Method,]",
+                              "for": "cwrapArray[Payment Method, cwrapOmit]",
                               "class": "label1"
                             }
                           },
                           {
                             "element": "label",
-                            "style": "max-width: 276px; width: 100%; position: relative; align-items: center; display: flex; transition: 150ms; cursor: pointer;",
+                            "mediaQueries": [
+                              {
+                                "query": "max-width: 768px",
+                                "style": "max-width: 100%;"
+                              }
+                            ],
+                            "style": "max-width: 48%; width: 100%; position: relative; align-items: center; display: flex; transition: 150ms; cursor: pointer; margin-left: auto;",
                             "extend": [
                               {
                                 "extension": ":has(input:nth-of-type(1):checked) > div:nth-of-type(1) > div:nth-of-type(1)",
@@ -309,6 +356,12 @@
                       "attributes": {
                         "id": "e-money-payment-type"
                       },
+                      "mediaQueries": [
+                        {
+                          "query": "max-width: 768px",
+                          "style": "flex-direction: column;"
+                        }
+                      ],
                       "style": "margin: 24px 0 0 0; padding: 0; display: flex; gap: 24px 16px;",
                       "blueprint": {
                         "element": "li",
@@ -364,6 +417,12 @@
             },
             {
               "element": "div",
+              "mediaQueries": [
+                {
+                  "query": "max-width: 1024px",
+                  "style": "max-width: 100%;"
+                }
+              ],
               "style": "display: flex; flex-direction: column; max-width: 350px; width: 100%; padding: 32px 33px; background-color: white; height: fit-content; border-radius: 8px; box-sizing: border-box;",
               "children": [
                 {
