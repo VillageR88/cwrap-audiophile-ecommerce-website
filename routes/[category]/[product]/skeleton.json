@@ -54,17 +54,17 @@
     {
       "name": "hero-container",
       "type": "class",
-      "style": "gap:24px; display:flex; justify-content: space-between;"
+      "style": "gap: 24px; display: flex; justify-content: space-between; align-items: center;"
     },
     {
       "name": "hero-image",
       "type": "class",
-      "style": "max-width: 540px; "
+      "style": "max-width: 540px; width: 50%; height: auto;"
     },
     {
       "name": "hero-div",
       "type": "class",
-      "style": "display:flex; flex-direction:column; max-width:445px; width:100%; margin-block: 77px;"
+      "style": "display: flex; flex-direction: column; max-width: 445px; width: 100%;"
     },
     {
       "name": "hero-new",
@@ -94,7 +94,7 @@
     {
       "name": "hero-cart-div",
       "type": "class",
-      "style": "display: flex; align-items: center; margin-top: 47px; gap: 16px;"
+      "style": "display: flex; margin-top: 47px; gap: 16px;"
     },
     {
       "name": "hero-cart-div-cart-button",
