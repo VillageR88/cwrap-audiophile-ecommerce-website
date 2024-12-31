@@ -8,6 +8,7 @@ const notNthEnumerableElements = ["body", "nav", "header", "main", "footer"];
 
 const templatesApiUrl = path.join(__dirname, "routes", "templates.json");
 const templatesMap = new Map();
+const globalsJsonPath = path.join(__dirname, "routes", "globals.json");
 
 function loadTemplates() {
   if (fs.existsSync(templatesApiUrl)) {
@@ -28,15 +29,15 @@ function generateHtmlFromJson(jsonObj, properties = new Map()) {
     return "";
   }
   let html = "";
-  if (Object.prototype.hasOwnProperty.call(jsonObj, "element")) {
+  if (jsonObj.element) {
     const element = jsonObj.element;
     html += `<${element}`;
 
-    if (Object.prototype.hasOwnProperty.call(jsonObj, "class")) {
+    if (jsonObj.class) {
       html += ` class="${jsonObj.class}"`;
     }
 
-    if (Object.prototype.hasOwnProperty.call(jsonObj, "attributes")) {
+    if (jsonObj.attributes) {
       for (const [key, value] of Object.entries(jsonObj.attributes)) {
         if (value !== "cwrapOmit") html += ` ${key}="${value}"`;
       }
@@ -49,13 +50,13 @@ function generateHtmlFromJson(jsonObj, properties = new Map()) {
       html += ">";
 
       // Check for cwrapOmit and return early if found
-      if (Object.prototype.hasOwnProperty.call(jsonObj, "text")) {
+      if (jsonObj.text) {
         const originalText = jsonObj.text;
 
         if (
-          originalText?.includes("cwrapSpan") ||
-          originalText?.includes("cwrapTemplate") ||
-          originalText?.includes("cwrapProperty")
+          originalText.includes("cwrapSpan") ||
+          originalText.includes("cwrapTemplate") ||
+          originalText.includes("cwrapProperty")
         ) {
           const parts = originalText.split(
             /(cwrapSpan|cwrapTemplate\[[^\]]+\]|cwrapProperty\[[^\]]+\])/
@@ -113,7 +114,7 @@ function generateHtmlFromJson(jsonObj, properties = new Map()) {
         }
       }
 
-      if (Object.prototype.hasOwnProperty.call(jsonObj, "blueprint")) {
+      if (jsonObj.blueprint) {
         const blueprint = jsonObj.blueprint;
         const count = blueprint.count;
         for (let i = 0; i < count; i++) {
@@ -123,7 +124,7 @@ function generateHtmlFromJson(jsonObj, properties = new Map()) {
         }
       }
 
-      if (Object.prototype.hasOwnProperty.call(jsonObj, "children")) {
+      if (jsonObj.children) {
         let spanIndex = 0;
         const spanElements =
           html.match(/<span data-cwrap-placeholder="true"><\/span>/g) || [];
@@ -228,7 +229,7 @@ function copyFaviconToRoot(buildDir) {
   }
 }
 
-function generateHeadHtml(head, buildDir) {
+function generateHeadHtml(head, buildDir, depth) {
   let headHtml = "<head>\n";
   const prefix = process.env.PAGE_URL;
   if (prefix) {
@@ -269,11 +270,16 @@ function generateHeadHtml(head, buildDir) {
   // Add additional tags like link
   headHtml += '    <link rel="stylesheet" href="styles.css">\n';
 
+  // Add globals.css with correct relative path
+  const globalsCssPath = `${"../".repeat(depth)}globals.css`;
+  headHtml += `    <link rel="stylesheet" href="${globalsCssPath}">\n`;
+
   headHtml += "</head>";
   return headHtml;
 }
 
 function processRouteDirectory(routeDir, buildDir) {
+  console.log("routeDir", routeDir);
   const jsonFile = path.join(routeDir, "skeleton.json");
   if (!fs.existsSync(jsonFile)) {
     console.error(`Error: Could not open ${jsonFile} file!`);
@@ -288,7 +294,15 @@ function processRouteDirectory(routeDir, buildDir) {
   // Generate head content
   let headContent = "";
   if (Object.prototype.hasOwnProperty.call(jsonObj, "head")) {
-    headContent = generateHeadHtml(jsonObj.head, buildDir);
+    let globalsHead = {};
+    if (fs.existsSync(globalsJsonPath)) {
+      const globalsJson = JSON.parse(fs.readFileSync(globalsJsonPath, "utf8"));
+      if (globalsJson.head) {
+        globalsHead = globalsJson.head;
+      }
+    }
+    const mergedHead = { ...globalsHead, ...jsonObj.head };
+    headContent = generateHeadHtml(mergedHead, buildDir);
   }
 
   // Generate HTML content from JSON and append the script tag
@@ -387,6 +401,76 @@ ${bodyContent}
   cssMap.clear();
   mediaQueriesMap.clear();
   console.log(`Generated ${cssFile} successfully!`);
+
+  // Generate globals.css from globals.json if it exists
+  if (fs.existsSync(globalsJsonPath)) {
+    const globalsJson = JSON.parse(fs.readFileSync(globalsJsonPath, "utf8"));
+    let globalsCssContent = "";
+
+    // Add font-face declarations from globals JSON
+    if (Object.prototype.hasOwnProperty.call(globalsJson, "fonts")) {
+      for (const font of globalsJson.fonts) {
+        globalsCssContent += `
+@font-face {
+    font-family: "${font["font-family"]}";
+    src: "${font.src}";
+    font-display: ${font["font-display"]};
+}
+`;
+      }
+    }
+
+    // Add root styles from globals JSON
+    if (Object.prototype.hasOwnProperty.call(globalsJson, "root")) {
+      let rootVariables = ":root {\n";
+      for (const [key, value] of Object.entries(globalsJson.root)) {
+        rootVariables += `${key}: ${value};\n`;
+      }
+      rootVariables += "}\n";
+      globalsCssContent += rootVariables;
+    }
+
+    // Add classroom styles from globals JSON
+    if (Object.prototype.hasOwnProperty.call(globalsJson, "classroom")) {
+      for (const classItem of globalsJson.classroom) {
+        let hashtag = "";
+        if (classItem.type === "class") {
+          hashtag = ".";
+        }
+        globalsCssContent += `${hashtag}${classItem.name} {${classItem.style}}\n`;
+
+        // Add media queries for classroom styles
+        if (Object.prototype.hasOwnProperty.call(classItem, "mediaQueries")) {
+          for (const mediaQuery of classItem.mediaQueries) {
+            if (!mediaQueriesMap.has(mediaQuery.query)) {
+              mediaQueriesMap.set(mediaQuery.query, new Map());
+            }
+            const queryMap = mediaQueriesMap.get(mediaQuery.query);
+            queryMap.set(`${hashtag}${classItem.name}`, mediaQuery.style);
+          }
+        }
+      }
+    }
+
+    // Add media queries to globals CSS content
+    const reversedMediaQueriesMap = new Map(
+      [...mediaQueriesMap.entries()].reverse()
+    );
+
+    for (const [query, elementsMap] of reversedMediaQueriesMap) {
+      globalsCssContent += `@media (${query}) {\n`;
+      elementsMap.forEach((style, selector) => {
+        if (style.trim()) {
+          globalsCssContent += `  ${selector} {${style}}\n`;
+        }
+      });
+      globalsCssContent += "}\n";
+    }
+
+    const globalsCssFile = path.join(buildDir, "globals.css");
+    fs.writeFileSync(globalsCssFile, globalsCssContent, "utf8");
+    console.log(`Generated ${globalsCssFile} successfully!`);
+  }
 }
 
 function processAllRoutes(sourceDir, buildDir) {

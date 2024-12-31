@@ -45,7 +45,8 @@
           "query": "max-width: 840px",
           "style": "display: none;"
         }
-      ]
+      ],
+      "style": ""
     },
     {
       "name": "nav1Footer",
@@ -55,7 +56,8 @@
           "query": "max-width: 640px",
           "style": "flex-direction: column; align-items: center;"
         }
-      ]
+      ],
+      "style": ""
     },
     {
       "name": "h1",
@@ -125,7 +127,8 @@
     },
     {
       "name": "cart-product-container-item-amount-div",
-      "type": "class"
+      "type": "class",
+      "style": ""
     },
     {
       "name": "hero-cart-div-count-div",
