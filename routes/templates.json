@@ -438,7 +438,7 @@
   {
     "element": "body",
     "name": "bodyCategory",
-    "style": "font-family: Manrope; padding: 0; margin: 0; box-sizing: border-box; background-color: #FAFAFA; min-height: 100dvh; display: flex; flex-direction: column; overflow-x: clip;",
+    "style": "font-family: Manrope, sans-serif; padding: 0; margin: 0; box-sizing: border-box; background-color: #FAFAFA; min-height: 100dvh; display: flex; flex-direction: column; overflow-x: clip;",
     "children": [
       {
         "element": "div",
@@ -706,7 +706,7 @@
                     "attributes": {
                       "id": "cart-product-clear"
                     },
-                    "style": "font-weight: 500; font-size: 15px; line-height: 25px; font-family: Manrope; background-color: transparent; border: none; cursor: pointer; text-decoration: underline; color: rgba(0,0,0,0.5); transition: 150ms;",
+                    "style": "font-weight: 500; font-size: 15px; line-height: 25px; font-family: Manrope, sans-serif; background-color: transparent; border: none; cursor: pointer; text-decoration: underline; color: rgba(0,0,0,0.5); transition: 150ms;",
                     "extend": [
                       {
                         "extension": ":hover",

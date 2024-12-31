@@ -20,7 +20,7 @@
   },
   "classroom": [],
   "element": "body",
-  "style": "font-family: Manrope; padding: 0; margin: 0; box-sizing: border-box; background-color: #FAFAFA; min-height: 100dvh; display: flex; flex-direction: column; overflow-x: clip;",
+  "style": "font-family: Manrope, sans-serif; padding: 0; margin: 0; box-sizing: border-box; background-color: #FAFAFA; min-height: 100dvh; display: flex; flex-direction: column; overflow-x: clip;",
   "children": [
     {
       "element": "cwrap-template",
@@ -183,7 +183,7 @@
           "mediaQueries": [
             {
               "query": "max-width: 840px",
-              "style": "ba background-image: url(\"static/images/home/tablet/image-speaker-zx7.jpg\"); background-repeat: no-repeat;"
+              "style": "background-image: url(\"static/images/home/tablet/image-speaker-zx7.jpg\"); background-repeat: no-repeat;"
             },
             {
               "query": "max-width: 800px",
