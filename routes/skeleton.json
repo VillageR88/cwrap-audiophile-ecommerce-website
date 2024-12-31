@@ -180,7 +180,17 @@
         },
         {
           "element": "div",
-          "style": "min-height: 320px; max-width: 1110px; width: 100%; background-color: #F1F1F1; margin: 48px auto 0 auto; background-image: url(\"static/images/home/desktop/image-speaker-zx7.jpg\"); background-position: center; border-radius: 8px; display: flex;",
+          "mediaQueries": [
+            {
+              "query": "max-width: 840px",
+              "style": "ba background-image: url(\"static/images/home/tablet/image-speaker-zx7.jpg\"); background-repeat: no-repeat;"
+            },
+            {
+              "query": "max-width: 800px",
+              "style": "background-position: right; background-image: url(\"static/images/home/mobile/image-speaker-zx7.jpg\");"
+            }
+          ],
+          "style": "min-height: 320px; max-width: 1110px; width: 100%; background-color: #F1F1F1; margin: 48px auto 0 auto; background-image: url(\"static/images/home/desktop/image-speaker-zx7.jpg\"); background-position: center; background-size: cover; border-radius: 8px; display: flex;",
           "children": [
             {
               "element": "cwrap-template",
@@ -190,14 +200,36 @@
         },
         {
           "element": "div",
+          "mediaQueries": [
+            {
+              "query": "max-width: 768px",
+              "style": "flex-direction: column;"
+            }
+          ],
           "style": "max-width: 1110px; min-height: 320px; margin-inline: auto; margin-top: 48px; display: flex; width: 100%; gap: 30px;",
           "children": [
             {
               "element": "div",
+              "mediaQueries": [
+                {
+                  "query": "max-width: 980px",
+                  "style": "background-image: url(\"static/images/home/tablet/image-earphones-yx1.jpg\"); background-size: cover; background-position: center;"
+                },
+                {
+                  "query": "max-width: 800px",
+                  "style": "background-image: url(\"static/images/home/mobile/image-earphones-yx1.jpg\"); min-height: 200px; max-width: 100%;"
+                }
+              ],
               "style": "background-color: #F1F1F1; max-width: 540px; min-height: 320px; width: 100%; border-radius: 8px; background-image: url(\"static/images/home/desktop/image-earphones-yx1.jpg\"); background-position: center;"
             },
             {
               "element": "div",
+              "mediaQueries": [
+                {
+                  "query": "max-width: 800px",
+                  "style": "max-width: 100%; padding: 41px 24px;"
+                }
+              ],
               "style": "background-color: #F1F1F1; width: 100%; max-width: 540px; border-radius: 8px; display: flex;",
               "children": [
                 {

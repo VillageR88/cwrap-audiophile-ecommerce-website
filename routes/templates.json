@@ -2,6 +2,12 @@
   {
     "element": "section",
     "name": "sectionHome1",
+    "mediaQueries":[
+      {
+        "query":"max-width: 768px",
+        "style":"margin: auto 24px auto 24px"
+      }
+    ],
     "style": "display: flex; flex-direction: column; gap: 32px; width: fit-content; margin: auto 62px auto cwrapProperty[sMarginLeft=cwrapPlaceholder] ;",
     "children": [
       {
