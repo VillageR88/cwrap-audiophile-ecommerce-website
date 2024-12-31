@@ -24,10 +24,11 @@ function loadTemplates() {
 
 loadTemplates();
 
-function generateHtmlFromJson(jsonObj, properties = new Map()) {
-  if (jsonObj?.text?.includes("cwrapOmit")) {
-    return "";
+function generateHtmlFromJson(jsonObj, properties = new Map(), omit = []) {
+  if (omit.includes(jsonObj["omit-id"])) {
+    jsonObj.text = "cwrapOmit";
   }
+
   let html = "";
   if (jsonObj.element) {
     const element = jsonObj.element;
@@ -49,69 +50,91 @@ function generateHtmlFromJson(jsonObj, properties = new Map()) {
     } else {
       html += ">";
 
-      // Check for cwrapOmit and return early if found
-      if (jsonObj.text) {
-        const originalText = jsonObj.text;
+      const originalText = jsonObj.text || "";
 
-        if (
-          originalText.includes("cwrapSpan") ||
-          originalText.includes("cwrapTemplate") ||
-          originalText.includes("cwrapProperty")
-        ) {
-          const parts = originalText.split(
-            /(cwrapSpan|cwrapTemplate\[[^\]]+\]|cwrapProperty\[[^\]]+\])/
-          );
-          html += parts[0];
-          for (let i = 1; i < parts.length; i++) {
-            if (parts[i].startsWith("cwrapSpan")) {
-              html += `<span data-cwrap-placeholder="true"></span>${parts[
-                i
-              ].replace("cwrapSpan", "")}`;
-            } else if (parts[i].startsWith("cwrapTemplate")) {
-              const propMap = new Map();
+      // Check if the text contains any of the special tags
+      if (
+        originalText.includes("cwrapSpan") ||
+        originalText.includes("cwrapTemplate") ||
+        originalText.includes("cwrapProperty")
+      ) {
+        const parts = originalText.split(
+          /(cwrapSpan|cwrapTemplate\[[^\]]*\]|cwrapProperty\[[^\]]*\])/
+        );
+        const mergedParts = [];
+        let tempPart = "";
 
-              const templateNameWithProps = parts[i].match(
-                /cwrapTemplate\[([^\]]+)\]/
-              )[1];
-              const templateName =
-                templateNameWithProps.match(/.+(?=\()/)?.[0] ||
-                templateNameWithProps;
-              const templateProps =
-                templateNameWithProps.match(/(?<=\().+(?=\))/)?.[0];
-              if (templateProps) {
-                const propsArray = templateProps.split(",");
-                for (const prop of propsArray) {
-                  const [key, value] = prop.split("=");
-                  propMap.set(key, value);
-                }
-              }
-              const templateElement = templatesMap.get(templateName);
-              if (templateElement) {
-                const clonedTemplateHtml = generateHtmlFromJson(
-                  templateElement,
-                  propMap
-                );
-                if (jsonObj.element === "cwrap-template") {
-                  return clonedTemplateHtml;
-                }
-                html += clonedTemplateHtml;
-              }
-            } else if (parts[i].startsWith("cwrapProperty")) {
-              const propertyMatch = parts[i].match(
-                /cwrapProperty\[([^\]=]+)=([^\]]+)\]/
-              );
-              if (propertyMatch) {
-                const [property, defaultValue] = propertyMatch.slice(1);
-                const mapValue = properties.get(propertyMatch[1]);
-                html += mapValue || defaultValue;
-              }
-            } else {
-              html += parts[i];
+        for (let i = 0; i < parts.length; i++) {
+          if (parts[i].startsWith("cwrapSpan")) {
+            if (tempPart) {
+              mergedParts.push(tempPart);
+              tempPart = "";
             }
+            mergedParts.push(parts[i]);
+          } else {
+            tempPart += parts[i];
           }
-        } else {
-          html += originalText;
         }
+        if (tempPart) {
+          mergedParts.push(tempPart);
+        }
+
+        // Process each part and handle cwrapSpan, cwrapTemplate, and cwrapProperty tags
+        for (let i = 0; i < mergedParts.length; i++) {
+          const part = mergedParts[i];
+
+          if (part.startsWith("cwrapSpan")) {
+            html += `<span data-cwrap-placeholder="true"></span>${part.replace(
+              "cwrapSpan",
+              ""
+            )}`;
+          } else if (part.startsWith("cwrapTemplate")) {
+            const propMap = new Map(properties); // Create a new Map based on current properties
+
+            const templateNameWithProps = part.match(
+              /cwrapTemplate\[([^\]]+)\]/
+            )[1];
+            const templateName =
+              templateNameWithProps.match(/.+(?=\()/)?.[0] ||
+              templateNameWithProps;
+            const templateProps =
+              templateNameWithProps.match(/(?<=\().+(?=\))/)?.[0];
+
+            if (templateProps) {
+              const propsArray = templateProps.split(",");
+              for (const prop of propsArray) {
+                const [key, value] = prop.split("=");
+                propMap.set(key, value);
+              }
+            }
+
+            const templateElement = templatesMap.get(templateName);
+            if (templateElement) {
+              const clonedTemplateHtml = generateHtmlFromJson(
+                templateElement,
+                propMap,
+                omit
+              );
+              if (jsonObj.element === "cwrap-template") {
+                return clonedTemplateHtml;
+              }
+              html += clonedTemplateHtml;
+            }
+          } else if (part.startsWith("cwrapProperty")) {
+            const propertyMatch = part.match(
+              /cwrapProperty\[([^\]=]+)=([^\]]+)\]/
+            );
+            if (propertyMatch) {
+              const [property, defaultValue] = propertyMatch.slice(1);
+              const mapValue = properties.get(propertyMatch[1]);
+              html += mapValue || defaultValue;
+            }
+          } else {
+            html += part;
+          }
+        }
+      } else {
+        html += originalText;
       }
 
       if (jsonObj.blueprint) {
@@ -120,7 +143,7 @@ function generateHtmlFromJson(jsonObj, properties = new Map()) {
         for (let i = 0; i < count; i++) {
           let blueprintJson = replacePlaceholdersCwrapIndex(blueprint, i);
           blueprintJson = replacePlaceholdersCwrapArray(blueprintJson, i);
-          html += generateHtmlFromJson(blueprintJson, properties);
+          html += generateHtmlFromJson(blueprintJson, properties, omit);
         }
       }
 
@@ -129,7 +152,7 @@ function generateHtmlFromJson(jsonObj, properties = new Map()) {
         const spanElements =
           html.match(/<span data-cwrap-placeholder="true"><\/span>/g) || [];
         for (const child of jsonObj.children) {
-          const childHtml = generateHtmlFromJson(child, properties);
+          const childHtml = generateHtmlFromJson(child, properties, omit);
           if (spanElements[spanIndex]) {
             html = html.replace(
               '<span data-cwrap-placeholder="true"></span>',
@@ -145,6 +168,18 @@ function generateHtmlFromJson(jsonObj, properties = new Map()) {
       html += `</${element}>`;
     }
   }
+
+  // Handle passover elements
+  if (jsonObj.element === "cwrap-template" && jsonObj.passover) {
+    const passoverHtml = jsonObj.passover
+      .map((childJson) => generateHtmlFromJson(childJson, properties, omit))
+      .join("");
+    html = html.replace("<cwrap-passover></cwrap-passover>", passoverHtml);
+  }
+
+  // Remove elements that contain "cwrapOmit" or "cwrapPlaceholder" in their text
+  const omitRegex = /<[^>]+>[^<]*(cwrapOmit|cwrapPlaceholder)[^<]*<\/[^>]+>/g;
+  html = html.replace(omitRegex, "");
 
   return html;
 }
