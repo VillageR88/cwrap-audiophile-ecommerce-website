@@ -631,17 +631,26 @@ function replacePlaceholdersCwrapArray(jsonObj, index) {
  * @param {Map} [siblingCountMap=new Map()] - A Map to keep track of sibling elements count.
  * @param {number} [blueprintCounter]
  * @param {Map} [propsMap=new Map()] - A Map to keep track of properties.
+ * @param {JsonObject[]} [passover] - The passover elements to insert.
+ * @param {string[]} [omit] - The omit elements to exclude.
  */
 function generateCssSelector(
   jsonObj,
   parentSelector = "",
   siblingCountMap = new Map(),
   blueprintCounter = undefined,
-  propsMap = new Map()
+  propsMap = new Map(),
+  passover = [],
+  omit = []
 ) {
+
+
   let selector = parentSelector;
 
   if (jsonObj.element) {
+    if (omit.includes(jsonObj["omit-id"])) {
+      return;
+    }
     const element = jsonObj.element;
     if (!jsonObj.text) jsonObj.text = "";
 
@@ -656,7 +665,7 @@ function generateCssSelector(
           const templateName =
             templateNameWithProps.match(/.+(?=\()/)?.[0] ||
             templateNameWithProps;
-          const templatePropsMap = new Map();
+          const templatePropsMap = propsMap;
           const propsMatch = templateNameWithProps.match(/\(([^)]+)\)/);
 
           if (propsMatch) {
@@ -674,21 +683,40 @@ function generateCssSelector(
               JSON.stringify(templateElement)
             );
             for (const [key, value] of templatePropsMap) {
-              if (value === "cwrapPassProperty" && propsMap.has(key)) {
+              if (propsMap.has(key)) {
                 templatePropsMap.set(key, propsMap.get(key));
               }
             }
+
             generateCssSelector(
               templateElementCopy,
               selector,
               siblingCountMap,
               blueprintCounter,
-              templatePropsMap
+              templatePropsMap,
+              jsonObj.passover || [],
+              jsonObj?.omit || []
             );
           }
           return;
         }
       }
+    }
+
+    // Handle cwrap-passover elements
+    if (element === "cwrap-passover") {
+      for (const childJson of passover) {
+        generateCssSelector(
+          childJson,
+          parentSelector,
+          siblingCountMap,
+          blueprintCounter,
+          propsMap,
+          passover,
+          omit
+        );
+      }
+      return;
     }
 
     // Initialize sibling counts for the parent selector
@@ -707,6 +735,26 @@ function generateCssSelector(
       selector += ` > ${element}:nth-of-type(${parentSiblingCount.get(
         element
       )})`;
+    }
+
+    if (jsonObj.text) {
+      if (jsonObj.text.includes("cwrapProperty")) {
+        const parts = jsonObj.text.split(/(cwrapProperty\[[^\]]+\])/);
+        for (let i = 1; i < parts.length; i++) {
+          if (parts[i].startsWith("cwrapProperty")) {
+            const propertyMatch = parts[i].match(
+              /cwrapProperty\[([^\]=]+)=([^\]]+)\]/
+            );
+            if (propertyMatch) {
+              const [property, defaultValue] = propertyMatch.slice(1);
+              const mapValue = propsMap.get(property);
+              if (mapValue?.includes("cwrapOmit")) {
+                return;
+              }
+            }
+          }
+        }
+      }
     }
 
     // Handle styles with cwrapProperty
@@ -728,6 +776,11 @@ function generateCssSelector(
             }
           }
         }
+      }
+
+      // Check if the final style contains cwrapOmit
+      if (jsonObj.style.includes("cwrapOmit")) {
+        return;
       }
 
       if (
@@ -768,7 +821,9 @@ function generateCssSelector(
           selector,
           siblingCountMap,
           blueprintCounter,
-          propsMap
+          propsMap,
+          passover,
+          omit
         );
       }
     }
@@ -790,7 +845,9 @@ function generateCssSelector(
           selector,
           siblingCountMap,
           i + 1,
-          propsMap
+          propsMap,
+          passover,
+          omit
         );
       }
     }
