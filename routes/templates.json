@@ -231,9 +231,13 @@
       {
         "query": "max-width: 960px",
         "style": "flex-direction: column-reverse;"
+      },
+      {
+        "query": "max-width: 840px",
+        "style": "margin-block: 120px;"
       }
     ],
-    "style": "gap: 48px; max-width: 1110px; width: 100%; min-height: 588px; margin-inline: auto; margin-top: 200px; margin-bottom: 200px; display: flex; align-items: center; justify-content: space-between;",
+    "style": "gap: 48px; max-width: 1110px; width: 100%; min-height: 588px; margin-inline: auto; margin-block: 200px; display: flex; align-items: center; justify-content: space-between;",
     "children": [
       {
         "element": "section",
