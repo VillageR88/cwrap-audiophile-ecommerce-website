@@ -24,110 +24,119 @@ function loadTemplates() {
 
 loadTemplates();
 
+/**
+ * Generates an HTML string based on the provided JSON object in a Node.js environment.
+ * @param {JsonObject} jsonObj - The JSON object representing the element.
+ * @param {Map} [properties=new Map()] - A Map to keep track of properties.
+ * @param {string[]} [omit] - The omit elements to exclude.
+ * @returns {string} - The generated HTML string.
+ */
 function generateHtmlFromJson(jsonObj, properties = new Map(), omit = []) {
   if (omit.includes(jsonObj["omit-id"])) {
     jsonObj.text = "cwrapOmit";
   }
 
   let html = "";
+
+  // Handle omitted items based on the "alter" property
+  let selectedJsonObj = jsonObj;
+  let abandonItem = false;
+
+  if (jsonObj.alter) {
+    const setJsonObjToEnumItem = () => {
+      for (const enumItem of jsonObj.enum || []) {
+        if (Number(enumItem.nth) === Number(jsonObj.blueprintElementCounter)) {
+          selectedJsonObj = enumItem;
+          return false;
+        }
+      }
+      return true;
+    };
+
+    if (jsonObj.alter === "partial" || jsonObj.alter === "full") {
+      abandonItem = setJsonObjToEnumItem();
+    }
+  }
+
+  // Return an empty string if the item is abandoned
+  if (abandonItem) return "";
+
   if (jsonObj.element) {
     const element = jsonObj.element;
     html += `<${element}`;
 
-    if (jsonObj.class) {
-      html += ` class="${jsonObj.class}"`;
-    }
+    // Add attributes
+    if (selectedJsonObj.attributes) {
+      for (const [key, value] of Object.entries(selectedJsonObj.attributes)) {
+        if (value === "cwrapOmit") continue;
+        if (value.includes("cwrapProperty")) {
+          const parts = value.split(/(cwrapProperty\[[^\]]+\])/g);
+          let finalValue = "";
 
-    if (jsonObj.attributes) {
-      for (const [key, value] of Object.entries(jsonObj.attributes)) {
-        if (value !== "cwrapOmit") html += ` ${key}="${value}"`;
+          for (const part of parts) {
+            if (part.startsWith("cwrapProperty")) {
+              const propertyMatch = part.match(/cwrapProperty\[([^\]=]+)=([^\]]+)\]/);
+              if (propertyMatch) {
+                const [property, defaultValue] = propertyMatch.slice(1);
+                const mapValue = properties.get(property) || defaultValue;
+                finalValue += mapValue;
+              }
+            } else {
+              finalValue += part;
+            }
+          }
+          html += ` ${key}="${finalValue}"`;
+        } else {
+          html += ` ${key}="${value}"`;
+        }
       }
     }
 
-    // Check if the element is a self-closing tag
+    // Handle self-closing tags
     if (["img", "br", "hr", "input", "meta", "link"].includes(element)) {
       html += " />";
-    } else {
-      html += ">";
+      return html;
+    }
 
-      const originalText = jsonObj.text || "";
+    html += ">";
 
-      // Check if the text contains any of the special tags
+    // Add text content
+    const originalText = selectedJsonObj.text || "";
+    if (originalText) {
       if (
         originalText.includes("cwrapSpan") ||
         originalText.includes("cwrapTemplate") ||
         originalText.includes("cwrapProperty")
       ) {
         const parts = originalText.split(
-          /(cwrapSpan|cwrapTemplate\[[^\]]*\]|cwrapProperty\[[^\]]*\])/
+          /(cwrapSpan|cwrapTemplate\[[^\]]*\]|cwrapProperty\[[^\]]*\])/g
         );
-        const mergedParts = [];
-        let tempPart = "";
 
-        for (let i = 0; i < parts.length; i++) {
-          if (parts[i].startsWith("cwrapSpan")) {
-            if (tempPart) {
-              mergedParts.push(tempPart);
-              tempPart = "";
-            }
-            mergedParts.push(parts[i]);
-          } else {
-            tempPart += parts[i];
-          }
-        }
-        if (tempPart) {
-          mergedParts.push(tempPart);
-        }
-
-        // Process each part and handle cwrapSpan, cwrapTemplate, and cwrapProperty tags
-        for (let i = 0; i < mergedParts.length; i++) {
-          const part = mergedParts[i];
-
+        for (const part of parts) {
           if (part.startsWith("cwrapSpan")) {
-            html += `<span data-cwrap-placeholder="true"></span>${part.replace(
-              "cwrapSpan",
-              ""
-            )}`;
+            html += `<span data-cwrap-placeholder="true"></span>${part.replace("cwrapSpan", "")}`;
           } else if (part.startsWith("cwrapTemplate")) {
-            const propMap = new Map(properties); // Create a new Map based on current properties
+            const templateMatch = part.match(/cwrapTemplate\[([^\]]+)\]/);
+            if (templateMatch) {
+              const templateNameWithProps = templateMatch[1];
+              const [templateName] = templateNameWithProps.split(/\(/);
+              const templateElement = templatesMap.get(templateName);
+              if (templateElement) {
+                const clonedTemplateHtml = generateHtmlFromJson(
+                  templateElement,
+                  new Map(properties),
+                  omit
+                );
+                //html += clonedTemplateHtml;
+                html = html.replace("<cwrap-template>", clonedTemplateHtml);
 
-            const templateNameWithProps = part.match(
-              /cwrapTemplate\[([^\]]+)\]/
-            )[1];
-            const templateName =
-              templateNameWithProps.match(/.+(?=\()/)?.[0] ||
-              templateNameWithProps;
-            const templateProps =
-              templateNameWithProps.match(/(?<=\().+(?=\))/)?.[0];
-
-            if (templateProps) {
-              const propsArray = templateProps.split(",");
-              for (const prop of propsArray) {
-                const [key, value] = prop.split("=");
-                propMap.set(key, value);
               }
-            }
-
-            const templateElement = templatesMap.get(templateName);
-            if (templateElement) {
-              const clonedTemplateHtml = generateHtmlFromJson(
-                templateElement,
-                propMap,
-                omit
-              );
-              if (jsonObj.element === "cwrap-template") {
-                return clonedTemplateHtml;
-              }
-              html += clonedTemplateHtml;
             }
           } else if (part.startsWith("cwrapProperty")) {
-            const propertyMatch = part.match(
-              /cwrapProperty\[([^\]=]+)=([^\]]+)\]/
-            );
+            const propertyMatch = part.match(/cwrapProperty\[([^\]=]+)=([^\]]+)\]/);
             if (propertyMatch) {
               const [property, defaultValue] = propertyMatch.slice(1);
-              const mapValue = properties.get(propertyMatch[1]);
-              html += mapValue || defaultValue;
+              html += properties.get(property) || defaultValue;
             }
           } else {
             html += part;
@@ -136,40 +145,29 @@ function generateHtmlFromJson(jsonObj, properties = new Map(), omit = []) {
       } else {
         html += originalText;
       }
-
-      if (jsonObj.blueprint) {
-        const blueprint = jsonObj.blueprint;
-        const count = blueprint.count;
-        for (let i = 0; i < count; i++) {
-          let blueprintJson = replacePlaceholdersCwrapIndex(blueprint, i);
-          blueprintJson = replacePlaceholdersCwrapArray(blueprintJson, i);
-          html += generateHtmlFromJson(blueprintJson, properties, omit);
-        }
-      }
-
-      if (jsonObj.children) {
-        let spanIndex = 0;
-        const spanElements =
-          html.match(/<span data-cwrap-placeholder="true"><\/span>/g) || [];
-        for (const child of jsonObj.children) {
-          const childHtml = generateHtmlFromJson(child, properties, omit);
-          if (spanElements[spanIndex]) {
-            html = html.replace(
-              '<span data-cwrap-placeholder="true"></span>',
-              childHtml
-            );
-            spanIndex++;
-          } else {
-            html += childHtml;
-          }
-        }
-      }
-
-      html += `</${element}>`;
     }
+
+    // Process blueprint
+    if (jsonObj.blueprint) {
+      const count = jsonObj.blueprint.count;
+      for (let i = 0; i < count; i++) {
+        let blueprintJson = replacePlaceholdersCwrapArray(jsonObj.blueprint, i);
+        blueprintJson = replacePlaceholdersCwrapIndex(blueprintJson, i);
+        html += generateHtmlFromJson(blueprintJson, properties, omit);
+      }
+    }
+
+    // Process children
+    if (jsonObj.children) {
+      for (const child of jsonObj.children) {
+        html += generateHtmlFromJson(child, properties, omit);
+      }
+    }
+
+    html += `</${element}>`;
   }
 
-  // Handle passover elements
+  // Handle "passover" elements
   if (jsonObj.element === "cwrap-template" && jsonObj.passover) {
     const passoverHtml = jsonObj.passover
       .map((childJson) => generateHtmlFromJson(childJson, properties, omit))
@@ -177,12 +175,9 @@ function generateHtmlFromJson(jsonObj, properties = new Map(), omit = []) {
     html = html.replace("<cwrap-passover></cwrap-passover>", passoverHtml);
   }
 
-  // Remove elements that contain "cwrapOmit" or "cwrapPlaceholder" in their text
-  const omitRegex = /<[^>]+>[^<]*(cwrapOmit|cwrapPlaceholder)[^<]*<\/[^>]+>/g;
-  html = html.replace(omitRegex, "");
-
   return html;
 }
+
 
 let hasCwrapGetParams = false;
 function generateHtmlWithScript(jsonObj, jsonFilePath) {
@@ -643,8 +638,6 @@ function generateCssSelector(
   passover = [],
   omit = []
 ) {
-
-
   let selector = parentSelector;
 
   if (jsonObj.element) {
