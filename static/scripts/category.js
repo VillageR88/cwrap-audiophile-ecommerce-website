@@ -8,6 +8,8 @@ for (const item of data.reverse()) {
   if (item.category === routeTitle) {
     addCategoryProduct(
       item.categoryImage.desktop.replace("./assets", "../static/images"),
+      item.categoryImage.tablet.replace("./assets", "../static/images"),
+      item.categoryImage.mobile.replace("./assets", "../static/images"),
       item.new,
       item.name,
       item.description,
@@ -16,10 +18,13 @@ for (const item of data.reverse()) {
   }
 }
 
-function addCategoryProduct(imageSrc, newProduct, title, description, slug) {
+function addCategoryProduct(desktopSrc, tabletSrc, mobileSrc, newProduct, title, description, slug) {
   const categoryContainer = document.getElementById("category-container");
   const categoryContainerWrapper = document.createElement("div");
-  const categoryContainerPicture = document.createElement("img");
+  const categoryContainerPicture = document.createElement("picture");
+  const categoryContainerSourceTablet = document.createElement("source");
+  const categoryContainerSourceMobile = document.createElement("source");
+  const categoryContainerImg = document.createElement("img");
   const categoryContainerDiv = document.createElement("div");
   const categoryContainerDivNew = document.createElement("span");
   const categoryContainerDivSection = document.createElement("section");
@@ -29,6 +34,7 @@ function addCategoryProduct(imageSrc, newProduct, title, description, slug) {
 
   categoryContainerWrapper.classList.add("category-container-wrapper");
   categoryContainerPicture.classList.add("category-container-picture");
+  categoryContainerImg.classList.add("category-container-image");
   categoryContainerDiv.classList.add("category-container-div");
   categoryContainerDivNew.classList.add("category-container-div-new");
   categoryContainerDivSection.classList.add("category-container-div-section");
@@ -43,13 +49,21 @@ function addCategoryProduct(imageSrc, newProduct, title, description, slug) {
     "category-container-div-section-button"
   );
 
-  categoryContainerPicture.src = imageSrc;
+  categoryContainerSourceTablet.srcset = tabletSrc;
+  categoryContainerSourceTablet.media = "(max-width: 960px)";
+  categoryContainerSourceMobile.srcset = mobileSrc;
+  categoryContainerSourceMobile.media = "(max-width: 640px)";
+  categoryContainerImg.src = desktopSrc;
+  categoryContainerImg.alt = title;
+
   categoryContainerDivNew.textContent = "NEW PRODUCT";
   categoryContainerDivSectionTitle.textContent = title?.toUpperCase();
   categoryContainerDivSectionDescription.textContent = description;
   categoryContainerDivSectionButton.textContent = "SEE PRODUCT";
   categoryContainerDivSectionButton.href = `../${routeTitle}/${slug}`;
-
+  categoryContainerPicture.appendChild(categoryContainerSourceMobile);
+  categoryContainerPicture.appendChild(categoryContainerSourceTablet);
+  categoryContainerPicture.appendChild(categoryContainerImg);
   categoryContainerWrapper.appendChild(categoryContainerPicture);
   if (newProduct) categoryContainerDiv.appendChild(categoryContainerDivNew);
   categoryContainerDiv.appendChild(categoryContainerDivSection);

@@ -6,3 +6,5 @@ export const productShortNames = {
   "ZX7 Speaker": "ZX7",
   "ZX9 Speaker": "ZX9",
 };
+
+export const formattedCost = (cost) => cost.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0, maximumFractionDigits: 0 }).replace('$', '$ ');

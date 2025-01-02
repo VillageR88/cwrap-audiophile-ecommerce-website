@@ -18,11 +18,9 @@
       }
     ]
   },
-  "classroom": [
-
-  ],
+  "classroom": [],
   "element": "body",
-  "style": "font-family: Manrope; padding: 0; margin: 0; box-sizing: border-box; background-color: #FAFAFA; min-height: 100dvh; display: flex; flex-direction: column;",
+  "style": "font-family: Manrope, sans-serif; padding: 0; margin: 0; box-sizing: border-box; background-color: #FAFAFA; min-height: 100dvh; display: flex; flex-direction: column; overflow-x: clip;",
   "children": [
     {
       "element": "cwrap-template",
@@ -30,7 +28,7 @@
     },
     {
       "element": "header",
-      "style": "min-height: 729px; width: 100%; background-color: #191919; position: relative; z-index: 0;",
+      "style": "min-height: 729px; width: 100%; background-color: #191919; position: relative; z-index: 0; padding-inline: 24px; box-sizing: border-box;",
       "children": [
         {
           "element": "cwrap-template",
@@ -38,6 +36,12 @@
         },
         {
           "element": "div",
+          "mediaQueries": [
+            {
+              "query": "max-width: 1024px",
+              "style": "align-items: center; text-align: center;"
+            }
+          ],
           "style": "max-width: 1110px; margin: 128px auto 0 auto; display: flex; flex-direction: column;",
           "children": [
             {
@@ -47,6 +51,12 @@
             },
             {
               "element": "section",
+              "mediaQueries": [
+                {
+                  "query": "max-width: 1024px",
+                  "style": "align-items: center;"
+                }
+              ],
               "style": "max-width: 400px; display: flex; flex-direction: column; gap: 24px; margin-top: 24px;",
               "children": [
                 {
@@ -65,7 +75,7 @@
               "element": "a",
               "attributes": {
                 "class": "button1",
-                "href": "../headphones/xx99-mark-two-headphones"
+                "href": "headphones/xx99-mark-two-headphones"
               },
               "style": "margin-top: 40px; background-color: #D87D4A; transition: 150ms;",
               "extend": [
@@ -82,7 +92,7 @@
     },
     {
       "element": "main",
-      "style": "width: 100%;",
+      "style": "width: 100%; padding-inline: 24px; box-sizing: border-box;",
       "children": [
         {
           "element": "cwrap-template",
@@ -90,25 +100,56 @@
         },
         {
           "element": "div",
-          "style": "min-height: 560px; background-color: #D87D4A; max-width: 1110px; margin-inline: auto; margin-block: 168px 0; border-radius: 8px; background-image: url(\"static/images/home/desktop/pattern-circles.svg\"); background-repeat: no-repeat; background-position: -140px -36px; display: flex; overflow: hidden; justify-content: space-between;",
+          "mediaQueries": [
+            {
+              "query": "max-width: 1024px",
+              "style": "gap: 64px; padding-block: 52px 64px; background-position: center 130%; flex-direction: column; align-items: center;"
+            }
+          ],
+          "style": "gap:48px; min-height: 560px; background-color: #D87D4A; max-width: 1110px; margin-inline: auto; margin-block: 168px 0; border-radius: 8px; background-image: url(\"static/images/home/desktop/pattern-circles.svg\"); background-repeat: no-repeat; background-position: -140px -36px; display: flex; overflow: hidden; justify-content: space-between;",
           "children": [
             {
               "element": "img",
+              "mediaQueries": [
+                {
+                  "query": "max-width: 1024px",
+                  "style": "margin: 0; max-width: 200px;"
+                }
+              ],
+              "style": "max-height: 460px; margin: auto 0 -12px 145px;",
               "attributes": {
+                "alt": "ZX9 Speaker",
                 "src": "static/images/home/desktop/image-speaker-zx9.png"
-              },
-              "style": "max-height: 460px; margin: auto 0 -12px 145px;"
+              }
             },
             {
               "element": "div",
+              "mediaQueries": [
+                {
+                  "query": "max-width: 1024px",
+                  "style": "align-items: center; text-align: center; margin: 0;"
+                }
+              ],
               "style": "display: flex; flex-direction: column; gap: 40px; height: fit-content; width: fit-content; margin: auto 95px auto 0;",
               "children": [
                 {
                   "element": "section",
+                  "mediaQueries": [
+                    {
+                      "query": "max-width: 1024px",
+                      "style": "align-items: center;"
+                    }
+                  ],
                   "style": "gap: 24px; display: flex; flex-direction: column;",
                   "children": [
                     {
                       "element": "h2",
+                      "mediaQueries": [
+                        {
+                          "query": "max-width: 768px",
+                          "style": "font-size: 36px; line-height: 40px; letter-spacing: 1.29px;"
+                        }
+                      ],
                       "style": "color: white; font-weight: bold; font-size: 56px; line-height: 58px; letter-spacing: 2px; max-width: 261px; margin: 0;",
                       "text": "ZX9\nSPEAKER"
                     },
@@ -123,7 +164,7 @@
                   "element": "a",
                   "attributes": {
                     "class": "button1",
-                    "href": "../speakers/zx9-speaker"
+                    "href": "speakers/zx9-speaker"
                   },
                   "style": "background-color: black; transition: 150ms;",
                   "extend": [
@@ -140,29 +181,61 @@
         },
         {
           "element": "div",
-          "style": "min-height: 320px; max-width: 1110px; width: 100%; background-color: #F1F1F1; margin: 48px auto 0 auto; background-image: url(\"static/images/home/desktop/image-speaker-zx7.jpg\"); border-radius: 8px; display: flex;",
+          "mediaQueries": [
+            {
+              "query": "max-width: 840px",
+              "style": "background-image: url(\"static/images/home/tablet/image-speaker-zx7.jpg\"); background-repeat: no-repeat;"
+            },
+            {
+              "query": "max-width: 800px",
+              "style": "background-position: right; background-image: url(\"static/images/home/mobile/image-speaker-zx7.jpg\");"
+            }
+          ],
+          "style": "min-height: 320px; max-width: 1110px; width: 100%; background-color: #F1F1F1; margin: 48px auto 0 auto; background-image: url(\"static/images/home/desktop/image-speaker-zx7.jpg\"); background-position: center; background-size: cover; border-radius: 8px; display: flex;",
           "children": [
             {
               "element": "cwrap-template",
-              "text": "cwrapTemplate[sectionHome1(title=ZX7 SPEAKER,link=speakers/zx7-speaker)]"
+              "text": "cwrapTemplate[sectionHome1(title=ZX7 SPEAKER,link=speakers/zx7-speaker,sMarginLeft=95px)]"
             }
           ]
         },
         {
           "element": "div",
+          "mediaQueries": [
+            {
+              "query": "max-width: 768px",
+              "style": "flex-direction: column;"
+            }
+          ],
           "style": "max-width: 1110px; min-height: 320px; margin-inline: auto; margin-top: 48px; display: flex; width: 100%; gap: 30px;",
           "children": [
             {
               "element": "div",
-              "style": "background-color: #F1F1F1; max-width: 540px; min-height: 320px; width: 100%; border-radius: 8px; background-image: url(\"static/images/home/desktop/image-earphones-yx1.jpg\");"
+              "mediaQueries": [
+                {
+                  "query": "max-width: 980px",
+                  "style": "background-image: url(\"static/images/home/tablet/image-earphones-yx1.jpg\"); background-size: cover; background-position: center;"
+                },
+                {
+                  "query": "max-width: 800px",
+                  "style": "background-image: url(\"static/images/home/mobile/image-earphones-yx1.jpg\"); min-height: 200px; max-width: 100%;"
+                }
+              ],
+              "style": "background-color: #F1F1F1; max-width: 540px; min-height: 320px; width: 100%; border-radius: 8px; background-image: url(\"static/images/home/desktop/image-earphones-yx1.jpg\"); background-position: center;"
             },
             {
               "element": "div",
+              "mediaQueries": [
+                {
+                  "query": "max-width: 800px",
+                  "style": "max-width: 100%; padding: 41px 24px;"
+                }
+              ],
               "style": "background-color: #F1F1F1; width: 100%; max-width: 540px; border-radius: 8px; display: flex;",
               "children": [
                 {
                   "element": "cwrap-template",
-                  "text": "cwrapTemplate[sectionHome1(title=YX1 EARPHONES,link=earphones/yx1-earphones)]"
+                  "text": "cwrapTemplate[sectionHome1(title=YX1 EARPHONES,link=earphones/yx1-earphones,sMarginLeft=62px)]"
                 }
               ]
             }
@@ -175,80 +248,13 @@
       ]
     },
     {
-      "element": "footer",
-      "style": "min-height: 365px; background-color: #101010; margin: auto 0 0 0; display: flex;",
-      "children": [
-        {
-          "element": "div",
-          "style": "max-width: 1110px; width: 100%; margin-inline: auto; display: flex; flex-direction: column;",
-          "children": [
-            {
-              "element": "div",
-              "style": "height: 4px; width: 101px; background-color: #D87D4A;"
-            },
-            {
-              "element": "div",
-              "style": "margin-top: 71px; width: 100%; min-height: 25px; display: flex; align-items: center; justify-content: space-between;",
-              "children": [
-                {
-                  "element": "img",
-                  "attributes": {
-                    "src": "static/images/shared/desktop/logo.svg",
-                    "alt": "audiophile logo"
-                  },
-                  "style": ""
-                },
-                {
-                  "element": "cwrap-template",
-                  "text": "cwrapTemplate[ulNavigation1(rightMargin=0)]"
-                }
-              ]
-            },
-            {
-              "element": "div",
-              "style": "margin-top: 36px; display: flex; justify-content: space-between; align-items: center;",
-              "children": [
-                {
-                  "element": "div",
-                  "style": "max-width: 540px; display: flex; flex-direction: column; justify-content: space-between; min-height: 181px;",
-                  "children": [
-                    {
-                      "element": "p",
-                      "style": "color: rgba(255,255,255,0.5);",
-                      "text": "Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week."
-                    },
-                    {
-                      "element": "p",
-                      "style": "color: rgba(255,255,255,0.5); font-weight: bold;",
-                      "text": "Copyright 2021. All Rights Reserved"
-                    }
-                  ]
-                },
-                {
-                  "element": "ul",
-                  "style": "display: flex; gap: 16px; list-style: none; margin: 0; padding: 0; align-items: center;",
-                  "children": [],
-                  "blueprint": {
-                    "element": "li",
-                    "count": 3,
-                    "children": [
-                      {
-                        "element": "cwrap-template",
-                        "text": "cwrapTemplate[cwrapArray[linkFacebook,linkTwitter,linkInstagram]];"
-                      }
-                    ]
-                  }
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      "element": "cwrap-template",
+      "text": "cwrapTemplate[footerUniversal]"
     },
     {
       "element": "script",
       "attributes": {
-        "src": "../static/scripts/cart.js",
+        "src": "static/scripts/cart.js",
         "type": "module"
       }
     }

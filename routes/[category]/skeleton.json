@@ -39,21 +39,60 @@
     {
       "name": "category-container-wrapper",
       "type": "class",
-      "style": "display: flex; width: 100%; justify-content: space-between; align-items:center;"
+      "mediaQueries": [
+        {
+          "query": "max-width: 1200px",
+          "style": "max-width: 1050px;"
+        },
+        {
+          "query": "max-width: 960px",
+          "style": "flex-direction: column;"
+        }
+      ],
+      "style": "gap:24px; display: flex; width: 100%; justify-content: space-between; align-items:center; margin-inline: auto;"
     },
     {
       "name": "category-container > div:nth-of-type(even)",
       "type": "id",
+      "mediaQueries": [
+        {
+          "query": "max-width: 960px",
+          "style": "flex-direction: column;"
+        }
+      ],
       "style": "flex-direction: row-reverse;"
     },
     {
       "name": "category-container-picture",
       "type": "class",
-      "style": "display:flex; max-width: 540px; border-radius: 8px;"
+      "style": "display: flex; width: 50%; justify-content: center;",
+      "mediaQueries": [
+        {
+          "query": "max-width: 960px",
+          "style": "width: 100%;"
+        }
+      ]
+    },
+    {
+      "name": "category-container-image",
+      "type": "class",
+      "mediaQueries": [
+        {
+          "query": "max-width: 960px",
+          "style": "width: 100%;"
+        }
+      ],
+      "style": "display: flex; max-width: 540px; border-radius: 8px; width: 100%;"
     },
     {
       "name": "category-container-div",
       "type": "class",
+      "mediaQueries": [
+        {
+          "query": "max-width: 960px",
+          "style": "align-items: center; text-align: center;"
+        }
+      ],
       "style": "max-width: 445px; display: flex; flex-direction: column;"
     },
     {
@@ -88,7 +127,11 @@
     }
   ],
   "element": "cwrap-template",
-  "text": "cwrapTemplate[bodyCategory(omit=cwrapOmit,routeTitle=cwrapRoutes[HEADPHONES,SPEAKERS,EARPHONES])]",
+  "omit": [
+    "fullMask",
+    "pictureHero"
+  ],
+  "text": "cwrapTemplate[bodyCategory(prefix=../,routeTitle=cwrapRoutes[HEADPHONES,SPEAKERS,EARPHONES])]",
   "passover": [
     {
       "element": "div",

@@ -1,6 +1,7 @@
 import data from "./fetchedData.js";
-import { productShortNames } from "./const.js";
+import { productShortNames, formattedCost } from "./const.js";
 import { inputButton } from "./elements.js";
+import { fillSummary } from "./checkout.js";
 
 const mask = document.getElementById("mask");
 const cart = document.getElementById("cart");
@@ -13,7 +14,7 @@ cartAmount.textContent = Object.keys(getCartItems()).length.toString();
 cartTotalCost.textContent = `$ ${"0".toLocaleString()}`;
 
 function updateCartDisplay() {
-  cartProductContainer.innerHTML = ""; // Clear existing items
+  cartProductContainer.innerHTML = "";
   let totalCost = 0;
 
   for (const item in getCartItems()) {
@@ -21,7 +22,7 @@ function updateCartDisplay() {
       if (productShortNames[objItem] === item) {
         for (const dataItem of data) {
           if (dataItem.name === objItem) {
-            const cartProductContainerItem = document.createElement("div");
+            const cartProductContainerItem = document.createElement("li");
             const cartProductContainerItemProductDiv =
               document.createElement("div");
             const cartProductContainerItemProductDivPicture =
@@ -55,7 +56,7 @@ function updateCartDisplay() {
               "cart-product-container-item-product-div-section-description"
             );
 
-            cartProductContainerItemProductDivPicture.src = `../static/images/cart/image-${dataItem.slug}.jpg`;
+            cartProductContainerItemProductDivPicture.src = `https://villager88.github.io/cwrap-audiophile-ecommerce-website/static/images/cart/image-${dataItem.slug}.jpg`;
             cartProductContainerItemProductDivSectionTitle.textContent =
               productShortNames[objItem];
             cartProductContainerItemProductDivSectionDescription.textContent = `$ ${dataItem.price.toLocaleString()}`;
@@ -97,6 +98,7 @@ function updateCartDisplay() {
                 }
                 localStorage.setItem("cart", JSON.stringify(cartItems));
                 updateCartDisplay();
+                fillSummary();
               }
             );
           }
@@ -105,7 +107,7 @@ function updateCartDisplay() {
     }
   }
   cartAmount.textContent = Object.keys(getCartItems()).length.toString();
-  cartTotalCost.textContent = `$ ${totalCost.toLocaleString()}`;
+  cartTotalCost.textContent = formattedCost(totalCost);
 }
 
 updateCartDisplay();
@@ -117,13 +119,31 @@ cart.addEventListener("click", () => {
 });
 
 function manageCartPresence() {
+  const mask = document.getElementById("mask");
+  const bodyElements = document.querySelectorAll(
+    "body *:not(#mask):not(#mask *)"
+  ); // Select all body elements, excluding #mask and its children
+
   if (cartIsOpen) {
     window.scrollTo({ top: 0, behavior: "instant" });
-    document.body.style.overflowY = "clip";
+    document.body.style.overflowY = "clip"; // Prevent scrolling
+    document.documentElement.style.overflowY = "clip"; // Prevent scrolling on html
     mask.style.display = "block";
+
+    for (const element of bodyElements) {
+      if (element !== mask) {
+        element.setAttribute("tabindex", "-1");
+      }
+    }
   } else {
     document.body.style.overflowY = "";
+    document.documentElement.style.overflowY = "";
+
     mask.style.display = "none";
+
+    for (const element of bodyElements) {
+      element.removeAttribute("tabindex");
+    }
   }
 }
 
@@ -132,6 +152,7 @@ cartProductClear.addEventListener("click", () => {
   cartAmount.textContent = "0";
   cartTotalCost.textContent = `$ ${"0".toLocaleString()}`;
   updateCartDisplay();
+  fillSummary();
 });
 
 export { updateCartDisplay };

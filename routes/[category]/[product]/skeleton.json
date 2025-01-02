@@ -54,17 +54,29 @@
     {
       "name": "hero-container",
       "type": "class",
-      "style": "display:flex; justify-content: space-between;"
+      "mediaQueries": [
+        {
+          "query": "max-width: 840px",
+          "style": "flex-direction: column;"
+        }
+      ],
+      "style": "gap: 24px; display: flex; justify-content: space-between; align-items: center;"
     },
     {
       "name": "hero-image",
       "type": "class",
-      "style": "max-width: 540px; "
+      "mediaQueries": [
+        {
+          "query": "max-width: 840px",
+          "style": "width: 100%;"
+        }
+      ],
+      "style": "max-width: 540px; width: 50%; height: auto;"
     },
     {
       "name": "hero-div",
       "type": "class",
-      "style": "display:flex; flex-direction:column; max-width:445px; width:100%; margin-block: 77px;"
+      "style": "display: flex; flex-direction: column; max-width: 445px; width: 100%;"
     },
     {
       "name": "hero-new",
@@ -94,7 +106,7 @@
     {
       "name": "hero-cart-div",
       "type": "class",
-      "style": "display: flex; align-items: center; margin-top: 47px; gap: 16px;"
+      "style": "display: flex; margin-top: 47px; gap: 16px;"
     },
     {
       "name": "hero-cart-div-cart-button",
@@ -109,11 +121,27 @@
     {
       "name": "additional-container",
       "type": "class",
-      "style": "margin-top: 160px; display: flex; justify-content: space-between;"
+      "mediaQueries": [
+        {
+          "query": "max-width: 1024px",
+          "style": "flex-direction: column;"
+        },
+        {
+          "query": "max-width: 840px",
+          "style": "margin-top: 120px;"
+        }
+      ],
+      "style": " gap: 120px; margin-top: 160px; display: flex; justify-content: space-between;"
     },
     {
       "name": "additional-features",
       "type": "class",
+      "mediaQueries": [
+        {
+          "query": "max-width: 1024px",
+          "style": "max-width: 100%;"
+        }
+      ],
       "style": "max-width: 635px; width: 100%; display: flex; flex-direction: column;"
     },
     {
@@ -129,17 +157,27 @@
     {
       "name": "additional-box",
       "type": "class",
-      "style": "max-width: 350px; width: 100%; display: flex; flex-direction: column;"
+      "mediaQueries": [
+        {
+          "query": "max-width: 1024px",
+          "style": "flex-direction: row; max-width: 100%; display: grid; grid-template-columns: 1fr 1fr;"
+        },
+        {
+          "query": "max-width: 640px",
+          "style": "display: flex; flex-direction: column;"
+        }
+      ],
+      "style": "gap: 32px; max-width: 350px; width: 100%; display: flex; flex-direction: column;"
+    },
+    {
+      "name": "additional-box-ul",
+      "type": "class",
+      "style": "list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px;"
     },
     {
       "name": "additional-box-p",
       "type": "class",
-      "style": "display: flex; gap: 24px; align-items: center; margin-top: 8px;"
-    },
-    {
-      "name": "additional-box-p:nth-of-type(1)",
-      "type": "class",
-      "style": "margin-top: 32px;"
+      "style": "display: flex; gap: 24px; align-items: center;"
     },
     {
       "name": "additional-box-span-quantity",
@@ -154,12 +192,18 @@
     {
       "name": "gallery-container",
       "type": "class",
-      "style": "max-width: 1110px; width: 100%; margin-top: 160px; display: grid; grid-template: 'i1 i3' 'i2 i3'; gap: 32px 30px;"
+      "mediaQueries": [
+        {
+          "query": "max-width: 840px",
+          "style": "display: flex; flex-direction: column;"
+        }
+      ],
+      "style": "max-width: 1110px; width: 100%; margin-top: 160px; display: grid; grid-template: 'i1 i3' 'i2 i3'; gap: 32px 30px; justify-content: center;"
     },
     {
       "name": "gallery-container > img",
       "type": "class",
-      "style": "border-radius: 8px;"
+      "style": "border-radius: 8px; height: 100%; width: 100%; object-fit: cover;"
     },
     {
       "name": "gallery-container > img:nth-of-type(1)",
@@ -179,36 +223,67 @@
     {
       "name": "like-container",
       "type": "class",
+      "mediaQueries": [
+        {
+          "query": "max-width: 840px",
+          "style": "margin-top: 120px; gap: 40px;"
+        }
+      ],
       "style": "max-width: 1110px; width: 100%; margin-top: 160px; display: flex; flex-direction: column; align-items: center; gap: 64px;"
     },
     {
-      "name": "like-container > div:nth-of-type(1)",
+      "name": "like-container > ul:nth-of-type(1)",
       "type": "class",
-      "style": "max-width: 1110px; width: 100%; display: flex; align-items: center; justify-content: space-between;"
+      "mediaQueries": [
+        {
+          "query": "max-width: 840px",
+          "style": "flex-direction: column; align-items: center; gap: 56px;"
+        },
+        {
+          "query": "max-width: 1024px",
+          "style": "gap: 10px;"
+        }
+      ],
+      "style": "margin-inline: auto; padding: 0; list-style: none; max-width: 1110px; gap: 24px; width: 100%; display: flex; align-items: center; justify-content: space-between;"
     },
     {
-      "name": "like-container > div:nth-of-type(1) > div",
+      "name": "like-container > ul:nth-of-type(1) > li",
       "type": "class",
-      "style": "max-width: 350px; width: 100%; min-height: 471px; gap: 40px; display: flex; flex-direction: column;"
+      "mediaQueries": [
+        {
+          "query": "max-width: 840px",
+          "style": "gap: 32px;"
+        }
+      ],
+      "style": "max-width: 350px; width: 100%; gap: 40px; display: flex; flex-direction: column;"
     },
     {
-      "name": "like-container > div:nth-of-type(1) > div > img:nth-of-type(1)",
+      "name": "like-container > ul:nth-of-type(1) > li > picture > img:nth-of-type(1)",
       "type": "class",
-      "style": "max-width: 350px;"
+      "style": "width: 100%;"
     },
     {
-      "name": "like-container > div:nth-of-type(1) > div > section",
+      "name": "like-container > ul:nth-of-type(1) > li > img:nth-of-type(1)",
+      "type": "class",
+      "style": "max-width: 350px; width: 100%; border-radius: 8px;"
+    },
+    {
+      "name": "like-container > ul:nth-of-type(1) > li > section",
       "type": "class",
       "style": "display: flex; flex-direction: column; align-items: center; gap: 32px;"
     },
     {
-      "name": "like-container > div:nth-of-type(1) > div > section > h3",
+      "name": "like-container > ul:nth-of-type(1) > li > section > h3",
       "type": "class",
       "style": "font-weight: bold; font-size: 24px; letter-spacing: 1.71px; margin: 0;"
     }
   ],
   "element": "cwrap-template",
-  "text": "cwrapTemplate[bodyCategory(omit=cwrapOmit,routeTitle=cwrapOmit,scriptName=product.js)]",
+  "omit": [
+    "fullMask",
+    "pictureHero"
+  ],
+  "text": "cwrapTemplate[bodyCategory(prefix=../../,routeTitle=cwrapOmit,scriptName=product.js)]",
   "passover": [
     {
       "element": "div",
@@ -220,7 +295,7 @@
         {
           "element": "a",
           "attributes": {
-            "href": "/cwrapRoutes[earphones,headphones,headphones,headphones,speakers,speakers]"
+            "href": "../../cwrapRoutes[earphones,headphones,headphones,headphones,speakers,speakers]"
           },
           "text": "Go Back",
           "extend": [

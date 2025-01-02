@@ -1,140 +1,191 @@
 {
-    "head": {
-        "title": "New Candy Wrapper project",
-        "link": [
-            {
-                "rel": "shortcut icon",
-                "href": "favicon.ico",
-                "type": "image/x-icon"
-            },
-            {
-                "rel": "stylesheet",
-                "href": "https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap",
-                "type": "text/css"
-            }
-        ],
-        "meta": [
-            {
-                "name": "viewport",
-                "content": "width=device-width, initial-scale=1.0"
-            },
-            {
-                "charset": "UTF-8"
-            },
-            {
-                "name": "description",
-                "content": "New Candy Wrapper project."
-            },
-            {
-                "name": "keywords",
-                "content": ""
-            }
-        ]
-    },
-    "classroom": [
-        {
-            "name": "h1",
-            "type": "element",
-            "style": "color: white; font-weight: bold; font-size: 56px; line-height: 58px; letter-spacing: 2px; margin: 0;"
-        },
-        {
-            "name": "p",
-            "type": "element",
-            "style": "font-weight: 500; font-size: 15px; line-height: 25px; margin: 0; letter-spacing: 0;"
-        },
-        {
-            "name": "a",
-            "type": "element",
-            "style": "font-family: Manrope; cursor: pointer;"
-        },
-        {
-            "name": "button1",
-            "type": "class",
-            "style": "color: white; font-weight: bold; font-size: 13px; letter-spacing: 1px; height: 48px; max-width: 160px; width: 100%; border: none; display:flex; align-items:center; justify-content: center; text-decoration: none;"
-        },
-        {
-            "name": "h2",
-            "type": "element",
-            "style": "margin: 0;"
-        },
-        {
-            "name": "h2-cart",
-            "type": "class",
-            "style": "font-weight: bold; font-size: 18px; letter-spacing: 1.29px;"
-        },
-        {
-            "name": "cart-product-container-item",
-            "type": "class",
-            "style": "display: flex; width: 100%; justify-content: space-between; align-items: center;"
-        },
-        {
-            "name": "cart-product-container-item-product-div",
-            "type": "class",
-            "style": "display: flex; gap: 16px;"
-        },
-        {
-            "name": "cart-product-container-item-product-div-picture",
-            "type": "class",
-            "style": "max-width: 64px; border-radius: 8px;"
-        },
-        {
-            "name": "cart-product-container-item-product-div-section",
-            "type": "class",
-            "style": "display: flex; flex-direction: column; justify-content: center;"
-        },
-        {
-            "name": "cart-product-container-item-product-div-section-title",
-            "type": "class",
-            "style": "font-weight: bold; margin: 0; font-size: 15px; line-height: 25px;"
-        },
-        {
-            "name": "cart-product-container-item-product-div-section-description",
-            "type": "class",
-            "style": "font-weight: bold; font-size: 14px; color: rgba(0,0,0,0.5);"
-        },
-        {
-            "name": "cart-product-container-item-amount-div",
-            "type": "class"
-        },
-        {
-            "name": "hero-cart-div-count-div",
-            "type": "class",
-            "style": "max-width: 120px; background-color: #F1F1F1; display: flex; align-items: center; justify-content: space-between; width:100%; min-height: 100%;"
-        },
-        {
-            "name": "hero-cart-div-count-div2",
-            "type": "class",
-            "style": "max-width: 96px; background-color: #F1F1F1; display: flex; align-items: center; justify-content: space-between; width:100%; min-height: 32px;"
-        },
-        {
-            "name": "hero-cart-div-count-buttons",
-            "type": "class",
-            "style": "border: none; font-size: 13px; font-weight: bold; letter-spacing: 1px; color: rgba(0,0,0,0.25); cursor: pointer; transition: 150ms; margin-inline: 12.5px;"
-        },
-        {
-            "name": "hero-cart-div-count-buttons2",
-            "type": "class",
-            "style": "border: none; font-size: 13px; font-weight: bold; letter-spacing: 1px; color: rgba(0,0,0,0.25); cursor: pointer; transition: 150ms; margin-inline: 6px;"
-        },
-        {
-            "name": "hero-cart-div-count-input",
-            "type": "class",
-            "style": "border: none; text-align: center; outline:none; width: 40px; padding:0; margin:0; font-family: Manrope; font-size: 13px; font-weight:bold; letter-spacing: 1px; background-color: transparent;"
-        },
-        {
-            "name": "input::-webkit-outer-spin-button, input::-webkit-inner-spin-button",
-            "type": "element",
-            "style": "-webkit-appearance: none; margin: 0;"
-        },
-        {
-            "name": "input[type=number]",
-            "type": "element",
-            "style": "-moz-appearance: textfield;"
-        },
-        {
-            "name": "hero-cart-div-count-buttons:hover",
-            "type": "class",
-            "style": "color: #D87D4A;"
-        }
+  "head": {
+    "title": "New Candy Wrapper project",
+    "link": [
+      {
+        "rel": "shortcut icon",
+        "href": "https://villager88.github.io/cwrap-audiophile-ecommerce-website/static/favicon/favicon.ico",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap",
+        "type": "text/css"
+      }
+    ],
+    "meta": [
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1.0"
+      },
+      {
+        "charset": "UTF-8"
+      },
+      {
+        "name": "description",
+        "content": "New Candy Wrapper project."
+      },
+      {
+        "name": "keywords",
+        "content": ""
+      }
     ]
+  },
+  "classroom": [
+    {
+      "name": "html",
+      "type": "element",
+      "style": "overflow-x: clip; "
+    },
+    {
+      "name": "nav1All",
+      "type": "class",
+      "style": "display: flex;"
+    },
+    {
+      "name": "nav1Head",
+      "type": "class",
+      "mediaQueries": [
+        {
+          "query": "max-width: 840px",
+          "style": "display: none;"
+        }
+      ],
+      "style": ""
+    },
+    {
+      "name": "nav1Footer",
+      "type": "class",
+      "mediaQueries": [
+        {
+          "query": "max-width: 640px",
+          "style": "flex-direction: column; align-items: center;"
+        }
+      ],
+      "style": ""
+    },
+    {
+      "name": "h1",
+      "type": "element",
+      "mediaQueries": [
+        {
+          "query": "max-width: 768px",
+          "style": "font-size: 36px; line-height: 40px; letter-spacing: 1.29px;"
+        }
+      ],
+      "style": "color: white; font-weight: bold; font-size: 56px; line-height: 58px; letter-spacing: 2px; margin: 0;"
+    },
+    {
+      "name": "p",
+      "type": "element",
+      "style": "font-weight: 500; font-size: 15px; line-height: 25px; margin: 0; letter-spacing: 0;"
+    },
+    {
+      "name": "a",
+      "type": "element",
+      "style": "font-family: Manrope, sans-serif; cursor: pointer;"
+    },
+    {
+      "name": "button1",
+      "type": "class",
+      "style": "color: white; font-weight: bold; font-size: 13px; letter-spacing: 1px; height: 48px; max-width: 160px; width: 100%; border: none; display:flex; align-items:center; justify-content: center; text-decoration: none;"
+    },
+    {
+      "name": "h2",
+      "type": "element",
+      "style": "margin: 0;"
+    },
+    {
+      "name": "h2-cart",
+      "type": "class",
+      "style": "font-weight: bold; font-size: 18px; letter-spacing: 1.29px;"
+    },
+    {
+      "name": "cart-product-container-item",
+      "type": "class",
+      "style": "display: flex; width: 100%; justify-content: space-between; align-items: center;"
+    },
+    {
+      "name": "cart-product-container-item-product-div",
+      "type": "class",
+      "style": "display: flex; gap: 16px;"
+    },
+    {
+      "name": "cart-product-container-item-product-div-picture",
+      "type": "class",
+      "style": "max-width: 64px; border-radius: 8px;"
+    },
+    {
+      "name": "cart-product-container-item-product-div-section",
+      "type": "class",
+      "style": "display: flex; flex-direction: column; justify-content: center;"
+    },
+    {
+      "name": "cart-product-container-item-product-div-section-title",
+      "type": "class",
+      "style": "font-weight: bold; margin: 0; font-size: 15px; line-height: 25px;"
+    },
+    {
+      "name": "cart-product-container-item-product-div-section-description",
+      "type": "class",
+      "style": "font-weight: bold; font-size: 14px; color: rgba(0,0,0,0.5);"
+    },
+    {
+      "name": "cart-product-container-item-amount-div",
+      "type": "class",
+      "style": ""
+    },
+    {
+      "name": "hero-cart-div-count-div",
+      "type": "class",
+      "style": "max-width: 120px; background-color: #F1F1F1; display: flex; align-items: center; justify-content: space-between; width:100%; min-height: 100%;"
+    },
+    {
+      "name": "hero-cart-div-count-div2",
+      "type": "class",
+      "style": "max-width: 96px; background-color: #F1F1F1; display: flex; align-items: center; justify-content: space-between; width:100%; min-height: 32px;"
+    },
+    {
+      "name": "hero-cart-div-count-buttons",
+      "type": "class",
+      "style": "border: none; font-size: 13px; font-weight: bold; letter-spacing: 1px; color: rgba(0,0,0,0.25); cursor: pointer; transition: 150ms; margin-inline: 12.5px;"
+    },
+    {
+      "name": "hero-cart-div-count-buttons2",
+      "type": "class",
+      "style": "font-family: Manrope, sans-serif; border: none; font-size: 13px; font-weight: bold; letter-spacing: 1px; color: rgba(0,0,0,0.25); cursor: pointer; transition: 150ms; margin-inline: 6px;"
+    },
+    {
+      "name": "hero-cart-div-count-buttons2:hover",
+      "type": "class",
+      "style": "color: #D87D4A;"
+    },
+    {
+      "name": "hero-cart-div-count-input",
+      "type": "class",
+      "style": "border: none; text-align: center; outline: none; width: 40px; padding:0; margin:0; font-family: Manrope; font-size: 13px; font-weight:bold; letter-spacing: 1px; background-color: transparent;"
+    },
+    {
+      "name": "input::-webkit-outer-spin-button, input::-webkit-inner-spin-button",
+      "type": "element",
+      "style": "-webkit-appearance: none; margin: 0;"
+    },
+    {
+      "name": "input[type=number]",
+      "type": "element",
+      "style": "-moz-appearance: textfield;"
+    },
+    {
+      "name": "hero-cart-div-count-buttons:hover",
+      "type": "class",
+      "style": "color: #D87D4A;"
+    }
+  ],
+  "const": {
+    "patternEmail": "^[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,}$",
+    "patternName": "^[a-zA-Z\\s]+$",
+    "patternPhone": "^\\+?[0-9]{7,}$",
+    "patternEMoney": "^[a-zA-Z0-9]{6,20}$",
+    "patternEMoneyPin": "^[0-9]{4}$"
+  }
 }

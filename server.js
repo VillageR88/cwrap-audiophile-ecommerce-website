@@ -6,7 +6,6 @@ const path = require("node:path");
 const fs = require("node:fs");
 const os = require("node:os");
 const { exec } = require("node:child_process");
-const url = require("url");
 
 const HTTP_PORT = 36969;
 let BASE_DIR;

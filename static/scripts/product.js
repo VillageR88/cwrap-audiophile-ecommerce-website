@@ -25,11 +25,12 @@ const additionalFeatures = document.createElement("section");
 const additionalFeaturesTitle = document.createElement("h2");
 const additionalFeaturesDescription = document.createElement("p");
 const additionalBox = document.createElement("section");
+const additionalBoxUl = document.createElement("ul");
 const additionalBoxTitle = document.createElement("h2");
 const gallery = document.createElement("div");
 const like = document.createElement("div");
 const likeTitle = document.createElement("h2");
-const likeContentWrapper = document.createElement("div");
+const likeContentWrapper = document.createElement("ul");
 
 let productData;
 for (const product of data) {
@@ -42,7 +43,7 @@ hero.classList.add("hero-container");
 heroImage.classList.add("hero-image");
 heroImage.src = productData.image.desktop.replace(
   "./assets",
-  "../static/images"
+  "../../static/images"
 );
 heroDiv.classList.add("hero-div");
 heroNew.classList.add("hero-new");
@@ -65,6 +66,7 @@ additionalFeaturesTitle.textContent = "FEATURES";
 additionalFeaturesDescription.classList.add("p-description");
 additionalFeaturesDescription.textContent = productData.features;
 additionalBox.classList.add("additional-box");
+additionalBoxUl.classList.add("additional-box-ul");
 additionalBoxTitle.classList.add("h2-title");
 additionalBoxTitle.textContent = "IN THE BOX";
 gallery.classList.add("gallery-container");
@@ -86,7 +88,10 @@ additionalFeatures.appendChild(additionalFeaturesTitle);
 additionalFeatures.appendChild(additionalFeaturesDescription);
 additional.appendChild(additionalFeatures);
 additionalBox.appendChild(additionalBoxTitle);
+additionalBox.appendChild(additionalBoxUl);
+
 for (const item of productData.includes) {
+  const additionalBoxLi = document.createElement("li");
   const additionalBoxDescription = document.createElement("p");
   const spanQuantity = document.createElement("span");
   const spanItem = document.createElement("span");
@@ -97,7 +102,8 @@ for (const item of productData.includes) {
   spanItem.textContent = item.item;
   additionalBoxDescription.appendChild(spanQuantity);
   additionalBoxDescription.appendChild(spanItem);
-  additionalBox.appendChild(additionalBoxDescription);
+  additionalBoxLi.appendChild(additionalBoxDescription);
+  additionalBoxUl.appendChild(additionalBoxLi);
 }
 additional.appendChild(additionalBox);
 productContainer.appendChild(additional);
@@ -105,26 +111,44 @@ for (const item in productData.gallery) {
   const galleryImage = document.createElement("img");
   galleryImage.src = productData.gallery[item].desktop.replace(
     "./assets",
-    "../static/images"
+    "../../static/images"
   );
   gallery.appendChild(galleryImage);
 }
 productContainer.appendChild(gallery);
 like.appendChild(likeTitle);
 for (const item of productData.others) {
-  const itemWrapper = document.createElement("div");
+  const itemWrapper = document.createElement("li");
+  const itemPicture = document.createElement("picture");
+  const itemSourceTablet = document.createElement("source");
+  const itemSourceMobile = document.createElement("source");
   const itemImage = document.createElement("img");
   const itemSection = document.createElement("section");
   const itemSectionDescription = document.createElement("h3");
   const itemSectionButton = document.createElement("a");
 
-  itemImage.src = item.image.desktop.replace("./assets", "../static/images");
+  itemSourceTablet.srcset = item.image.tablet.replace(
+    "./assets",
+    "../../static/images"
+  );
+  itemSourceTablet.media = "(max-width: 1024px)";
+  itemSourceMobile.srcset = item.image.mobile.replace(
+    "./assets",
+    "../../static/images"
+  );
+  itemSourceMobile.media = "(max-width: 840px)";
+  itemImage.src = item.image.desktop.replace("./assets", "../../static/images");
+  itemImage.alt = item.name;
+
   itemSectionDescription.textContent = item.name.toUpperCase();
   itemSectionButton.classList.add("button1", "hero-cart-div-cart-button");
   itemSectionButton.textContent = "SEE PRODUCT";
   itemSectionButton.href = `/${item.category}/${item.slug}`;
 
-  itemWrapper.appendChild(itemImage);
+  itemPicture.appendChild(itemSourceMobile);
+  itemPicture.appendChild(itemSourceTablet);
+  itemPicture.appendChild(itemImage);
+  itemWrapper.appendChild(itemPicture);
   itemSection.appendChild(itemSectionDescription);
   itemSection.appendChild(itemSectionButton);
   itemWrapper.appendChild(itemSection);
