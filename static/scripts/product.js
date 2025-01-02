@@ -143,7 +143,7 @@ for (const item of productData.others) {
   itemSectionDescription.textContent = item.name.toUpperCase();
   itemSectionButton.classList.add("button1", "hero-cart-div-cart-button");
   itemSectionButton.textContent = "SEE PRODUCT";
-  itemSectionButton.href = `/${item.category}/${item.slug}`;
+  itemSectionButton.href = `../../${item.category}/${item.slug}`;
 
   itemPicture.appendChild(itemSourceMobile);
   itemPicture.appendChild(itemSourceTablet);

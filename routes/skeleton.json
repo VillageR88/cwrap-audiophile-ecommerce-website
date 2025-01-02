@@ -257,6 +257,13 @@
         "src": "static/scripts/cart.js",
         "type": "module"
       }
+    },
+    {
+      "element": "script",
+      "attributes": {
+        "src": "static/scripts/navbar.js",
+        "type": "module"
+      }
     }
   ]
 }

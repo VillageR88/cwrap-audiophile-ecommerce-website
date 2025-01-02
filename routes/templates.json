@@ -346,7 +346,8 @@
           {
             "element": "button",
             "attributes": {
-              "aria-label": "navbar"
+              "aria-label": "navbar",
+              "id": "hamburger-button"
             },
             "mediaQueries": [
               {
@@ -608,6 +609,13 @@
           "src": "cwrapProperty[prefix=./]static/scripts/cart.js",
           "type": "module"
         }
+      },
+      {
+        "element": "script",
+        "attributes": {
+          "src": "cwrapProperty[prefix=./]static/scripts/navbar.js",
+          "type": "module"
+        }
       }
     ]
   },
@@ -690,7 +698,10 @@
     "children": [
       {
         "element": "div",
-        "style": "max-width: calc(1110px + 48px); padding-inline: 24px; margin-inline: auto; display:flex; justify-content: end; padding-top: 32px; box-sizing: border-box;",
+        "attributes": {
+          "id": "cart-container"
+        },
+        "style": "max-width: calc(1110px + 48px); padding-inline: 24px; margin-inline: auto; display:flex; justify-content: end; padding-top: 32px; box-sizing: border-box; display: none;",
         "children": [
           {
             "element": "div",
@@ -736,7 +747,7 @@
                 "attributes": {
                   "id": "cart-product-container"
                 },
-                "style": "display: flex; flex-direction: column; gap: 24px; width: 100%; margin: 0; list-style: none; padding: 0;"
+                "style": "display: flex; flex-direction: column; gap: 24px; width: 100%; margin: 0; list-style: none; padding: 0; "
               },
               {
                 "element": "div",
@@ -778,6 +789,19 @@
                 ]
               }
             ]
+          }
+        ]
+      },
+      {
+        "element": "div",
+        "attributes": {
+          "id": "mobile-navigation"
+        },
+        "style": "position: absolute; top: 0; left: 0; width: 100%; height: fit-content; background-color: white; padding-bottom: 67px; border-radius: 0 0 8px 8px; display: none;",
+        "children": [
+          {
+            "element": "cwrap-template",
+            "text": "cwrapTemplate[ulNavigation2]"
           }
         ]
       }

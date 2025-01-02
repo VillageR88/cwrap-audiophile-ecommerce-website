@@ -112,37 +112,46 @@ function updateCartDisplay() {
 
 updateCartDisplay();
 
-let cartIsOpen = false;
 cart.addEventListener("click", () => {
-  cartIsOpen = !cartIsOpen;
   manageCartPresence();
 });
 
 function manageCartPresence() {
   const mask = document.getElementById("mask");
+  const mobileNavigation = document.getElementById("mobile-navigation");
+  const cartContainer = document.getElementById("cart-container");
   const bodyElements = document.querySelectorAll(
     "body *:not(#mask):not(#mask *)"
   ); // Select all body elements, excluding #mask and its children
 
-  if (cartIsOpen) {
+  const isMaskDisplayed = mask.style.display === "block";
+  const isCartContainerDisplayed = cartContainer.style.display === "flex";
+  const isMobileNavigationDisplayed =
+    mobileNavigation.style.display === "block";
+
+  if (isMaskDisplayed && isCartContainerDisplayed) {
+    document.body.style.overflowY = "";
+    document.documentElement.style.overflowY = "";
+
+    mask.style.display = "none";
+    cartContainer.style.display = "none";
+    mobileNavigation.style.display = "none";
+
+    for (const element of bodyElements) {
+      element.removeAttribute("tabindex");
+    }
+  } else {
     window.scrollTo({ top: 0, behavior: "instant" });
     document.body.style.overflowY = "clip"; // Prevent scrolling
     document.documentElement.style.overflowY = "clip"; // Prevent scrolling on html
     mask.style.display = "block";
+    cartContainer.style.display = "flex";
+    mobileNavigation.style.display = "none";
 
     for (const element of bodyElements) {
       if (element !== mask) {
         element.setAttribute("tabindex", "-1");
       }
-    }
-  } else {
-    document.body.style.overflowY = "";
-    document.documentElement.style.overflowY = "";
-
-    mask.style.display = "none";
-
-    for (const element of bodyElements) {
-      element.removeAttribute("tabindex");
     }
   }
 }
