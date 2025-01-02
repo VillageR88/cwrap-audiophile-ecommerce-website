@@ -41,8 +41,8 @@
     "style": "margin: 0; padding: 0; list-style: none; gap: 34px; margin-right: cwrapProperty[rightMargin=0];",
     "children": [],
     "blueprint": {
-      "element": "li",
       "count": "4",
+      "element": "li",
       "children": [
         {
           "element": "a",
@@ -77,9 +77,9 @@
     "style": "max-width: 1110px; margin-inline: auto; display: flex; gap: 30px; margin-block: 120px 0; padding: 0; list-style: none;",
     "children": [],
     "blueprint": {
+      "count": "3",
       "element": "li",
       "style": "max-width: 350px; width: 100%; display: flex; flex-direction: column; justify-content: end; align-items: center",
-      "count": "3",
       "children": [
         {
           "element": "img",
@@ -900,8 +900,8 @@
                 "style": "display: flex; gap: 16px; list-style: none; margin: 0; padding: 0; align-items: center;",
                 "children": [],
                 "blueprint": {
+                  "count": "3",
                   "element": "li",
-                  "count": 3,
                   "children": [
                     {
                       "element": "cwrap-template",

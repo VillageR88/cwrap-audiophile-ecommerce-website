@@ -192,7 +192,7 @@
                       "blueprint": {
                         "element": "li",
                         "style": "display: flex; flex-direction: column; gap: 9px; grid-area: cwrapArray[li1,li2,li3]",
-                        "count": 3,
+                        "count": "3",
                         "children": [
                           {
                             "element": "label",
@@ -241,7 +241,7 @@
                       "blueprint": {
                         "element": "li",
                         "style": "display: flex; flex-direction: column; gap: 9px; grid-area: cwrapArray[li1,li2,li3,li4,li5]",
-                        "count": 4,
+                        "count": "4",
                         "children": [
                           {
                             "element": "label",
@@ -295,7 +295,7 @@
                           }
                         ],
                         "style": "display: flex; flex-direction: row; gap: 9px; justify-content: space-between;",
-                        "count": 2,
+                        "count": "2",
                         "children": [
                           {
                             "element": "h3",
@@ -375,7 +375,7 @@
                       "blueprint": {
                         "element": "li",
                         "style": "display: flex; flex-direction: column; gap: 9px; width: 100%;",
-                        "count": 2,
+                        "count": "2",
                         "children": [
                           {
                             "element": "label",
