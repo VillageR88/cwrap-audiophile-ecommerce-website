@@ -20,7 +20,7 @@
   },
   "classroom": [],
   "element": "body",
-  "style": "font-family: Manrope, sans-serif; padding: 0; margin: 0; box-sizing: border-box; background-color: #FAFAFA; min-height: 100dvh; display: flex; flex-direction: column; overflow-x: clip;",
+  "style": "background-color: #FAFAFA; box-sizing: border-box; display: flex; flex-direction: column; font-family: Manrope, sans-serif; margin: 0; min-height: 100dvh; overflow-x: clip; padding: 0;",
   "children": [
     {
       "element": "cwrap-template",
@@ -28,7 +28,7 @@
     },
     {
       "element": "header",
-      "style": "min-height: 729px; width: 100%; background-color: #191919; position: relative; z-index: 0; padding-inline: 24px; box-sizing: border-box;",
+      "style": "background-color: #191919; box-sizing: border-box; min-height: 729px; padding-inline: 24px; position: relative; width: 100%; z-index: 0;",
       "children": [
         {
           "element": "cwrap-template",
@@ -42,7 +42,7 @@
               "style": "align-items: center; text-align: center;"
             }
           ],
-          "style": "max-width: 1110px; margin: 128px auto 0 auto; display: flex; flex-direction: column;",
+          "style": "display: flex; flex-direction: column; margin: 128px auto 0 auto; max-width: 1110px;",
           "children": [
             {
               "element": "span",
@@ -57,11 +57,11 @@
                   "style": "align-items: center;"
                 }
               ],
-              "style": "max-width: 400px; display: flex; flex-direction: column; gap: 24px; margin-top: 24px;",
+              "style": "display: flex; flex-direction: column; gap: 24px; margin-top: 24px; max-width: 400px;",
               "children": [
                 {
                   "element": "h1",
-                  "style": "",
+                  "style": ";",
                   "text": "XX99 MARK II\nHEADPHONES"
                 },
                 {
@@ -77,7 +77,7 @@
                 "class": "button1",
                 "href": "headphones/xx99-mark-two-headphones"
               },
-              "style": "margin-top: 40px; background-color: #D87D4A; transition: 150ms;",
+              "style": "background-color: #D87D4A; margin-top: 40px; transition: 150ms;",
               "extend": [
                 {
                   "extension": ":hover",
@@ -92,7 +92,7 @@
     },
     {
       "element": "main",
-      "style": "width: 100%; padding-inline: 24px; box-sizing: border-box;",
+      "style": "box-sizing: border-box; padding-inline: 24px; width: 100%;",
       "children": [
         {
           "element": "cwrap-template",
@@ -103,10 +103,10 @@
           "mediaQueries": [
             {
               "query": "max-width: 1024px",
-              "style": "gap: 64px; padding-block: 52px 64px; background-position: center 130%; flex-direction: column; align-items: center;"
+              "style": "align-items: center; background-position: center 130%; flex-direction: column; gap: 64px; padding-block: 52px 64px;"
             }
           ],
-          "style": "gap:48px; min-height: 560px; background-color: #D87D4A; max-width: 1110px; margin-inline: auto; margin-block: 168px 0; border-radius: 8px; background-image: url(\"static/images/home/desktop/pattern-circles.svg\"); background-repeat: no-repeat; background-position: -140px -36px; display: flex; overflow: hidden; justify-content: space-between;",
+          "style": "background-color: #D87D4A; background-image: url(\"static/images/home/desktop/pattern-circles.svg\"); background-position: -140px -36px; background-repeat: no-repeat; border-radius: 8px; display: flex; gap: 48px; justify-content: space-between; margin-block: 168px 0; margin-inline: auto; max-width: 1110px; min-height: 560px; overflow: hidden;",
           "children": [
             {
               "element": "img",
@@ -116,7 +116,7 @@
                   "style": "margin: 0; max-width: 200px;"
                 }
               ],
-              "style": "max-height: 460px; margin: auto 0 -12px 145px;",
+              "style": "margin: auto 0 -12px 145px; max-height: 460px;",
               "attributes": {
                 "alt": "ZX9 Speaker",
                 "src": "static/images/home/desktop/image-speaker-zx9.png"
@@ -127,10 +127,10 @@
               "mediaQueries": [
                 {
                   "query": "max-width: 1024px",
-                  "style": "align-items: center; text-align: center; margin: 0;"
+                  "style": "align-items: center; margin: 0; text-align: center;"
                 }
               ],
-              "style": "display: flex; flex-direction: column; gap: 40px; height: fit-content; width: fit-content; margin: auto 95px auto 0;",
+              "style": "display: flex; flex-direction: column; gap: 40px; height: fit-content; margin: auto 95px auto 0; width: fit-content;",
               "children": [
                 {
                   "element": "section",
@@ -140,22 +140,22 @@
                       "style": "align-items: center;"
                     }
                   ],
-                  "style": "gap: 24px; display: flex; flex-direction: column;",
+                  "style": "display: flex; flex-direction: column; gap: 24px;",
                   "children": [
                     {
                       "element": "h2",
                       "mediaQueries": [
                         {
                           "query": "max-width: 768px",
-                          "style": "font-size: 36px; line-height: 40px; letter-spacing: 1.29px;"
+                          "style": "font-size: 36px; letter-spacing: 1.29px; line-height: 40px;"
                         }
                       ],
-                      "style": "color: white; font-weight: bold; font-size: 56px; line-height: 58px; letter-spacing: 2px; max-width: 261px; margin: 0;",
+                      "style": "color: white; font-size: 56px; font-weight: bold; letter-spacing: 2px; line-height: 58px; margin: 0; max-width: 261px;",
                       "text": "ZX9\nSPEAKER"
                     },
                     {
                       "element": "p",
-                      "style": "max-width: 349px; color: rgba(255,255,255,0.75);",
+                      "style": "color: rgba(255,255,255,0.75); max-width: 349px;",
                       "text": "Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound."
                     }
                   ]
@@ -188,10 +188,10 @@
             },
             {
               "query": "max-width: 800px",
-              "style": "background-position: right; background-image: url(\"static/images/home/mobile/image-speaker-zx7.jpg\");"
+              "style": "background-image: url(\"static/images/home/mobile/image-speaker-zx7.jpg\"); background-position: right;"
             }
           ],
-          "style": "min-height: 320px; max-width: 1110px; width: 100%; background-color: #F1F1F1; margin: 48px auto 0 auto; background-image: url(\"static/images/home/desktop/image-speaker-zx7.jpg\"); background-position: center; background-size: cover; border-radius: 8px; display: flex;",
+          "style": "background-color: #F1F1F1; background-image: url(\"static/images/home/desktop/image-speaker-zx7.jpg\"); background-position: center; background-size: cover; border-radius: 8px; display: flex; margin: 48px auto 0 auto; max-width: 1110px; min-height: 320px; width: 100%;",
           "children": [
             {
               "element": "cwrap-template",
@@ -207,21 +207,21 @@
               "style": "flex-direction: column;"
             }
           ],
-          "style": "max-width: 1110px; min-height: 320px; margin-inline: auto; margin-top: 48px; display: flex; width: 100%; gap: 30px;",
+          "style": "display: flex; gap: 30px; margin-inline: auto; margin-top: 48px; max-width: 1110px; min-height: 320px; width: 100%;",
           "children": [
             {
               "element": "div",
               "mediaQueries": [
                 {
                   "query": "max-width: 980px",
-                  "style": "background-image: url(\"static/images/home/tablet/image-earphones-yx1.jpg\"); background-size: cover; background-position: center;"
+                  "style": "background-image: url(\"static/images/home/tablet/image-earphones-yx1.jpg\"); background-position: center; background-size: cover;"
                 },
                 {
                   "query": "max-width: 800px",
-                  "style": "background-image: url(\"static/images/home/mobile/image-earphones-yx1.jpg\"); min-height: 200px; max-width: 100%;"
+                  "style": "background-image: url(\"static/images/home/mobile/image-earphones-yx1.jpg\"); max-width: 100%; min-height: 200px;"
                 }
               ],
-              "style": "background-color: #F1F1F1; max-width: 540px; min-height: 320px; width: 100%; border-radius: 8px; background-image: url(\"static/images/home/desktop/image-earphones-yx1.jpg\"); background-position: center;"
+              "style": "background-color: #F1F1F1; background-image: url(\"static/images/home/desktop/image-earphones-yx1.jpg\"); background-position: center; border-radius: 8px; max-width: 540px; min-height: 320px; width: 100%;"
             },
             {
               "element": "div",
@@ -231,7 +231,7 @@
                   "style": "max-width: 100%; padding: 41px 24px;"
                 }
               ],
-              "style": "background-color: #F1F1F1; width: 100%; max-width: 540px; border-radius: 8px; display: flex;",
+              "style": "background-color: #F1F1F1; border-radius: 8px; display: flex; max-width: 540px; width: 100%;",
               "children": [
                 {
                   "element": "cwrap-template",

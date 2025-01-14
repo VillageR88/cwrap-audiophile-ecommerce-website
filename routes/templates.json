@@ -797,7 +797,6 @@
         "attributes": {
           "id": "mobile-navigation"
         },
-        "style": "position: absolute; top: 0; left: 0; width: 100%; height: fit-content; background-color: white; padding-bottom: 67px; border-radius: 0 0 8px 8px; display: none;",
         "children": [
           {
             "element": "cwrap-template",

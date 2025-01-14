@@ -33,9 +33,14 @@
   },
   "classroom": [
     {
+      "name": "@view-transition",
+      "type": "custom",
+      "style": "navigation: auto;"
+    },
+    {
       "name": "html",
       "type": "element",
-      "style": "overflow-x: clip; "
+      "style": "overflow-x: clip;"
     },
     {
       "name": "nav1All",
@@ -50,8 +55,7 @@
           "query": "max-width: 840px",
           "style": "display: none;"
         }
-      ],
-      "style": ""
+      ]
     },
     {
       "name": "nav1Footer",
@@ -59,10 +63,9 @@
       "mediaQueries": [
         {
           "query": "max-width: 640px",
-          "style": "flex-direction: column; align-items: center;"
+          "style": "align-items: center; flex-direction: column;"
         }
-      ],
-      "style": ""
+      ]
     },
     {
       "name": "h1",
@@ -70,25 +73,25 @@
       "mediaQueries": [
         {
           "query": "max-width: 768px",
-          "style": "font-size: 36px; line-height: 40px; letter-spacing: 1.29px;"
+          "style": "font-size: 36px; letter-spacing: 1.29px; line-height: 40px;"
         }
       ],
-      "style": "color: white; font-weight: bold; font-size: 56px; line-height: 58px; letter-spacing: 2px; margin: 0;"
+      "style": "color: white; font-size: 56px; font-weight: bold; letter-spacing: 2px; line-height: 58px; margin: 0;"
     },
     {
       "name": "p",
       "type": "element",
-      "style": "font-weight: 500; font-size: 15px; line-height: 25px; margin: 0; letter-spacing: 0;"
+      "style": "font-size: 15px; font-weight: 500; letter-spacing: 0; line-height: 25px; margin: 0;"
     },
     {
       "name": "a",
       "type": "element",
-      "style": "font-family: Manrope, sans-serif; cursor: pointer;"
+      "style": "cursor: pointer; font-family: Manrope, sans-serif;"
     },
     {
       "name": "button1",
       "type": "class",
-      "style": "color: white; font-weight: bold; font-size: 13px; letter-spacing: 1px; height: 48px; max-width: 160px; width: 100%; border: none; display:flex; align-items:center; justify-content: center; text-decoration: none;"
+      "style": "align-items: center; border: none; color: white; display: flex; font-size: 13px; font-weight: bold; height: 48px; justify-content: center; letter-spacing: 1px; max-width: 160px; text-decoration: none; width: 100%;"
     },
     {
       "name": "h2",
@@ -98,12 +101,12 @@
     {
       "name": "h2-cart",
       "type": "class",
-      "style": "font-weight: bold; font-size: 18px; letter-spacing: 1.29px;"
+      "style": "font-size: 18px; font-weight: bold; letter-spacing: 1.29px;"
     },
     {
       "name": "cart-product-container-item",
       "type": "class",
-      "style": "display: flex; width: 100%; justify-content: space-between; align-items: center;"
+      "style": "align-items: center; display: flex; justify-content: space-between; width: 100%;"
     },
     {
       "name": "cart-product-container-item-product-div",
@@ -113,7 +116,7 @@
     {
       "name": "cart-product-container-item-product-div-picture",
       "type": "class",
-      "style": "max-width: 64px; border-radius: 8px;"
+      "style": "border-radius: 8px; max-width: 64px;"
     },
     {
       "name": "cart-product-container-item-product-div-section",
@@ -123,37 +126,37 @@
     {
       "name": "cart-product-container-item-product-div-section-title",
       "type": "class",
-      "style": "font-weight: bold; margin: 0; font-size: 15px; line-height: 25px;"
+      "style": "font-size: 15px; font-weight: bold; line-height: 25px; margin: 0;"
     },
     {
       "name": "cart-product-container-item-product-div-section-description",
       "type": "class",
-      "style": "font-weight: bold; font-size: 14px; color: rgba(0,0,0,0.5);"
+      "style": "color: rgba(0,0,0,0.5); font-size: 14px; font-weight: bold;"
     },
     {
       "name": "cart-product-container-item-amount-div",
       "type": "class",
-      "style": ""
+      "style": ";"
     },
     {
       "name": "hero-cart-div-count-div",
       "type": "class",
-      "style": "max-width: 120px; background-color: #F1F1F1; display: flex; align-items: center; justify-content: space-between; width:100%; min-height: 100%;"
+      "style": "align-items: center; background-color: #F1F1F1; display: flex; justify-content: space-between; max-width: 120px; min-height: 100%; width: 100%;"
     },
     {
       "name": "hero-cart-div-count-div2",
       "type": "class",
-      "style": "max-width: 96px; background-color: #F1F1F1; display: flex; align-items: center; justify-content: space-between; width:100%; min-height: 32px;"
+      "style": "align-items: center; background-color: #F1F1F1; display: flex; justify-content: space-between; max-width: 96px; min-height: 32px; width: 100%;"
     },
     {
       "name": "hero-cart-div-count-buttons",
       "type": "class",
-      "style": "border: none; font-size: 13px; font-weight: bold; letter-spacing: 1px; color: rgba(0,0,0,0.25); cursor: pointer; transition: 150ms; margin-inline: 12.5px;"
+      "style": "border: none; color: rgba(0,0,0,0.25); cursor: pointer; font-size: 13px; font-weight: bold; letter-spacing: 1px; margin-inline: 12.5px; transition: 150ms;"
     },
     {
       "name": "hero-cart-div-count-buttons2",
       "type": "class",
-      "style": "font-family: Manrope, sans-serif; border: none; font-size: 13px; font-weight: bold; letter-spacing: 1px; color: rgba(0,0,0,0.25); cursor: pointer; transition: 150ms; margin-inline: 6px;"
+      "style": "border: none; color: rgba(0,0,0,0.25); cursor: pointer; font-family: Manrope, sans-serif; font-size: 13px; font-weight: bold; letter-spacing: 1px; margin-inline: 6px; transition: 150ms;"
     },
     {
       "name": "hero-cart-div-count-buttons2:hover",
@@ -163,7 +166,7 @@
     {
       "name": "hero-cart-div-count-input",
       "type": "class",
-      "style": "border: none; text-align: center; outline: none; width: 40px; padding:0; margin:0; font-family: Manrope; font-size: 13px; font-weight:bold; letter-spacing: 1px; background-color: transparent;"
+      "style": "background-color: transparent; border: none; font-family: Manrope; font-size: 13px; font-weight: bold; letter-spacing: 1px; margin: 0; outline: none; padding: 0; text-align: center; width: 40px;"
     },
     {
       "name": "input::-webkit-outer-spin-button, input::-webkit-inner-spin-button",

@@ -34,7 +34,7 @@
     {
       "name": "category-container",
       "type": "id",
-      "style": "max-width: 1110px; display: flex; margin-inline: auto; margin-block: 160px; gap: 160px; flex-direction: column;"
+      "style": "display: flex; flex-direction: column; gap: 160px; margin-block: 160px; margin-inline: auto; max-width: 1110px;"
     },
     {
       "name": "category-container-wrapper",
@@ -49,7 +49,7 @@
           "style": "flex-direction: column;"
         }
       ],
-      "style": "gap:24px; display: flex; width: 100%; justify-content: space-between; align-items:center; margin-inline: auto;"
+      "style": "align-items: center; display: flex; gap: 24px; justify-content: space-between; margin-inline: auto; width: 100%;"
     },
     {
       "name": "category-container > div:nth-of-type(even)",
@@ -65,7 +65,7 @@
     {
       "name": "category-container-picture",
       "type": "class",
-      "style": "display: flex; width: 50%; justify-content: center;",
+      "style": "display: flex; justify-content: center; width: 50%;",
       "mediaQueries": [
         {
           "query": "max-width: 960px",
@@ -82,7 +82,7 @@
           "style": "width: 100%;"
         }
       ],
-      "style": "display: flex; max-width: 540px; border-radius: 8px; width: 100%;"
+      "style": "border-radius: 8px; display: flex; max-width: 540px; width: 100%;"
     },
     {
       "name": "category-container-div",
@@ -93,22 +93,22 @@
           "style": "align-items: center; text-align: center;"
         }
       ],
-      "style": "max-width: 445px; display: flex; flex-direction: column;"
+      "style": "display: flex; flex-direction: column; max-width: 445px;"
     },
     {
       "name": "category-container-div-new",
       "type": "class",
-      "style": "font-size: 14px; color: #D87D4A; letter-spacing: 14px; margin-bottom: 16px;"
+      "style": "color: #D87D4A; font-size: 14px; letter-spacing: 14px; margin-bottom: 16px;"
     },
     {
       "name": "category-container-div-section",
       "type": "class",
-      "style": "display: flex; flex-direction: column; gap:32px;"
+      "style": "display: flex; flex-direction: column; gap: 32px;"
     },
     {
       "name": "category-container-div-section-title",
       "type": "class",
-      "style": "font-weight: bold; font-size: 40px; line-height: 44px; letter-spacing: 1.43px;"
+      "style": "font-size: 40px; font-weight: bold; letter-spacing: 1.43px; line-height: 44px;"
     },
     {
       "name": "category-container-div-section-description",
